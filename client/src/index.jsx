@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+import ReviewInfo from "./components/ReviewInfo.jsx";
+
 class App extends Component {
   state = {
     name: "Gabe"
@@ -9,8 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <ReviewInfo data={data} />
-        <UserReviews data={data}/> */}
+        <ReviewInfo />
       </div>
     );
   }
