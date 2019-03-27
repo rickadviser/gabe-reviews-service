@@ -1,0 +1,22 @@
+/* For small gray text */
+/* For header/navbar, little green bars */
+/* For green h1/h2/etc.  */
+/* for yellow buttons */
+/* For green text, greeen buttons */
+/* LOCATION COMPONENT */
+/* BOOKING COMPONENT */
+/* Red font */
+/* For bold prices at bottom */
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  color: #2c2c2c;
+}
+
+.test {
+  color: red;
+}
+
+.test2 {
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=main.css.map */

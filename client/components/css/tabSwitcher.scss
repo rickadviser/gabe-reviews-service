@@ -1,0 +1,9 @@
+@import "globals";
+
+.tabswitch__wrapper {
+  @include center;
+}
+
+.tabswitch__tab {
+  padding: 30px;
+}

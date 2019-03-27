@@ -1,0 +1,32 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$mainFontColor: #2c2c2c;
+
+/* For small gray text */
+$secondaryGrayFontColor: #767676;
+
+/* For header/navbar, little green bars */
+$mainGreen: #5da880;
+
+/* For green h1/h2/etc.  */
+$darkGreen: #458371;
+
+/* for yellow buttons */
+$buttonYellow: #fc0;
+
+/* For green text, greeen buttons */
+$darkGreen: #078171;
+
+/* LOCATION COMPONENT */
+$darkBlue: #069;
+$redColor: #e46615;
+
+/* BOOKING COMPONENT */
+/* Red font */
+$red: #ff6500;
+/* For bold prices at bottom */
+$blackBoldText: #000a12;

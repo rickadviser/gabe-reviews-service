@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACQA,yBAAyB;AAGzB,0CAA0C;AAG1C,2BAA2B;AAG3B,wBAAwB;AAGxB,oCAAoC;AAGpC,wBAAwB;AAIxB,uBAAuB;AACvB,cAAc;AAEd,+BAA+B;AD5B/B,AAAA,mBAAmB,CAAC;ECDlB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CDCxB;;AAED,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "tabSwitcher.scss",
+        "globals.scss"
+    ],
+    "names": [],
+    "file": "tabSwitcher.css"
+}

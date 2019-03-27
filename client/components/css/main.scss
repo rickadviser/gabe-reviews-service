@@ -1,0 +1,14 @@
+@import "globals";
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  color: $mainFontColor;
+}
+
+.test {
+  color: red;
+}
+
+.test2 {
+  text-transform: uppercase;
+}
