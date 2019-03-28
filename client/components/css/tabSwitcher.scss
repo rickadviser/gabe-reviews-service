@@ -1,9 +1,40 @@
-@import "globals";
+@import 'globals';
 
 .tabswitch__wrapper {
   @include center;
+  width: 100%;
 }
 
 .tabswitch__tab {
-  padding: 30px;
+  flex: 25%;
+  @include center;
+  flex-direction: column;
+  padding: 20px 30px;
+  cursor: pointer;
+  color: #078171;
+  border: $thinGrayBorder;
+  border-right: none;
+  background-color: #f9f9f9;
+
+  &:last-of-type {
+    border-right: 0.5px solid #e5e5e5;
+  }
+}
+.active {
+  color: #000a12;
+  position: relative;
+  font-weight: 700;
+  background-color: #fff;
+  border-bottom-color: #fff;
+  border-top: 3px solid $darkGreenMain;
+}
+
+.tabNumbers {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.tabCategory {
+  font-size: 14px;
 }

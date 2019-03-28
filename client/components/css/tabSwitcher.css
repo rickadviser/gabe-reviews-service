@@ -17,9 +17,54 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .tabswitch__tab {
-  padding: 30px;
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 30px;
+  cursor: pointer;
+  color: #078171;
+  border: 0.5px solid #e5e5e5;
+  border-right: none;
+  background-color: #f9f9f9;
+}
+
+.tabswitch__tab:last-of-type {
+  border-right: 0.5px solid #e5e5e5;
+}
+
+.active {
+  color: #000a12;
+  position: relative;
+  font-weight: 700;
+  background-color: #fff;
+  border-bottom-color: #fff;
+  border-top: 3px solid #078171;
+}
+
+.tabNumbers {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.tabCategory {
+  font-size: 14px;
 }
 /*# sourceMappingURL=tabSwitcher.css.map */

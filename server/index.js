@@ -11,6 +11,6 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(console.error);
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.listen(PORT, () => console.log("Server running"));

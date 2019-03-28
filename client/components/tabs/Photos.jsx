@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import TabHeader from '../TabHeader';
 
-export default class Photos extends Component {
+class Photos extends Component {
+  state = {};
+
   render() {
     return (
-      <div>
-        <h1>Photos</h1>
-      </div>
+      <React.Fragment>
+        <TabHeader title="Photos" buttonText="Post a Photo" />
+        <div>
+          <p>Content</p>
+        </div>
+      </React.Fragment>
     );
   }
 }
+
+export default Photos;

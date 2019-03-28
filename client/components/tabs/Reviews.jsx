@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import TabHeader from '../TabHeader';
 
-export default class Reviews extends Component {
+class Reviews extends Component {
+  state = {};
+
   render() {
     return (
-      <div>
-        <h1>Reviews</h1>
-      </div>
+      <React.Fragment>
+        <TabHeader title="Reviews" buttonText="Finish Your Review" />
+        <div>
+          <p>Content</p>
+        </div>
+      </React.Fragment>
     );
   }
 }
+
+export default Reviews;

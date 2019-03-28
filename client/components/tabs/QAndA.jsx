@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import TabHeader from '../TabHeader';
 
-export default class QAndA extends Component {
+class QAndA extends Component {
+  state = {};
+
   render() {
     return (
-      <div>
-        <h1>Q AND A</h1>
-      </div>
+      <React.Fragment>
+        <TabHeader title="Q &amp; A" buttonText="Ask a Question" />
+        <div>
+          <p>Content</p>
+        </div>
+      </React.Fragment>
     );
   }
 }
+
+export default QAndA;

@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import TabHeader from '../TabHeader';
 
-export default class RoomTips extends Component {
+class RoomTips extends Component {
+  state = {};
+
   render() {
     return (
-      <div>
-        <h1>Room Tips</h1>
-      </div>
+      <React.Fragment>
+        <TabHeader title="Room Tips" buttonText="Finish Your Review" />
+        <div>
+          <p>Content</p>
+        </div>
+      </React.Fragment>
     );
   }
 }
+
+export default RoomTips;
