@@ -1,38 +1,35 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, "/client/index.jsx"),
+  entry: path.join(__dirname, '/client/index.jsx'),
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        loader: "style-loader"
+        loader: 'style-loader',
       },
       {
         test: /\.css$/,
-        loader: "css-loader",
+        loader: 'css-loader',
         query: {
           modules: true,
-          localIdentName: "[name]__[local]___[hash:base64:5]"
-        }
-      }
-    ]
+          localIdentName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ['*', '.js', '.jsx'],
   },
 
   output: {
-    path: path.join(__dirname, "/public"),
-    publicPath: "/",
-    filename: "bundle.js"
+    path: path.join(__dirname, '/public'),
+    publicPath: '/',
+    filename: 'bundle.js',
   },
-  devServer: {
-    contentBase: "./dist"
-  }
 };

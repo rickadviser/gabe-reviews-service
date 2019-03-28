@@ -18,5 +18,10 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    'space-before-function-paren': 'off',
+    'no-plusplus': 'off',
+    'prefer-template': 'off',
+    'arrow-parens': 'off',
+  },
 };
