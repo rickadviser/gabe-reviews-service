@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import TabHeader from '../TabHeader';
+import TabHeader from '../../TabHeader';
 
-class Photos extends Component {
+class RoomTips extends Component {
   state = {};
 
   render() {
     return (
       <React.Fragment>
-        <TabHeader title="Photos" buttonText="Post a Photo" />
+        <TabHeader title="Room Tips" buttonText="Finish Your Review" />
         <div>
           <p>Content</p>
         </div>
@@ -16,4 +16,4 @@ class Photos extends Component {
   }
 }
 
-export default Photos;
+export default RoomTips;
