@@ -31,23 +31,24 @@ const answerSchema = new mongoose.Schema({
     ref: 'user',
     required: true,
   },
-  hotel_id: {
+  question_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'hotel',
+    ref: 'question',
     required: true,
   },
   date: {
     type: Date,
     required: true,
   },
-  tip: {
+  answer: {
     type: String,
     required: true,
   },
-  rating: {
+  votes: {
     type: Number,
     required: true,
   },
 });
 
-module.exports = mongoose.model('question', answerSchema);
+exports.Question = mongoose.model('question', questionSchema);
+exports.Answer = mongoose.model('answer', answerSchema);
