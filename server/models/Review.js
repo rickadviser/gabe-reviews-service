@@ -48,9 +48,6 @@ const reviewSchema = new mongoose.Schema({
     type: String,
   },
   ratings: ratingsSchema,
-  photos: {
-    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'photo' }],
-  },
 });
 
 module.exports = mongoose.model('review', reviewSchema);

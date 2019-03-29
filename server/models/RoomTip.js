@@ -25,4 +25,4 @@ const roomTipSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('review_tip', roomTipSchema);
+module.exports = mongoose.model('roomtip', roomTipSchema);

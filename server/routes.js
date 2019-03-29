@@ -2,6 +2,9 @@ const express = require('express');
 const User = require('./models/User');
 const Hotel = require('./models/Hotel');
 const Review = require('./models/Review');
+const { Question, Answer } = require('./models/QAndA');
+const Photo = require('./models/Photo');
+const RoomTip = require('./models/RoomTip');
 
 const seedMongo = require('./seed/seedMongo');
 
@@ -67,7 +70,7 @@ router.get('/hotels/:id', async (req, res) => {
     Access:         Public
  */
 
-router.get('/reviews', async (req, res) => {
+router.get('/reviews/general', async (req, res) => {
   const reviews = await Review.find({});
   res.json(reviews);
 });
@@ -79,12 +82,112 @@ router.get('/reviews', async (req, res) => {
     Access:         Public
  */
 
-router.get('/reviews/:id', async (req, res) => {
+router.get('/reviews/general/:id', async (req, res) => {
   const review = await Review.find({ _id: req.params.id })
     .populate('hotel_id')
     .populate('user_id')
     .exec();
   res.json(review);
+});
+
+/*
+    Route:          /api/hotels
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/roomtips', async (req, res) => {
+  const roomtips = await RoomTip.find({});
+  res.json(roomtips);
+});
+
+/*
+    Route:          /api/questions
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/roomtips/:id', async (req, res) => {
+  const roomtip = await RoomTip.find({ _id: req.params.id });
+  res.json(roomtip);
+});
+
+/*
+    Route:          /api/hotels
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/photos', async (req, res) => {
+  const photos = await Photo.find({});
+  res.json(photos);
+});
+
+/*
+    Route:          /api/questions
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/photos/:id', async (req, res) => {
+  const photo = await Photo.find({ _id: req.params.id });
+  res.json(photo);
+});
+
+/*
+    Route:          /api/hotels
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/questions', async (req, res) => {
+  const questions = await Question.find({});
+  res.json(questions);
+});
+
+/*
+    Route:          /api/questions
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/questions/:id', async (req, res) => {
+  const question = await Question.find({ _id: req.params.id });
+  res.json(question);
+});
+
+/*
+    Route:          /api/hotels
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/answers', async (req, res) => {
+  const answers = await Answer.find({})
+    .populate('question_id')
+    .exec();
+  res.json(answers);
+});
+
+/*
+    Route:          /api/questions
+    Method:         GET
+    Description:    Get All Hotels
+    Access:         Public
+ */
+
+router.get('/reviews/answers/:id', async (req, res) => {
+  const answer = await Answer.find({ _id: req.params.id })
+    .populate('question_id')
+    .exec();
+  res.json(answer);
 });
 
 module.exports = router;
