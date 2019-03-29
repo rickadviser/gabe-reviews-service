@@ -39,6 +39,7 @@
           flex-direction: column;
   padding: 20px 30px;
   cursor: pointer;
+  outline: none;
   color: #078171;
   border: 0.5px solid #e5e5e5;
   border-right: none;
@@ -52,6 +53,7 @@
 .active {
   color: #000a12;
   position: relative;
+  outline: none;
   font-weight: 700;
   background-color: #fff;
   border-bottom-color: #fff;

@@ -95,7 +95,31 @@ div {
 
 .popup__box__link__wrapper {
   border-bottom: 1px solid #e5e5e5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
   cursor: pointer;
+}
+
+.popup__box__link__wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.popup__box__link__wrapper div:first-of-type {
+  margin-left: 20px;
 }
 
 .popup__box__link {
@@ -103,7 +127,11 @@ div {
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
-  padding: 20px 60px 20px 20px;
+  padding: 20px 0px 20px 0px;
   text-decoration: none;
+}
+
+.popup__box__link:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */

@@ -21,11 +21,13 @@ const ratingsSchema = new mongoose.Schema({
 
 const reviewSchema = new mongoose.Schema({
   user_id: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
     required: true,
   },
   hotel_id: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'hotel',
     required: true,
   },
   date: {
@@ -46,8 +48,8 @@ const reviewSchema = new mongoose.Schema({
     type: String,
   },
   ratings: ratingsSchema,
-  images: {
-    type: [String],
+  photos: {
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'photo' }],
   },
 });
 

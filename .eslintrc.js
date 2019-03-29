@@ -23,5 +23,6 @@ module.exports = {
     'no-plusplus': 'off',
     'prefer-template': 'off',
     'arrow-parens': 'off',
+    'max-len': 'off',
   },
 };

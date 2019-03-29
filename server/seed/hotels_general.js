@@ -69,6 +69,7 @@ const generateHotelsData = n => {
     hotel.nearest_airport = generateAirport();
     hotel.url = 'http://hotel.com';
     hotel.ranking = generateRanking();
+    hotel.stars = Math.round(Math.random() * 5);
 
     hotels.push(hotel);
   }

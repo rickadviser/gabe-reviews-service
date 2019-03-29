@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Photos from './tabs/Photos';
-import QAndA from './tabs/QAndA';
-import RoomTips from './tabs/RoomTips';
-import Reviews from './tabs/Reviews';
+import Photos from './tabs/photos';
+import QAndA from './tabs/qanda';
+import RoomTips from './tabs/roomtips';
+import Reviews from './tabs/reviews';
 
 const TabLoader = ({ tab }) => {
   switch (tab) {

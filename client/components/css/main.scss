@@ -69,7 +69,19 @@ div {
 
 .popup__box__link__wrapper {
   border-bottom: 1px solid #e5e5e5;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   cursor: pointer;
+
+  div {
+    @include center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  div:first-of-type {
+    margin-left: 20px;
+  }
 }
 
 .popup__box__link {
@@ -77,6 +89,10 @@ div {
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
-  padding: 20px 60px 20px 20px;
+  padding: 20px 0px 20px 0px;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

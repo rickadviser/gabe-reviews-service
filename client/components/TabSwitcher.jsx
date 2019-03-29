@@ -22,7 +22,8 @@ class TabSwitcher extends Component {
   }
 
   handleKeyPress(e) {
-    this.setState(e);
+    e.preventDefault();
+    this.x = e;
   }
 
   render() {
@@ -44,11 +45,12 @@ class TabSwitcher extends Component {
         </div>
         <div
           className={`${styles.tabswitch__tab} ${
-            this.state.selected === 'photos' ? styles.active : ''
+            selected === 'photos' ? styles.active : ''
           }`}
           role="button"
           tabIndex={0}
           onClick={e => this.selectTab(e, 'photos')}
+          onKeyPress={this.handleKeyPress}
         >
           <FontAwesomeIcon icon="camera" size="lg" />
           <span className={styles.tabNumbers}>1,455</span>
@@ -56,9 +58,12 @@ class TabSwitcher extends Component {
         </div>
         <div
           className={`${styles.tabswitch__tab} ${
-            this.state.selected === 'qa' ? styles.active : ''
+            selected === 'qa' ? styles.active : ''
           }`}
+          role="button"
+          tabIndex={0}
           onClick={e => this.selectTab(e, 'qa')}
+          onKeyPress={this.handleKeyPress}
         >
           <FontAwesomeIcon icon="comments" size="lg" />
           <span className={styles.tabNumbers}>745</span>
@@ -66,9 +71,12 @@ class TabSwitcher extends Component {
         </div>
         <div
           className={`${styles.tabswitch__tab} ${
-            this.state.selected === 'room_tips' ? styles.active : ''
+            selected === 'room_tips' ? styles.active : ''
           }`}
+          role="button"
+          tabIndex={0}
           onClick={e => this.selectTab(e, 'room_tips')}
+          onKeyPress={this.handleKeyPress}
         >
           <FontAwesomeIcon icon="lightbulb" size="lg" />
           <span className={styles.tabNumbers}>1,334</span>

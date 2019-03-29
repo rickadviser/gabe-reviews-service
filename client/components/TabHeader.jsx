@@ -2,6 +2,7 @@
 /* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './css/tabHeader.css';
 import mainStyles from './css/main.css';
 
@@ -74,28 +75,43 @@ class TabHeader extends Component {
               style={{ display: !popup ? 'none' : 'block' }}
             >
               <div className={mainStyles.popup__box__link__wrapper}>
-                <a
-                  href="http://www.google.com"
-                  className={mainStyles.popup__box__link}
-                >
-                  Finish Your Review
-                </a>
+                <div>
+                  <FontAwesomeIcon icon="edit" size="sm" />
+                </div>
+                <div>
+                  <a
+                    href="http://www.google.com"
+                    className={mainStyles.popup__box__link}
+                  >
+                    Finish Your Review
+                  </a>
+                </div>
               </div>
               <div className={mainStyles.popup__box__link__wrapper}>
-                <a
-                  href="http://www.google.com"
-                  className={mainStyles.popup__box__link}
-                >
-                  Post a Photo
-                </a>
+                <div>
+                  <FontAwesomeIcon icon="camera" size="sm" />
+                </div>
+                <div>
+                  <a
+                    href="http://www.google.com"
+                    className={mainStyles.popup__box__link}
+                  >
+                    Post a Photo
+                  </a>
+                </div>
               </div>
               <div className={mainStyles.popup__box__link__wrapper}>
-                <a
-                  href="http://www.google.com"
-                  className={mainStyles.popup__box__link}
-                >
-                  Ask a Question
-                </a>
+                <div>
+                  <FontAwesomeIcon icon="lightbulb" size="sm" />
+                </div>
+                <div>
+                  <a
+                    href="http://www.google.com"
+                    className={mainStyles.popup__box__link}
+                  >
+                    Ask a Question
+                  </a>
+                </div>
               </div>
             </div>
           </span>
