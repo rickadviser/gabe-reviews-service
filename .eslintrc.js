@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: 'airbnb',
   globals: {
@@ -17,7 +18,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'jest'],
   rules: {
     'space-before-function-paren': 'off',
     'no-plusplus': 'off',

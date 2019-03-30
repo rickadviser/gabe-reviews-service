@@ -23,6 +23,11 @@ div {
   width: 100%;
 }
 
+button,
+a {
+  outline: none;
+}
+
 .button__primary {
   border-color: #078171;
   border-radius: 3px;
@@ -78,7 +83,7 @@ div {
 }
 
 .popup__box {
-  position: relative;
+  position: absolute;
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
   background-color: #fff;

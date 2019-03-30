@@ -64,6 +64,54 @@ router.get('/hotels/:id', async (req, res) => {
 });
 
 /*
+    Route:          /api/hotels/:id/reviews/general
+    Method:         GET
+    Description:    Get General Reviews For A Hotel
+    Access:         Public
+ */
+
+router.get('/hotels/:id/reviews/general', async (req, res) => {
+  const reviews = await Review.find({ hotel_id: req.params.id });
+  res.json(reviews);
+});
+
+/*
+    Route:          /api/hotels/:id/reviews/photos
+    Method:         GET
+    Description:    Get Review Photos For A Hotel
+    Access:         Public
+ */
+
+router.get('/hotels/:id/reviews/photos', async (req, res) => {
+  const photos = await Photo.find({ hotel_id: req.params.id });
+  res.json(photos);
+});
+
+/*
+    Route:          /api/hotels/:id/reviews/roomtips
+    Method:         GET
+    Description:    Get Room Tips For A Hotel
+    Access:         Public
+ */
+
+router.get('/hotels/:id/reviews/roomtips', async (req, res) => {
+  const roomTips = await RoomTip.find({ hotel_id: req.params.id });
+  res.json(roomTips);
+});
+
+/*
+    Route:          /api/hotels/:id/reviews/questions
+    Method:         GET
+    Description:    Get Q & A For A Hotel
+    Access:         Public
+ */
+
+router.get('/hotels/:id/reviews/questions', async (req, res) => {
+  const questions = await Question.find({ hotel_id: req.params.id });
+  res.json(questions);
+});
+
+/*
     Route:          /api/hotels
     Method:         GET
     Description:    Get All Hotels
