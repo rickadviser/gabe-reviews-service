@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './css/tabSwitcher.css';
+import styles from './css/tabSwitcher.scss';
 
 const TabSwitcher = ({ update }) => {
   const [selected, setSelected] = useState('reviews');
@@ -14,6 +14,7 @@ const TabSwitcher = ({ update }) => {
 
   const handleKeyPress = e => {
     e.preventDefault();
+    console.log(e.key);
   };
 
   return (
@@ -23,7 +24,7 @@ const TabSwitcher = ({ update }) => {
           selected === 'reviews' ? styles.active : ''
         }`}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         onClick={e => selectTab(e, 'reviews')}
         onKeyPress={handleKeyPress}
       >
@@ -36,7 +37,7 @@ const TabSwitcher = ({ update }) => {
           selected === 'photos' ? styles.active : ''
         }`}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         onClick={e => selectTab(e, 'photos')}
         onKeyPress={handleKeyPress}
       >
@@ -49,20 +50,20 @@ const TabSwitcher = ({ update }) => {
           selected === 'qa' ? styles.active : ''
         }`}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         onClick={e => selectTab(e, 'qa')}
         onKeyPress={handleKeyPress}
       >
         <FontAwesomeIcon icon="comments" size="lg" />
         <span className={styles.tabNumbers}>745</span>
-        <span className={styles.tabCategory}>Q {'&'} A</span>
+        <span className={styles.tabCategory}>Q &amp; A</span>
       </div>
       <div
         className={`${styles.tabswitch__tab} ${
           selected === 'room_tips' ? styles.active : ''
         }`}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         onClick={e => selectTab(e, 'room_tips')}
         onKeyPress={handleKeyPress}
       >

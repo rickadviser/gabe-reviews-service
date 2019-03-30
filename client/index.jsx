@@ -12,7 +12,7 @@ import {
 import TabSwitcher from './components/TabSwitcher.jsx';
 import TabLoader from './components/TabLoader.jsx';
 
-import styles from './components/css/main.css';
+import { mainWrapper } from './components/css/main.scss';
 
 library.add(faCamera);
 library.add(faEdit);
@@ -23,7 +23,7 @@ const App = () => {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className={styles.mainWrapper}>
+    <div className={mainWrapper}>
       <TabSwitcher update={setCurrentTab} />
       <TabLoader tab={currentTab} />
     </div>

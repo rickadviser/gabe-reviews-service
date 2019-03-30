@@ -1,0 +1,26 @@
+@import '../../../css/globals.scss';
+
+.ratingbar__wrapper {
+  display: grid;
+  grid-template-columns: 10% 30% 50% 10%;
+  font-size: 14px;
+}
+
+/*.ratingbar__bar__bg,
+.ratingbar__bar__green {
+  height: 8px;
+}*/
+
+.ratingbar__bar__bg {
+  height: 12px;
+  position: relative;
+  background-color: #e3e3e3;
+}
+
+.ratingbar__bar__green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $darkGreenMain;
+}

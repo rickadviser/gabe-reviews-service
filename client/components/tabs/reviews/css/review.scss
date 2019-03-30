@@ -1,0 +1,27 @@
+.reviews__wrapper {
+  display: grid;
+  grid-template:
+    'ratings date type language'
+    'mentions mentions mentions mentions';
+  width: 100%;
+}
+
+.reviews__ratings {
+  grid-area: ratings;
+}
+
+.reviews__date {
+  grid-area: date;
+}
+
+.reviews__type {
+  grid-area: type;
+}
+
+.reviews__language {
+  grid-area: language;
+}
+
+.reviews__mentions {
+  grid-area: mentions;
+}

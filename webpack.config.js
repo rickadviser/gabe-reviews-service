@@ -21,6 +21,30 @@ module.exports = {
           localIdentName: '[name]__[local]___[hash:base64:5]',
         },
       },
+      {
+        test: /\.scss$/,
+        loader: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            query: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     'style-loader', // creates style nodes from JS strings
+      //     'css-loader', // translates CSS into CommonJS
+      //     'sass-loader', // compiles Sass to CSS, using Node Sass by default
+      //   ],
+      // },
     ],
   },
   resolve: {

@@ -9,7 +9,7 @@ import {
   tabHeader__wrapper,
   tabHeader__popup__wrapper,
   tabHeader__popup,
-} from './css/tabHeader.css';
+} from './css/tabHeader.scss';
 import {
   button__primary,
   button,
@@ -17,7 +17,7 @@ import {
   popup__box__link__wrapper,
   popup__box__link,
   button__side,
-} from './css/main.css';
+} from './css/main.scss';
 
 const TabHeader = ({ title, buttonText }) => {
   const [popup, setPopup] = useState(false);
