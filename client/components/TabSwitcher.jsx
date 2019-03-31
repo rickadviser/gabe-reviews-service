@@ -1,8 +1,11 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './css/tabSwitcher.scss';
+import { tabswitch__wrapper } from './css/tabSwitcher.scss';
+
+import Tab from './Tab';
 
 const TabSwitcher = ({ update }) => {
   const [selected, setSelected] = useState('reviews');
@@ -17,60 +20,47 @@ const TabSwitcher = ({ update }) => {
     console.log(e.key);
   };
 
+  const data = [
+    {
+      tabName: 'reviews',
+      category: 'Reviews',
+      icon: 'edit',
+      total: 1200,
+    },
+    {
+      tabName: 'photos',
+      category: 'Photos',
+      icon: 'camera',
+      total: 1455,
+    },
+    {
+      tabName: 'qa',
+      category: 'Q & A',
+      icon: 'comments',
+      total: 745,
+    },
+    {
+      tabName: 'room_tips',
+      category: 'Rom Tips',
+      icon: 'lightbulb',
+      total: 1334,
+    },
+  ];
+
   return (
-    <div className={styles.tabswitch__wrapper}>
-      <div
-        className={`${styles.tabswitch__tab} ${
-          selected === 'reviews' ? styles.active : ''
-        }`}
-        role="button"
-        tabIndex={-1}
-        onClick={e => selectTab(e, 'reviews')}
-        onKeyPress={handleKeyPress}
-      >
-        <FontAwesomeIcon icon="edit" size="lg" />
-        <span className={styles.tabNumbers}>1,200</span>
-        <span className={styles.tabCategory}>Reviews</span>
-      </div>
-      <div
-        className={`${styles.tabswitch__tab} ${
-          selected === 'photos' ? styles.active : ''
-        }`}
-        role="button"
-        tabIndex={-1}
-        onClick={e => selectTab(e, 'photos')}
-        onKeyPress={handleKeyPress}
-      >
-        <FontAwesomeIcon icon="camera" size="lg" />
-        <span className={styles.tabNumbers}>1,455</span>
-        <span className={styles.tabCategory}>Photos</span>
-      </div>
-      <div
-        className={`${styles.tabswitch__tab} ${
-          selected === 'qa' ? styles.active : ''
-        }`}
-        role="button"
-        tabIndex={-1}
-        onClick={e => selectTab(e, 'qa')}
-        onKeyPress={handleKeyPress}
-      >
-        <FontAwesomeIcon icon="comments" size="lg" />
-        <span className={styles.tabNumbers}>745</span>
-        <span className={styles.tabCategory}>Q &amp; A</span>
-      </div>
-      <div
-        className={`${styles.tabswitch__tab} ${
-          selected === 'room_tips' ? styles.active : ''
-        }`}
-        role="button"
-        tabIndex={-1}
-        onClick={e => selectTab(e, 'room_tips')}
-        onKeyPress={handleKeyPress}
-      >
-        <FontAwesomeIcon icon="lightbulb" size="lg" />
-        <span className={styles.tabNumbers}>1,334</span>
-        <span className={styles.tabCategory}>Room Tips</span>
-      </div>
+    <div className={tabswitch__wrapper}>
+      {data.map(({ tabName, category, icon, total }) => (
+        <Tab
+          key={tabName}
+          selected={selected}
+          tabName={tabName}
+          category={category}
+          icon={icon}
+          total={total}
+          selectTab={selectTab}
+          handleKeyPress={handleKeyPress}
+        />
+      ))}
     </div>
   );
 };

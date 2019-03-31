@@ -9,18 +9,18 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader',
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
-      },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader',
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'css-loader',
+      //   query: {
+      //     modules: true,
+      //     localIdentName: '[name]__[local]___[hash:base64:5]',
+      //   },
+      // },
       {
         test: /\.scss$/,
         loader: [
@@ -37,14 +37,6 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.scss$/,
-      //   use: [
-      //     'style-loader', // creates style nodes from JS strings
-      //     'css-loader', // translates CSS into CommonJS
-      //     'sass-loader', // compiles Sass to CSS, using Node Sass by default
-      //   ],
-      // },
     ],
   },
   resolve: {

@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'jest'],
+  plugins: ['react', 'react-hooks', 'jest'],
   rules: {
     'space-before-function-paren': 'off',
     'no-plusplus': 'off',
