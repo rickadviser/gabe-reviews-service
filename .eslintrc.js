@@ -27,5 +27,8 @@ module.exports = {
     'max-len': 'off',
     camelcase: 'off',
     'no-console': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'comma-dangle': 'off',
+    'function-paren-newline': 'off',
   },
 };

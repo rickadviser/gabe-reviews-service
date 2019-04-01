@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ReviewsContext from './context/reviews-context';
-
+// import ReviewsContext from './context/reviews-context';
+import HotelContext from '../../../context/hotel-context';
 import RatingRow from './RatingRow';
 
 const ratingSystem = [
@@ -15,7 +15,7 @@ const ratingSystem = [
 
 const RatingsBar = () => {
   // reduce ratings to 5/4/3/2/1 star totals
-  const { reviews } = useContext(ReviewsContext);
+  const { reviews } = useContext(HotelContext);
 
   const ratingsData = reviews
     .reduce((acc, { ratings }) => {

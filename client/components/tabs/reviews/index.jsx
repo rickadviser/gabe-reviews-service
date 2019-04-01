@@ -18,51 +18,28 @@ const {
   reviews__mentions,
 } = styles;
 
-const testData = {
-  totalRatings: 99,
-  types: [
-    {
-      type: 'Excellent',
-      total: 12,
-    },
-    {
-      type: 'Good',
-      total: 29,
-    },
-    {
-      type: 'Average',
-      total: 35,
-    },
-    {
-      type: 'Poor',
-      total: 16,
-    },
-    {
-      type: 'Terrible',
-      total: 7,
-    },
-  ],
-};
-
 const Reviews = () => (
   <ReviewsState>
     <TabHeader title="Reviews" buttonText="Finish Your Review" />
-    <div className={reviews__wrapper}>
-      <div className={reviews__ratings}>
-        <RatingsBar data={testData} />
+    <div>
+      <div className={reviews__wrapper}>
+        <div className={reviews__ratings}>
+          <RatingsBar />
+        </div>
+        <div className={reviews__date}>
+          <Times />
+        </div>
+        <div className={reviews__type}>
+          <Types />
+        </div>
+        <div className={reviews__language}>
+          <Languages />
+        </div>
+        <div className={reviews__mentions}>
+          <p>MENTIONS</p>
+        </div>
       </div>
-      <div className={reviews__date}>
-        <Times />
-      </div>
-      <div className={reviews__type}>
-        <Types />
-      </div>
-      <div className={reviews__language}>
-        <Languages />
-      </div>
-      <div className={reviews__mentions}>
-        <p>MENTIONS</p>
-      </div>
+      <div style={{ marginTop: 50 }}>BODY</div>
     </div>
   </ReviewsState>
 );

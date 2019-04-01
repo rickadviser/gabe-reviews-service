@@ -9,15 +9,56 @@ const GlobalState = ({ children, hotelId }) => {
     nearest_airport: {},
   });
 
+  const [reviews, setReviews] = useState([]);
+  const [photos, setPhotos] = useState([]);
+  const [questions, setQuestions] = useState([]);
+  const [roomtips, setRooomtips] = useState([]);
+
+  // Fetch hotel info and array of reviews (all types)
   useEffect(() => {
-    fetch(`http://localhost:3000/api/hotels/${hotelId}`)
+    const baseUrl = 'http://localhost:3000/api';
+
+    fetch(`${baseUrl}/hotels/${hotelId}`)
       .then(res => res.json())
-      .then(data => setHotel(data[0]))
+      .then(data => {
+        setHotel(data[0]);
+        return data[0];
+      })
+      .then(({ _id: id }) =>
+        Promise.all([
+          fetch(`${baseUrl}/hotels/${id}/reviews/general`),
+          fetch(`${baseUrl}/hotels/${id}/reviews/photos`),
+          fetch(`${baseUrl}/hotels/${id}/reviews/questions`),
+          fetch(`${baseUrl}/hotels/${id}/reviews/roomtips`),
+        ])
+      )
+      .then(rawData => Promise.all(rawData.map(i => i.json())))
+      .then(([reviewData, photoData, questionData, roomtipData]) => {
+        setReviews(reviewData);
+        setPhotos(photoData);
+        setQuestions(questionData);
+        setRooomtips(roomtipData);
+      })
       .catch(console.error);
   }, [hotelId]);
 
+  const contextData = {
+    hotel,
+    setHotel,
+    reviews,
+    setReviews,
+    photos,
+    setPhotos,
+    questions,
+    setQuestions,
+    roomtips,
+    setRooomtips,
+  };
+
   return (
-    <HotelContext.Provider value={hotel}>{children}</HotelContext.Provider>
+    <HotelContext.Provider value={contextData}>
+      {children}
+    </HotelContext.Provider>
   );
 };
 

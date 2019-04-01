@@ -12,7 +12,6 @@ import {
 
 const Tab = ({
   selected,
-  tabName,
   icon,
   total,
   category,
@@ -20,10 +19,10 @@ const Tab = ({
   handleKeyPress,
 }) => (
   <div
-    className={`${tabswitch__tab} ${selected === tabName ? active : ''}`}
+    className={`${tabswitch__tab} ${selected === category ? active : ''}`}
     role="button"
     tabIndex={-1}
-    onClick={e => selectTab(e, tabName)}
+    onClick={() => selectTab(category)}
     onKeyPress={handleKeyPress}
   >
     <FontAwesomeIcon icon={icon} size="lg" />
@@ -34,7 +33,6 @@ const Tab = ({
 
 Tab.propTypes = {
   selected: PropTypes.string.isRequired,
-  tabName: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired,

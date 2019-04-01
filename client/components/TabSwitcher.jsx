@@ -1,16 +1,18 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable camelcase */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import HotelContext from '../context/hotel-context';
+import Tab from './Tab';
 
 import { tabswitch__wrapper } from './css/tabSwitcher.scss';
 
-import Tab from './Tab';
-
 const TabSwitcher = ({ update }) => {
-  const [selected, setSelected] = useState('reviews');
+  const [selected, setSelected] = useState('Reviews');
+  // const [lengths, setLengths] = useState([]);
 
-  const selectTab = (e, tab) => {
+  const selectTab = tab => {
     update(tab);
     setSelected(tab);
   };
@@ -20,40 +22,63 @@ const TabSwitcher = ({ update }) => {
     console.log(e.key);
   };
 
+  // Get total review numbers
+  const { reviews, photos, questions, roomtips } = useContext(HotelContext);
+
+  // useEffect(() => {
+  //   const baseUrl = 'http://localhost:3000/api';
+
+  //   const { _id: id } = hotel;
+  //   if (id) {
+  //     Promise.all([
+  //       fetch(`${baseUrl}/hotels/${id}/reviews/general`),
+  //       fetch(`${baseUrl}/hotels/${id}/reviews/photos`),
+  //       fetch(`${baseUrl}/hotels/${id}/reviews/questions`),
+  //       fetch(`${baseUrl}/hotels/${id}/reviews/roomtips`),
+  //     ])
+  //       .then(rawData => Promise.all(rawData.map(i => i.json())))
+  //       .then(allReviews => allReviews.map(i => i.length))
+  //       .then(setLengths)
+  //       .catch(console.error);
+  //   }
+  // }, [hotel]);
+
+  // const [
+  //   reviewTotal = 0,
+  //   photoTotal = 0,
+  //   questionTotal = 0,
+  //   roomTipTotal = 0,
+  // ] = lengths;
+
   const data = [
     {
-      tabName: 'reviews',
       category: 'Reviews',
       icon: 'edit',
-      total: 1200,
+      total: reviews.length || 99,
     },
     {
-      tabName: 'photos',
       category: 'Photos',
       icon: 'camera',
-      total: 1455,
+      total: photos.length || 7,
     },
     {
-      tabName: 'qa',
       category: 'Q & A',
       icon: 'comments',
-      total: 745,
+      total: questions.length || 99,
     },
     {
-      tabName: 'room_tips',
-      category: 'Rom Tips',
+      category: 'Room Tips',
       icon: 'lightbulb',
-      total: 1334,
+      total: roomtips.length || 99,
     },
   ];
 
   return (
     <div className={tabswitch__wrapper}>
-      {data.map(({ tabName, category, icon, total }) => (
+      {data.map(({ category, icon, total }) => (
         <Tab
-          key={tabName}
+          key={category}
           selected={selected}
-          tabName={tabName}
           category={category}
           icon={icon}
           total={total}
