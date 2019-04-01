@@ -2,8 +2,29 @@
 
 .ratingbar__wrapper {
   display: grid;
-  grid-template-columns: 10% 30% 50% 10%;
+  grid-template-columns: 1fr auto;
   font-size: 14px;
+
+  span {
+    margin-right: 40px;
+  }
+}
+
+.ratingbar__inner__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .label {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    cursor: pointer;
+  }
 }
 
 /*.ratingbar__bar__bg,

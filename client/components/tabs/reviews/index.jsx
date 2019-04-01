@@ -40,7 +40,7 @@ const testData = {
       total: 16,
     },
     {
-      type: 'Excellent',
+      type: 'Terrible',
       total: 7,
     },
   ],
