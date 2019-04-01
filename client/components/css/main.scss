@@ -9,6 +9,7 @@
 body {
   font-family: Arial, Tahoma, sans-serif;
   color: $mainFontColor;
+  background-color: #f2f2f2;
 }
 
 div {
@@ -104,4 +105,9 @@ input[type='checkbox'] {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.main__filter__wrapper {
+  background-color: #fff;
+  padding: 20px;
 }

@@ -6,18 +6,27 @@ import QAndA from './tabs/qanda';
 import RoomTips from './tabs/roomtips';
 import Reviews from './tabs/reviews';
 
+import { main__filter__wrapper } from './css/main.scss';
+
 const TabLoader = ({ tab }) => {
+  let component;
+
   switch (tab) {
     case 'photos':
-      return <Photos />;
+      component = <Photos />;
+      break;
     case 'qa':
-      return <QAndA />;
+      component = <QAndA />;
+      break;
     case 'room_tips':
-      return <RoomTips />;
+      component = <RoomTips />;
+      break;
     case 'reviews':
     default:
-      return <Reviews />;
+      component = <Reviews />;
   }
+
+  return <div className={main__filter__wrapper}>{component}</div>;
 };
 
 TabLoader.propTypes = {
