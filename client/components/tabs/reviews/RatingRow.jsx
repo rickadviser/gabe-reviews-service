@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable camelcase */
 import React, { useState, useCallback } from 'react';
@@ -29,15 +30,6 @@ const RatingRow = ({ type, total, percentage }) => {
   return (
     <div className={ratingbar__wrapper}>
       <div className={ratingbar__inner__wrapper}>
-        {/* <div>
-          <input
-            type="checkbox"
-            name="checkbox"
-            value={checkbox}
-            id={type}
-            onChange={toggleCheckbox}
-          />
-        </div> */}
         <div>
           <input
             className={styled__checkbox}

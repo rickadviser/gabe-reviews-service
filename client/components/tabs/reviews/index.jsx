@@ -1,14 +1,12 @@
 /* eslint-disable camelcase */
-import React, { useContext } from 'react';
+import React from 'react';
 
-import HotelContext from '../../../context/hotel-context';
-
+import ReviewsState from './context/ReviewsState';
 import TabHeader from '../../TabHeader';
 import RatingsBar from './RatingsBar';
 import Times from './Times';
 import Types from './Types';
 import Languages from './Languages';
-
 import styles from './css/review.scss';
 
 const {
@@ -46,32 +44,27 @@ const testData = {
   ],
 };
 
-const Reviews = () => {
-  const hotelInfo = useContext(HotelContext);
-  console.log(hotelInfo);
-
-  return (
-    <>
-      <TabHeader title="Reviews" buttonText="Finish Your Review" />
-      <div className={reviews__wrapper}>
-        <div className={reviews__ratings}>
-          <RatingsBar data={testData} />
-        </div>
-        <div className={reviews__date}>
-          <Times />
-        </div>
-        <div className={reviews__type}>
-          <Types />
-        </div>
-        <div className={reviews__language}>
-          <Languages />
-        </div>
-        <div className={reviews__mentions}>
-          <p>MENTIONS</p>
-        </div>
+const Reviews = () => (
+  <ReviewsState>
+    <TabHeader title="Reviews" buttonText="Finish Your Review" />
+    <div className={reviews__wrapper}>
+      <div className={reviews__ratings}>
+        <RatingsBar data={testData} />
       </div>
-    </>
-  );
-};
+      <div className={reviews__date}>
+        <Times />
+      </div>
+      <div className={reviews__type}>
+        <Types />
+      </div>
+      <div className={reviews__language}>
+        <Languages />
+      </div>
+      <div className={reviews__mentions}>
+        <p>MENTIONS</p>
+      </div>
+    </div>
+  </ReviewsState>
+);
 
 export default Reviews;
