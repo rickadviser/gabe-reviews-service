@@ -9,10 +9,13 @@ import {
   faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 
+import GlobalState from './context/GlobalState';
 import TabSwitcher from './components/TabSwitcher.jsx';
 import TabLoader from './components/TabLoader.jsx';
 
-import { mainWrapper } from './components/css/main.scss';
+import styles from './components/css/main.scss';
+
+const { mainWrapper } = styles;
 
 library.add(faCamera);
 library.add(faEdit);
@@ -23,10 +26,12 @@ const App = () => {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className={mainWrapper}>
-      <TabSwitcher update={setCurrentTab} />
-      <TabLoader tab={currentTab} />
-    </div>
+    <GlobalState hotelId="5c9e595002944324d1f20679">
+      <div className={mainWrapper}>
+        <TabSwitcher update={setCurrentTab} />
+        <TabLoader tab={currentTab} />
+      </div>
+    </GlobalState>
   );
 };
 

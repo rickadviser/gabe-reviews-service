@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import TimeRange from './TimeRange';
+import TimeRow from './TimeRow';
 
 const calcMonth = target => {
   const current = new Date().getMonth();
@@ -9,7 +8,7 @@ const calcMonth = target => {
   return newMonth > 11 ? newMonth - 12 : newMonth;
 };
 
-const Time = () => {
+const Times = () => {
   const data = [
     {
       start: calcMonth(0),
@@ -32,12 +31,10 @@ const Time = () => {
   return (
     <div>
       {data.map(({ start, end }) => (
-        <TimeRange start={start} end={end} />
+        <TimeRow start={start} end={end} />
       ))}
     </div>
   );
 };
 
-Time.propTypes = {};
-
-export default Time;
+export default Times;

@@ -25,5 +25,7 @@ module.exports = {
     'prefer-template': 'off',
     'arrow-parens': 'off',
     'max-len': 'off',
+    camelcase: 'off',
+    'no-console': 'off',
   },
 };

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   ratingbar__wrapper,
@@ -7,12 +7,19 @@ import {
   ratingbar__bar__green,
 } from './css/ratingsbar.scss';
 
-const RatingBar = ({ type, total, percentage }) => {
-  const totalWidth = 150;
-  const barWidth = percentage * totalWidth;
-
+const RatingRow = ({ type, total, percentage }) => {
   const [checkbox, setCheckbox] = useState(false);
+  const [totalWidth, setTotalWidth] = useState(false);
+
+  const measuredRef = useCallback(node => {
+    if (node !== null) {
+      setTotalWidth(node.getBoundingClientRect().width);
+    }
+  }, []);
+
   const toggleCheckbox = () => setCheckbox(!checkbox);
+
+  const barWidth = percentage * totalWidth;
 
   return (
     <div className={ratingbar__wrapper}>
@@ -28,7 +35,11 @@ const RatingBar = ({ type, total, percentage }) => {
         <span>{type}</span>
       </div>
       <div>
-        <div className={ratingbar__bar__bg} style={{ width: totalWidth }}>
+        <div
+          ref={measuredRef}
+          style={{ width: '90%' }}
+          className={ratingbar__bar__bg}
+        >
           <div className={ratingbar__bar__green} style={{ width: barWidth }} />
         </div>
       </div>
@@ -39,10 +50,10 @@ const RatingBar = ({ type, total, percentage }) => {
   );
 };
 
-RatingBar.propTypes = {
+RatingRow.propTypes = {
   type: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
   percentage: PropTypes.number.isRequired,
 };
 
-export default RatingBar;
+export default RatingRow;
