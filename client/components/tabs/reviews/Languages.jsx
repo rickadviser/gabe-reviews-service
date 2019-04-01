@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
+import ReviewsContext from './context/reviews-context';
 import LanguageRow from './LanguageRow';
 
 const fakeData = [
@@ -26,8 +27,12 @@ const totalData = {
 
 const Languages = () => {
   const [checked, setChecked] = useState(false);
+  const { setLanguage } = useContext(ReviewsContext);
 
-  const selectRadio = e => setChecked(e.target.value);
+  const selectRadio = e => {
+    setChecked(e.target.value);
+    setLanguage(e.target.value);
+  };
   return (
     <form>
       <LanguageRow

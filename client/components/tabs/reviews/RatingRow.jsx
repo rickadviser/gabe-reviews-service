@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable camelcase */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
+
+import ReviewsContext from './context/reviews-context';
+
 import {
   ratingbar__wrapper,
   ratingbar__bar__bg,
@@ -13,7 +16,7 @@ import {
 
 import { styled__checkbox } from './css/review.scss';
 
-const RatingRow = ({ type, total, percentage }) => {
+const RatingRow = ({ type, rating, total, percentage }) => {
   const [checkbox, setCheckbox] = useState(false);
   const [totalWidth, setTotalWidth] = useState(false);
 
@@ -23,7 +26,15 @@ const RatingRow = ({ type, total, percentage }) => {
     }
   }, []);
 
-  const toggleCheckbox = () => setCheckbox(!checkbox);
+  const { dispatchRatings } = useContext(ReviewsContext);
+
+  const toggleCheckbox = () => {
+    dispatchRatings({
+      type: !checkbox ? 'add' : 'remove',
+      payload: rating,
+    });
+    setCheckbox(!checkbox);
+  };
 
   const barWidth = percentage * totalWidth;
 
@@ -68,6 +79,7 @@ const RatingRow = ({ type, total, percentage }) => {
 
 RatingRow.propTypes = {
   type: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   percentage: PropTypes.number.isRequired,
 };

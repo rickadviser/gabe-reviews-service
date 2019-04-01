@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/label-has-for */
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import ReviewsContext from './context/reviews-context';
 
 import { styled__checkbox, checkbox__wrapper } from './css/review.scss';
 
@@ -20,6 +23,15 @@ const months = [
 
 const TimeRow = ({ start, end }) => {
   const [checked, setChecked] = useState(false);
+  const { dispatchTimes } = useContext(ReviewsContext);
+
+  const handleCheck = () => {
+    dispatchTimes({
+      type: !checked ? 'add' : 'remove',
+      payload: `${start} - ${end}`,
+    });
+    setChecked(!checked);
+  };
 
   return (
     <div className={checkbox__wrapper}>
@@ -28,7 +40,7 @@ const TimeRow = ({ start, end }) => {
         id={start}
         type="checkbox"
         value={checked}
-        onChange={() => setChecked(!checked)}
+        onChange={handleCheck}
       />
       <label htmlFor={start}>{`${months[start]} - ${months[end]}`}</label>
     </div>

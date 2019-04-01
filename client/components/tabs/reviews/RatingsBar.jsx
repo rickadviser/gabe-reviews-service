@@ -43,9 +43,10 @@ const RatingsBar = () => {
 
   return (
     <div>
-      {ratingsData.map(({ type, total }) => (
+      {ratingsData.map(({ type, rating, total }) => (
         <RatingRow
           type={type}
+          rating={rating}
           total={total}
           percentage={total / totalRatings}
         />

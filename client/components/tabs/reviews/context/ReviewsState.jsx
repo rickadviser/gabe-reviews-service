@@ -1,44 +1,10 @@
-import React, { useState, useReducer, useContext } from 'react';
+import React, { useState, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
-import HotelContext from '../../../../context/hotel-context';
+// import HotelContext from '../../../../context/hotel-context';
 import ReviewsContext from './reviews-context';
 
 const ReviewsState = ({ children }) => {
-  // const hotelInfo = useContext(HotelContext);
-  // const { hotel } = hotelInfo;
-  // const { _id: id } = hotel;
-
-  // const [reviews, dispatch] = useReducer((state, action) => {
-  //   switch (action.type) {
-  //     case 'populate':
-  //       return action.payload;
-  //     case 'add':
-  //       return [action.payload, ...state];
-  //     default:
-  //       return state;
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (id) {
-  //     fetch(`http://localhost:3000/api/hotels/${id}/reviews/general`)
-  //       .then(res => res.json())
-  //       .then(data => {
-  //         dispatch({
-  //           type: 'populate',
-  //           payload: data,
-  //         });
-  //       })
-  //       .catch(console.error);
-  //   }
-  // }, [id]);
-
-  // const contextData = {
-  //   reviews,
-  //   dispatch,
-  // };
-
   const reducerFunc = (state, action) => {
     switch (action.type) {
       case 'add':
@@ -56,8 +22,7 @@ const ReviewsState = ({ children }) => {
   const [selectedMentions, dispatchMentions] = useReducer(reducerFunc, []);
   const [selectedLanguage, setLanguage] = useState('All');
 
-  const { reviews } = useContext(HotelContext);
-
+  // const { reviews } = useContext(HotelContext);
   // console.log(reviews);
 
   const getFilteredReviews = (
@@ -65,7 +30,7 @@ const ReviewsState = ({ children }) => {
     ratingsRange,
     timesRange,
     typesRange,
-    language
+    language = 'all'
   ) => {
     let filteredReviews = [...reviewsList];
 
@@ -99,12 +64,15 @@ const ReviewsState = ({ children }) => {
     }
 
     if (typesRange.length) {
-      filteredReviews = filteredReviews.filter(({ type }) =>
-        typesRange.includes(type)
+      filteredReviews = filteredReviews.filter(({ traveler_type }) =>
+        typesRange.includes(traveler_type)
       );
     }
 
-    if (language.toLowerCase() !== 'any') {
+    if (
+      language.toLowerCase() !== 'all' &&
+      language.toLowerCase() !== 'all languages'
+    ) {
       filteredReviews = filteredReviews.filter(
         review => review.language.toLowerCase() === language.toLowerCase()
       );

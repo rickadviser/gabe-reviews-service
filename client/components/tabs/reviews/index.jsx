@@ -7,6 +7,7 @@ import RatingsBar from './RatingsBar';
 import Times from './Times';
 import Types from './Types';
 import Languages from './Languages';
+import ReviewsBody from './ReviewsBody';
 import styles from './css/review.scss';
 
 const {
@@ -39,7 +40,9 @@ const Reviews = () => (
           <p>MENTIONS</p>
         </div>
       </div>
-      <div style={{ marginTop: 50 }}>BODY</div>
+      <div style={{ marginTop: 50 }}>
+        <ReviewsBody />
+      </div>
     </div>
   </ReviewsState>
 );
