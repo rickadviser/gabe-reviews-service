@@ -31,7 +31,7 @@ const Times = () => {
   return (
     <div>
       {data.map(({ start, end }) => (
-        <TimeRow start={start} end={end} />
+        <TimeRow key={start} start={start} end={end} />
       ))}
     </div>
   );

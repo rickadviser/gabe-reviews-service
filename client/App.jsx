@@ -23,11 +23,11 @@ library.add(faComments);
 library.add(faLightbulb);
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState('Reviews');
 
   return (
     <GlobalState hotelId="5c9e595002944324d1f20679">
-      <div className={mainWrapper}>
+      <div id="mainWrapper" className={mainWrapper}>
         <TabSwitcher update={setCurrentTab} />
         <TabLoader tab={currentTab} />
       </div>
@@ -36,3 +36,5 @@ const App = () => {
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+export default App;

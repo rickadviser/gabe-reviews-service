@@ -25,31 +25,6 @@ const TabSwitcher = ({ update }) => {
   // Get total review numbers
   const { reviews, photos, questions, roomtips } = useContext(HotelContext);
 
-  // useEffect(() => {
-  //   const baseUrl = 'http://localhost:3000/api';
-
-  //   const { _id: id } = hotel;
-  //   if (id) {
-  //     Promise.all([
-  //       fetch(`${baseUrl}/hotels/${id}/reviews/general`),
-  //       fetch(`${baseUrl}/hotels/${id}/reviews/photos`),
-  //       fetch(`${baseUrl}/hotels/${id}/reviews/questions`),
-  //       fetch(`${baseUrl}/hotels/${id}/reviews/roomtips`),
-  //     ])
-  //       .then(rawData => Promise.all(rawData.map(i => i.json())))
-  //       .then(allReviews => allReviews.map(i => i.length))
-  //       .then(setLengths)
-  //       .catch(console.error);
-  //   }
-  // }, [hotel]);
-
-  // const [
-  //   reviewTotal = 0,
-  //   photoTotal = 0,
-  //   questionTotal = 0,
-  //   roomTipTotal = 0,
-  // ] = lengths;
-
   const data = [
     {
       category: 'Reviews',

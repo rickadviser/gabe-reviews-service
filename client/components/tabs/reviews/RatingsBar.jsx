@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 // import ReviewsContext from './context/reviews-context';
 import HotelContext from '../../../context/hotel-context';
 import RatingRow from './RatingRow';
@@ -53,13 +52,6 @@ const RatingsBar = () => {
       ))}
     </div>
   );
-};
-
-RatingsBar.propTypes = {
-  data: PropTypes.shape({
-    totalRatings: PropTypes.number.isRequired,
-    types: PropTypes.array.isRequired,
-  }).isRequired,
 };
 
 export default RatingsBar;

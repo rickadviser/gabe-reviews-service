@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 
 import HotelContext from '../../../context/hotel-context';
 import ReviewsContext from './context/reviews-context';

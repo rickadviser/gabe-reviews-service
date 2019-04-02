@@ -26,7 +26,7 @@ const totalData = {
 };
 
 const Languages = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState('All languages');
   const { setLanguage } = useContext(ReviewsContext);
 
   const selectRadio = e => {
@@ -42,6 +42,7 @@ const Languages = () => {
       />
       {fakeData.map(language => (
         <LanguageRow
+          key={language.language}
           checked={checked}
           languageData={language}
           selectRadio={selectRadio}

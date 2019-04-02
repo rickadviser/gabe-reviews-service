@@ -7,7 +7,7 @@ const fakeData = ['Families', 'Couples', 'Solo', 'Business', 'Friends'];
 const Types = () => (
   <div>
     {fakeData.map(type => (
-      <TypeRow type={type} />
+      <TypeRow key={type} type={type} />
     ))}
   </div>
 );
