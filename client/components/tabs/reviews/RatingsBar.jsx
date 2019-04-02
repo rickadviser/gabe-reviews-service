@@ -23,6 +23,7 @@ const RatingsBar = () => {
       <div>
         {ratingsData.map(({ type, rating, total }) => (
           <RatingRow
+            key={rating}
             type={type}
             rating={rating}
             total={total}

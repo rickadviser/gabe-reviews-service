@@ -1,35 +1,19 @@
 import React, { useState, useContext } from 'react';
 
+import HotelContext from '../../../context/hotel-context';
 import ReviewsContext from './context/reviews-context';
 import LanguageRow from './LanguageRow';
 
 import { reviews__subheader } from './css/review.scss';
-
-const fakeData = [
-  {
-    language: 'English',
-    total: 122,
-  },
-  {
-    language: 'Chinese',
-    total: 33,
-  },
-  {
-    language: 'Italian',
-    total: 18,
-  },
-];
-
-const totalNum = fakeData.reduce((acc, item) => acc + item.total, 0);
-
-const totalData = {
-  language: 'All languages',
-  total: totalNum,
-};
+import { getLanguages, getTotalLaguages } from '../../../helpers/getLanguages';
 
 const Languages = () => {
   const [checked, setChecked] = useState('All languages');
+  const { reviews } = useContext(HotelContext);
   const { setLanguage } = useContext(ReviewsContext);
+
+  const languageData = getLanguages(reviews);
+  const totalData = getTotalLaguages(reviews);
 
   const selectRadio = e => {
     setChecked(e.target.value);
@@ -44,7 +28,7 @@ const Languages = () => {
           languageData={totalData}
           selectRadio={selectRadio}
         />
-        {fakeData.map(language => (
+        {languageData.map(language => (
           <LanguageRow
             key={language.language}
             checked={checked}

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run build\"",
-    "build": "webpack --mode production --watch",
+    "build": "webpack --mode development --watch",
     "seed": "node server/seed/seedMongo.js",
     "server": "nodemon server/index.js",
     "test": "jest",

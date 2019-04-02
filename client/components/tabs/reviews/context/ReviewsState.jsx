@@ -12,6 +12,7 @@ const ReviewsState = ({ children }) => {
   const [selectedTypes, dispatchTypes] = useReducer(crudReducer, []);
   const [selectedMentions, dispatchMentions] = useReducer(crudReducer, []);
   const [selectedLanguage, setLanguage] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const contextData = {
     selectedRatings,
@@ -19,12 +20,14 @@ const ReviewsState = ({ children }) => {
     selectedTypes,
     selectedMentions,
     selectedLanguage,
+    searchTerm,
 
     dispatchRatings,
     dispatchTimes,
     dispatchTypes,
     dispatchMentions,
     setLanguage,
+    setSearchTerm,
     getFilteredReviews,
   };
 

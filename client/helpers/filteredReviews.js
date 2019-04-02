@@ -3,7 +3,8 @@ const getFilteredReviews = (
   ratingsRange = [],
   timesRange = [],
   typesRange = [],
-  language = 'all'
+  language = 'all',
+  searchTerm = ''
 ) => {
   let filteredReviews = [...reviewsList];
 
@@ -49,6 +50,22 @@ const getFilteredReviews = (
     filteredReviews = filteredReviews.filter(
       review => review.language.toLowerCase() === language.toLowerCase()
     );
+  }
+
+  if (searchTerm) {
+    filteredReviews = filteredReviews.filter(review => {
+      const searchTermLower = searchTerm.toLowerCase();
+      return (
+        review.title.toLowerCase().includes(searchTermLower) ||
+        review.description.toLowerCase().includes(searchTermLower) ||
+        review.traveler_type.toLowerCase().includes(searchTermLower) ||
+        review.language.toLowerCase().includes(searchTermLower) ||
+        review.date
+          .toString()
+          .toLowerCase()
+          .includes(searchTermLower)
+      );
+    });
   }
 
   return filteredReviews;

@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import TypeRow from './TypeRow';
+import HotelContext from '../../../context/hotel-context';
+
+import getTravelerTypes from '../../../helpers/getTravelerTypes';
 
 import { reviews__subheader } from './css/review.scss';
 
-const fakeData = ['Families', 'Couples', 'Solo', 'Business', 'Friends'];
-
-const Types = () => (
-  <>
-    <h4 className={reviews__subheader}>Traveler type</h4>
-    <div>
-      {fakeData.map(type => (
-        <TypeRow key={type} type={type} />
-      ))}
-    </div>
-  </>
-);
+const Types = () => {
+  const { reviews } = useContext(HotelContext);
+  const travelerTypes = getTravelerTypes(reviews);
+  return (
+    <>
+      <h4 className={reviews__subheader}>Traveler type</h4>
+      <div>
+        {travelerTypes.map(type => (
+          <TypeRow key={type} type={type} />
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default Types;

@@ -8,6 +8,7 @@ import {
   faEdit,
   faComments,
   faLightbulb,
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 
 import GlobalState from './context/GlobalState';
@@ -22,6 +23,7 @@ library.add(faCamera);
 library.add(faEdit);
 library.add(faComments);
 library.add(faLightbulb);
+library.add(faSearch);
 
 const App = ({ hotelId }) => {
   const [currentTab, setCurrentTab] = useState('Reviews');
