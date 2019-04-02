@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCamera,
@@ -22,12 +23,12 @@ library.add(faEdit);
 library.add(faComments);
 library.add(faLightbulb);
 
-const App = () => {
+const App = ({ hotelId }) => {
   const [currentTab, setCurrentTab] = useState('Reviews');
 
   return (
-    <GlobalState hotelId="5c9e595002944324d1f20679">
-      <div id="mainWrapper" className={mainWrapper}>
+    <GlobalState hotelId={hotelId}>
+      <div className={mainWrapper}>
         <TabSwitcher update={setCurrentTab} />
         <TabLoader tab={currentTab} />
       </div>
@@ -35,6 +36,13 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+App.propTypes = {
+  hotelId: PropTypes.string.isRequired,
+};
+
+// ReactDOM.render(
+//   <App hotelId="5c9e595002944324d1f20679" />,
+//   document.getElementById('root')
+// );
 
 export default App;

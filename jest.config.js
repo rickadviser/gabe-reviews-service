@@ -38,4 +38,9 @@ module.exports = {
   moduleNameMapper: {
     '\\.scss$': 'identity-obj-proxy',
   },
+
+  setupFilesAfterEnv: [
+    'react-testing-library/cleanup-after-each',
+    // ... other setup files ...
+  ],
 };
