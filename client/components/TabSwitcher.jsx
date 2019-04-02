@@ -23,7 +23,12 @@ const TabSwitcher = ({ update }) => {
   };
 
   // Get total review numbers
-  const { reviews, photos, questions, roomtips } = useContext(HotelContext);
+  const {
+    reviews = {},
+    photos = {},
+    questions = {},
+    roomtips = {},
+  } = useContext(HotelContext);
 
   const data = [
     {
@@ -57,7 +62,7 @@ const TabSwitcher = ({ update }) => {
           category={category}
           icon={icon}
           total={total}
-          selectTab={selectTab}
+          onClick={() => selectTab(category)}
           handleKeyPress={handleKeyPress}
         />
       ))}

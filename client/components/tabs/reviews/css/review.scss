@@ -34,9 +34,15 @@
   margin-bottom: 10px;
 }
 
+.reviews__subheader {
+  margin-top: 0;
+  padding-top: 0;
+  color: #000;
+}
+
 .styled__checkbox {
-  position: absolute; // take it out of document flow
-  opacity: 0; // hide it
+  position: absolute;
+  opacity: 0;
 
   & + label,
   & + span {
@@ -55,7 +61,7 @@
     width: 1.2em;
     height: 1.2em;
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid #888;
     border-radius: 3px;
     transition: all 100ms ease;
   }
@@ -124,7 +130,7 @@
   top: 0;
   width: 20px;
   height: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #888;
   border-radius: 100%;
   background: #fff;
 }

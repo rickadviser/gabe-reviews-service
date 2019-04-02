@@ -3,6 +3,8 @@ import React, { useState, useContext } from 'react';
 import ReviewsContext from './context/reviews-context';
 import LanguageRow from './LanguageRow';
 
+import { reviews__subheader } from './css/review.scss';
+
 const fakeData = [
   {
     language: 'English',
@@ -34,21 +36,24 @@ const Languages = () => {
     setLanguage(e.target.value);
   };
   return (
-    <form>
-      <LanguageRow
-        checked={checked}
-        languageData={totalData}
-        selectRadio={selectRadio}
-      />
-      {fakeData.map(language => (
+    <>
+      <h4 className={reviews__subheader}>Language</h4>
+      <form>
         <LanguageRow
-          key={language.language}
           checked={checked}
-          languageData={language}
+          languageData={totalData}
           selectRadio={selectRadio}
         />
-      ))}
-    </form>
+        {fakeData.map(language => (
+          <LanguageRow
+            key={language.language}
+            checked={checked}
+            languageData={language}
+            selectRadio={selectRadio}
+          />
+        ))}
+      </form>
+    </>
   );
 };
 

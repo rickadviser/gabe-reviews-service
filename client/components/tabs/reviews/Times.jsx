@@ -2,6 +2,8 @@ import React from 'react';
 
 import TimeRow from './TimeRow';
 
+import { reviews__subheader } from './css/review.scss';
+
 const calcMonth = target => {
   const current = new Date().getMonth();
   const newMonth = current + target;
@@ -29,11 +31,14 @@ const Times = () => {
   ];
 
   return (
-    <div>
-      {data.map(({ start, end }) => (
-        <TimeRow key={start} start={start} end={end} />
-      ))}
-    </div>
+    <>
+      <h4 className={reviews__subheader}>Time of year</h4>
+      <div>
+        {data.map(({ start, end }) => (
+          <TimeRow key={start} start={start} end={end} />
+        ))}
+      </div>
+    </>
   );
 };
 

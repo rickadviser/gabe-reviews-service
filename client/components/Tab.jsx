@@ -10,19 +10,12 @@ import {
   tabCategory,
 } from './css/tabSwitcher.scss';
 
-const Tab = ({
-  selected,
-  icon,
-  total,
-  category,
-  selectTab,
-  handleKeyPress,
-}) => (
+const Tab = ({ selected, icon, total, category, onClick, handleKeyPress }) => (
   <div
     className={`${tabswitch__tab} ${selected === category ? active : ''}`}
     role="button"
     tabIndex={-1}
-    onClick={() => selectTab(category)}
+    onClick={onClick}
     onKeyPress={handleKeyPress}
   >
     <FontAwesomeIcon icon={icon} size="lg" />
@@ -36,7 +29,7 @@ Tab.propTypes = {
   icon: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired,
-  selectTab: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   handleKeyPress: PropTypes.func.isRequired,
 };
 
