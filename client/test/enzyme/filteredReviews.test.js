@@ -1,9 +1,11 @@
 import getFilteredReviews from '../../helpers/filteredReviews';
 
-describe('Filtered Reviews helper', () => {
+describe('getFilteredReviews', () => {
   const reviews = [
     {
       date: new Date('11/12/2018'),
+      title: '',
+      description: '',
       language: 'English',
       traveler_type: 'Solo',
       ratings: {
@@ -12,6 +14,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('1/17/2019'),
+      title: '',
+      description: '',
       language: 'English',
       traveler_type: 'Families',
       ratings: {
@@ -20,6 +24,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('2/22/2019'),
+      title: '',
+      description: '',
       language: 'Italian',
       traveler_type: 'Couples',
       ratings: {
@@ -28,6 +34,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('3/12/2019'),
+      title: '',
+      description: '',
       language: 'Chinese',
       traveler_type: 'Business',
       ratings: {
@@ -36,6 +44,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('4/1/2019'),
+      title: '',
+      description: '',
       language: 'Italian',
       traveler_type: 'Friends',
       ratings: {
@@ -44,6 +54,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('5/11/2018'),
+      title: '',
+      description: '',
       language: 'Chinese',
       traveler_type: 'Business',
       ratings: {
@@ -52,6 +64,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('6/1/2018'),
+      title: '',
+      description: '',
       language: 'English',
       traveler_type: 'Families',
       ratings: {
@@ -60,6 +74,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('7/1/2018'),
+      title: 'bonzai',
+      description: '',
       language: 'Italian',
       traveler_type: 'Couples',
       ratings: {
@@ -68,6 +84,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('8/1/2018'),
+      title: '',
+      description: '',
       language: 'Chinese',
       traveler_type: 'Solo',
       ratings: {
@@ -76,6 +94,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('9/19/2018'),
+      title: '',
+      description: '',
       language: 'English',
       traveler_type: 'Friends',
       ratings: {
@@ -84,6 +104,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('10/30/2018'),
+      title: '',
+      description: '',
       language: 'English',
       traveler_type: 'Business',
       ratings: {
@@ -92,6 +114,8 @@ describe('Filtered Reviews helper', () => {
     },
     {
       date: new Date('12/8/2018'),
+      title: 'YAHOO',
+      description: '',
       language: 'Italian',
       traveler_type: 'Solo',
       ratings: {
@@ -103,7 +127,7 @@ describe('Filtered Reviews helper', () => {
   let filtered;
   let filtered2;
 
-  describe('existance and structure', () => {
+  describe('Existance and structure', () => {
     it('should exist ', () => {
       expect(getFilteredReviews).toBeDefined();
     });
@@ -118,7 +142,7 @@ describe('Filtered Reviews helper', () => {
     });
   });
 
-  describe('filtering capabilities', () => {
+  describe('Filtering', () => {
     it('should return input array with no filters', () => {
       filtered = getFilteredReviews(reviews);
       expect(filtered).toStrictEqual(reviews);
@@ -129,21 +153,21 @@ describe('Filtered Reviews helper', () => {
       expect(filtered).toHaveLength(reviews.length);
     });
 
-    it('should return the currect reviews by rating filter', () => {
+    it('should correctly filter by rating', () => {
       filtered = getFilteredReviews(reviews, [1]);
       filtered2 = getFilteredReviews(reviews, [1, 2, 3]);
       expect(filtered).toHaveLength(2);
       expect(filtered2).toHaveLength(7);
     });
 
-    it('should return the correct reviews by date filter', () => {
+    it('should correctly filter by date', () => {
       filtered = getFilteredReviews(reviews, [], ['0 - 2']);
       filtered2 = getFilteredReviews(reviews, [], ['6 - 11']);
       expect(filtered).toHaveLength(3);
       expect(filtered2).toHaveLength(6);
     });
 
-    it('should return the correct reviews by type filter', () => {
+    it('should correctly filter by type', () => {
       filtered = getFilteredReviews(reviews, [], [], ['Solo']);
       filtered2 = getFilteredReviews(
         reviews,
@@ -155,14 +179,14 @@ describe('Filtered Reviews helper', () => {
       expect(filtered2).toHaveLength(7);
     });
 
-    it('should return the correct reviews by language filter', () => {
+    it('should correctly filter by language', () => {
       filtered = getFilteredReviews(reviews, [], [], [], 'English');
       filtered2 = getFilteredReviews(reviews, [], [], [], 'Italian');
       expect(filtered).toHaveLength(5);
       expect(filtered2).toHaveLength(4);
     });
 
-    it('should return the correct reviews by mixed filter', () => {
+    it('should correctly filter by multiple categories', () => {
       filtered = getFilteredReviews(
         reviews,
         [2, 3, 4],
@@ -171,6 +195,13 @@ describe('Filtered Reviews helper', () => {
         'English'
       );
       expect(filtered).toHaveLength(1);
+    });
+
+    it('should correctly filter by search term', () => {
+      filtered = getFilteredReviews(reviews, [], [], [], '', 'YAHoO');
+      filtered2 = getFilteredReviews(reviews, [], [], [], '', 'bonza');
+      expect(filtered).toHaveLength(1);
+      expect(filtered2).toHaveLength(1);
     });
   });
 });

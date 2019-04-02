@@ -42,9 +42,9 @@ App.propTypes = {
   hotelId: PropTypes.string.isRequired,
 };
 
-ReactDOM.render(
-  <App hotelId="5c9e595002944324d1f20679" />,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <App hotelId="5c9e595002944324d1f20679" />,
+//   document.getElementById('root')
+// );
 
 export default App;

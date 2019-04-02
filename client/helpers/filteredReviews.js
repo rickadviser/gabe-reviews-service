@@ -44,6 +44,7 @@ const getFilteredReviews = (
   }
 
   if (
+    language &&
     language.toLowerCase() !== 'all' &&
     language.toLowerCase() !== 'all languages'
   ) {
@@ -53,9 +54,9 @@ const getFilteredReviews = (
   }
 
   if (searchTerm) {
-    filteredReviews = filteredReviews.filter(review => {
-      const searchTermLower = searchTerm.toLowerCase();
-      return (
+    const searchTermLower = searchTerm.toLowerCase();
+    filteredReviews = filteredReviews.filter(
+      review =>
         review.title.toLowerCase().includes(searchTermLower) ||
         review.description.toLowerCase().includes(searchTermLower) ||
         review.traveler_type.toLowerCase().includes(searchTermLower) ||
@@ -64,8 +65,7 @@ const getFilteredReviews = (
           .toString()
           .toLowerCase()
           .includes(searchTermLower)
-      );
-    });
+    );
   }
 
   return filteredReviews;
