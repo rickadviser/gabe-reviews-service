@@ -1,13 +1,72 @@
 @import '../../../css/globals.scss';
 
-.reviews__body__wrapper,
+.review__inner__wrapper {
+  background-color: #fff;
+  padding: 24px;
+}
+
+.review__single__wrapper {
+  margin-top: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.review__userInfo__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.review__userInfo__extras__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  > * {
+    margin-left: 10px;
+  }
+}
+
+.review__links__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+
+  > * {
+    margin-right: 20px;
+  }
+}
+
+.review__smallButton__wrapper {
+  @include center;
+  cursor: pointer;
+
+  span {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+
+.review__avatar {
+  height: 50px;
+}
+
+.review__extrasPopup__wrapper {
+  position: absolute;
+  top: 200%;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  border: 2px solid red;
+}
+
 .reviews__search__wrapper {
   margin-top: 10px;
   background-color: #fff;
-}
-
-.reviews__body__wrapper {
-  padding: 24px;
+  padding: 0 5px;
   border: 1px solid #e5e5e5;
 }
 

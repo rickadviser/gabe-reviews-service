@@ -1,7 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useContext } from 'react';
 
 import HotelContext from '../../../context/hotel-context';
 import ReviewsContext from './context/reviews-context';
+import ReviewSingle from './ReviewSingle';
 
 import { reviews__body__wrapper } from './css/review.scss';
 
@@ -28,13 +30,15 @@ const ReviewsBody = () => {
 
   return (
     <div className={reviews__body__wrapper}>
-      {filtered.map(({ title, date, traveler_type, language }) => (
-        <div key={date}>
-          <h3>{title}</h3>
-          <p>{date}</p>
-          <p>{traveler_type}</p>
-          <p>{language}</p>
-        </div>
+      {filtered.map(review => (
+        // ({ title, date, traveler_type, language })
+        // <div key={date}>
+        //   <h3>{title}</h3>
+        //   <p>{date}</p>
+        //   <p>{traveler_type}</p>
+        //   <p>{language}</p>
+        // </div>
+        <ReviewSingle key={review._id} review={review} />
       ))}
     </div>
   );
