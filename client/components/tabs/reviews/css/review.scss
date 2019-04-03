@@ -1,13 +1,5 @@
 @import '../../../css/globals.scss';
 
-.reviews__upper__wrapper {
-  padding: 24px;
-  background-color: #fff;
-  border-left: 1px solid #e5e5e5;
-  border-right: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-}
-
 .reviews__body__wrapper,
 .reviews__search__wrapper {
   margin-top: 10px;
@@ -19,6 +11,11 @@
   border: 1px solid #e5e5e5;
 }
 
+.reviews__closeButton__wrapper {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
 .reviews__search__wrapper {
   border: 1px solid #ddd;
 
@@ -26,7 +23,7 @@
     color: $darkGreenMain;
     padding: 10px;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
     @include center;
 

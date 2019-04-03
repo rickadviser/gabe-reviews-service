@@ -11,8 +11,9 @@ import ReviewsSearch from './ReviewsSearch';
 import ReviewsBody from './ReviewsBody';
 import styles from './css/review.scss';
 
+import { upper__wrapper } from '../../css/main.scss';
+
 const {
-  reviews__upper__wrapper,
   reviews__wrapper,
   reviews__ratings,
   reviews__date,
@@ -23,7 +24,7 @@ const {
 
 const Reviews = () => (
   <ReviewsState>
-    <div className={reviews__upper__wrapper}>
+    <div className={upper__wrapper}>
       <TabHeader title="Reviews" buttonText="Finish Your Review" />
       <div className={reviews__wrapper}>
         <div className={reviews__ratings}>
