@@ -15,24 +15,16 @@ const ReviewsSearch = () => {
   const [outlined, setOutlined] = useState(false);
 
   const toggleWrapperOutline = () => setOutlined(!outlined);
+  const updateSearchField = e => setSearch(e.target.value);
 
   const handleSearch = e => {
-    if (e.key) {
-      if (e.key === 'Enter') {
-        setSearchTerm(search);
-      }
-    } else {
+    if (!e.key || (e.key && e.key === 'Enter')) {
       setSearchTerm(search);
     }
   };
 
   const handleClear = e => {
-    if (e.key) {
-      if (e.key === 'Enter') {
-        setSearch('');
-        setSearchTerm('');
-      }
-    } else {
+    if (!e.key || (e.key && e.key === 'Enter')) {
       setSearch('');
       setSearchTerm('');
     }
@@ -54,7 +46,7 @@ const ReviewsSearch = () => {
           type="text"
           name="search"
           value={search}
-          onChange={e => setSearch(e.target.value)}
+          onChange={updateSearchField}
           onKeyPress={handleSearch}
           placeholder="Search reviews..."
           onFocus={toggleWrapperOutline}
