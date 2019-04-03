@@ -30,10 +30,13 @@ const ReviewsSearch = () => {
     }
   };
 
+  const outlinedShadow =
+    '2px 2px #078171, -2px -2px #078171, 2px -2px #078171, -2px 2px #078171';
+
   return (
     <div
       className={reviews__search__wrapper}
-      style={{ border: outlined ? '2px solid #078171' : '1px solid #ccc' }}
+      style={{ boxShadow: outlined ? outlinedShadow : '' }}
     >
       <div>
         <FontAwesomeIcon

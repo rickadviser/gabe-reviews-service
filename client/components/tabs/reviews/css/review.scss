@@ -17,11 +17,13 @@
 }
 
 .reviews__closeButton__wrapper {
-  transition: opacity 200ms ease;
+  transition: opacity 150ms ease;
 }
 
 .reviews__search__wrapper {
+  box-sizing: border-box;
   border: 1px solid #ddd;
+  transition: box-shadow 50ms ease-in;
 
   div {
     color: $darkGreenMain;
