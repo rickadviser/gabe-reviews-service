@@ -11,6 +11,9 @@ import {
   review__userInfo__wrapper,
   review__extrasPopup__wrapper,
   review__userInfo__extras__wrapper,
+  review__userInfo__username,
+  review__userInfo__subInfo,
+  review__userInfo__contributions,
 } from './css/review.scss';
 
 const ReviewUserInfo = ({ user, date }) => {
@@ -29,14 +32,16 @@ const ReviewUserInfo = ({ user, date }) => {
       </div>
       <div>
         <div>
-          <span>{user.username}</span>
+          <span className={review__userInfo__username}>{user.username}</span>
           <span>{` wrote a review ${formattedDate}`}</span>
         </div>
-        <div>
+        <div className={review__userInfo__subInfo}>
           <span>{`${user.location && user.location.city}, `}</span>
           <span>{user.location && user.location.state}</span>
-          <span> - </span>
-          <span>{`${user.contributions} contributions`}</span>
+          <span className={review__userInfo__contributions}>{` - ${
+            user.contributions
+          } `}</span>
+          <span>contributions</span>
         </div>
       </div>
       <div className={review__userInfo__extras__wrapper}>

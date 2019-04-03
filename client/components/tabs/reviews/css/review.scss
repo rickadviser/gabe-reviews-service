@@ -2,7 +2,7 @@
 
 .review__inner__wrapper {
   background-color: #fff;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 .review__single__wrapper {
@@ -15,6 +15,19 @@
   grid-template-columns: auto 1fr auto;
   grid-gap: 20px;
   align-items: center;
+  font-size: 14px;
+  padding-top: 24px;
+}
+
+.review__userInfo__username,
+.review__userInfo__contributions {
+  font-weight: bold;
+}
+
+.review__userInfo__subInfo {
+  font-size: 12px;
+  color: #888;
+  margin-top: 6px;
 }
 
 .review__userInfo__extras__wrapper {
@@ -28,10 +41,15 @@
   }
 }
 
+.review__content__wrapper {
+  padding-top: 24px;
+}
+
 .review__links__wrapper {
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding: 24px 0;
   width: 50%;
 
   > * {
