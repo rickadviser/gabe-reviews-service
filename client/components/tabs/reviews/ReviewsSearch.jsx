@@ -6,6 +6,7 @@ import ReviewsContext from './context/reviews-context';
 import {
   reviews__search__wrapper,
   reviews__closeButton__wrapper,
+  reviews__searchButton,
 } from './css/review.scss';
 
 const ReviewsSearch = () => {
@@ -16,7 +17,11 @@ const ReviewsSearch = () => {
   const toggleWrapperOutline = () => setOutlined(!outlined);
 
   const handleSearch = e => {
-    if (e.key === 'Enter') {
+    if (e.key) {
+      if (e.key === 'Enter') {
+        setSearchTerm(search);
+      }
+    } else {
       setSearchTerm(search);
     }
   };
@@ -39,7 +44,12 @@ const ReviewsSearch = () => {
       style={{ border: outlined ? '2px solid #078171' : '1px solid #ccc' }}
     >
       <div>
-        <FontAwesomeIcon icon="search" size="sm" />
+        <FontAwesomeIcon
+          icon="search"
+          size="sm"
+          onClick={handleSearch}
+          className={reviews__searchButton}
+        />
         <input
           type="text"
           name="search"

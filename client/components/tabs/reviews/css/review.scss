@@ -11,8 +11,12 @@
   border: 1px solid #e5e5e5;
 }
 
+.reviews__searchButton,
 .reviews__closeButton__wrapper {
   cursor: pointer;
+}
+
+.reviews__closeButton__wrapper {
   transition: opacity 200ms ease;
 }
 
