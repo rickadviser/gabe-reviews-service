@@ -71,7 +71,9 @@ router.get('/hotels/:id', async (req, res) => {
  */
 
 router.get('/hotels/:id/reviews/general', async (req, res) => {
-  const reviews = await Review.find({ hotel_id: req.params.id });
+  const reviews = await Review.find({ hotel_id: req.params.id })
+    .populate('user_id')
+    .exec();
   res.json(reviews);
 });
 
