@@ -5,14 +5,16 @@ import reviewPropTypes from '../../../proptypes/review';
 import getReviewDescription from '../../../helpers/getReviewDescription';
 import getTripType from '../../../helpers/getTripType';
 
+import ReviewStars from './ReviewStars';
+
 import {
   review__inner__wrapper,
   review__content__wrapper,
-  review__dateOfStay,
-  review__tripInfo,
+  review__content__key,
+  review__content__tripType,
+  review__content__tripInfo,
+  review__content__advisory,
 } from './css/review.scss';
-
-import { review__stars__full, review__stars__empty } from '../../css/main.scss';
 
 const ReviewContent = ({ review }) => {
   const { title, description, ratings } = review;
@@ -24,43 +26,36 @@ const ReviewContent = ({ review }) => {
     setMore(!more);
   };
 
-  const showStars = ({ overall }) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        i <= overall ? (
-          <div key={i} className={review__stars__full} />
-        ) : (
-          <div key={i} className={review__stars__empty} />
-        )
-      );
-    }
-    return stars;
-  };
-
   const formattedDate = formatDate(review.date, 'mmm yyyy');
   const trimmedDescription = getReviewDescription(description, more);
   const tripType = getTripType(review.traveler_type);
-  const stars = showStars(ratings);
 
   return (
     <div className={`${review__inner__wrapper} ${review__content__wrapper}`}>
-      {stars}
+      <ReviewStars rating={ratings.overall} />
       <h4>{title}</h4>
       <p>{trimmedDescription}</p>
       <a href="http://google.com" onClick={toggleMore}>
         {more ? 'Read less' : 'Read more'}
       </a>
-      <div className={review__tripInfo}>
+      <div className={review__content__tripInfo}>
         <div>
-          <span className={review__dateOfStay}>Date of Stay: </span>
+          <span className={review__content__key}>Date of Stay: </span>
           <span>{formattedDate}</span>
         </div>
         {more && (
-          <div>
-            <span className={review__dateOfStay}>Trip Type: </span>
-            <span>{tripType}</span>
-          </div>
+          <>
+            <div className={review__content__tripType}>
+              <span className={review__content__key}>Trip Type: </span>
+              <span>{tripType}</span>
+            </div>
+            <div className={review__content__advisory}>
+              <span>
+                This review is the subjective opinion of a RickAdvisor member
+                and not of RickAdvisor LLC.
+              </span>
+            </div>
+          </>
         )}
       </div>
     </div>

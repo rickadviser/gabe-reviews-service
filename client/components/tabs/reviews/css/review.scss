@@ -42,7 +42,6 @@
 }
 
 .review__content__wrapper {
-  // padding-top: 24px;
   background-color: #f9f9f9;
   color: #4a4a4a;
 
@@ -59,36 +58,74 @@
     margin: 0;
     padding: 0;
   }
-
   a,
-  .review__tripInfo {
+  .review__content__tripInfo {
     font-size: 14px;
     display: block;
+  }
+
+  div {
     margin-top: 10px;
   }
 
   a {
+    display: inline-block;
+    position: relative;
     text-decoration: none;
     color: $secondaryGrayFontColor;
+    margin-top: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 12px;
+      width: 10px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('https://png.pngtree.com/svg/20161117/b362dc768b.svg');
+      background-size: cover;
+    }
   }
 }
 
-.review__dateOfStay {
+.review__content__key {
   font-weight: bold;
 }
 
+.review__content__tripType {
+  margin-bottom: 10px;
+}
+
+.review__content__advisory {
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  color: $secondaryGrayFontColor;
+  font-style: italic;
+}
+
 .review__links__wrapper {
+}
+
+.review__links__helpfulVotes {
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 12px;
+  color: $secondaryGrayFontColor;
+}
+
+.review__links {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   padding: 2px 0;
   width: 50%;
-  // display: flex;
-  // width: auto;
 
   > * {
     // flex: auto;
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
     text-align: left;
   }

@@ -12,7 +12,7 @@ const ReviewSingle = ({ review }) => (
   <div className={review__single__wrapper}>
     <ReviewUserInfo user={review.user_id} date={review.date} />
     <ReviewContent review={review} />
-    <ReviewLinks review={review} />
+    <ReviewLinks votes={review.helpful_votes} />
   </div>
 );
 

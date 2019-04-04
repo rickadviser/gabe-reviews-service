@@ -41,6 +41,16 @@ const generateHelpful = () => {
   return rand > 0.75 ? Math.ceil(Math.random() * 20) : 0;
 };
 
+// const generateRoomtip = () => {
+//   const rand = Math.random();
+
+//   if(rand > 0.5) {
+//     //
+//   }
+// }
+
+// const generatePhotos = () => {}
+
 const generateUserReviewsData = n => {
   const reviews = [];
 
@@ -50,7 +60,7 @@ const generateUserReviewsData = n => {
     currentReview.date = faker.date.past();
     currentReview.language = generateLanguage();
     currentReview.title = getReviewTitle(faker.lorem.sentence());
-    currentReview.description = faker.lorem.paragraph();
+    currentReview.description = faker.lorem.paragraphs();
     currentReview.traveler_type = generateEnum([
       'Families',
       'Couples',
@@ -64,8 +74,8 @@ const generateUserReviewsData = n => {
     currentReview.ratings.service = generateNum(5);
     currentReview.ratings.sleep_quality = generateNum(5);
     currentReview.ratings.overall = generateRating();
-
     currentReview.helpful_votes = generateHelpful();
+    // currentReview.roomtip = generateRoomtip():
 
     reviews.push(currentReview);
   }
