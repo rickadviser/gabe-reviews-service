@@ -58,13 +58,7 @@ const getFilteredReviews = (
     filteredReviews = filteredReviews.filter(
       review =>
         review.title.toLowerCase().includes(searchTermLower) ||
-        review.description.toLowerCase().includes(searchTermLower) ||
-        review.traveler_type.toLowerCase().includes(searchTermLower) ||
-        review.language.toLowerCase().includes(searchTermLower) ||
-        review.date
-          .toString()
-          .toLowerCase()
-          .includes(searchTermLower)
+        review.description.toLowerCase().includes(searchTermLower)
     );
   }
 

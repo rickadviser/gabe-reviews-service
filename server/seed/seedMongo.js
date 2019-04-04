@@ -1,12 +1,15 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
 const Hotel = require('../models/Hotel');
-// const Review = require('../models/Review');
+const Review = require('../models/Review');
 const User = require('../models/User');
 const Photo = require('../models/Photo');
 const { Question, Answer } = require('../models/QAndA');
 const RoomTip = require('../models/RoomTip');
-// const generateUserReviewsData = require('./user_review');
-// const generateHotelsData = require('./hotels_general');
-// const generateUsersData = require('./users');
+const generateUserReviewsData = require('./user_review');
+const generateHotelsData = require('./hotels_general');
+const generateUsersData = require('./users');
 const generatePhotosData = require('./photos');
 const generateRoomTipsData = require('./room_tips');
 const { generateQuestionsData, generateAnswerData } = require('./q_and_a');

@@ -1,5 +1,40 @@
 const faker = require('faker');
-const { generateEnum, generateNum, generateAvg } = require('./helpers');
+const { generateEnum, generateNum } = require('./helpers');
+
+const getReviewTitle = title => {
+  const randNum = Math.ceil(Math.random() * 5);
+  return title
+    .split(' ')
+    .slice(0, randNum)
+    .map(i => i[0].toUpperCase() + i.slice(1))
+    .join(' ');
+};
+
+const generateLanguage = () => {
+  const rand = Math.random();
+  return rand < 0.75
+    ? 'English'
+    : generateEnum(['Spanish', 'Chinese', 'Italian']);
+};
+
+const generateRating = () => {
+  const rand = Math.ceil(Math.random() * 10);
+  let rating;
+
+  if (rand >= 1 && rand < 4) {
+    rating = 5;
+  } else if (rand >= 4 && rand < 7) {
+    rating = 4;
+  } else if (rand >= 7 && rand < 9) {
+    rating = 3;
+  } else if (rand === 9) {
+    rating = 2;
+  } else {
+    rating = 1;
+  }
+
+  return rating;
+};
 
 const generateUserReviewsData = n => {
   const reviews = [];
@@ -8,13 +43,8 @@ const generateUserReviewsData = n => {
     const currentReview = {};
 
     currentReview.date = faker.date.past();
-    currentReview.language = generateEnum([
-      'English',
-      'Spanish',
-      'Chinese',
-      'Italian',
-    ]);
-    currentReview.title = faker.lorem.sentence();
+    currentReview.language = generateLanguage();
+    currentReview.title = getReviewTitle(faker.lorem.sentence());
     currentReview.description = faker.lorem.paragraph();
     currentReview.traveler_type = generateEnum([
       'Families',
@@ -28,13 +58,7 @@ const generateUserReviewsData = n => {
     currentReview.ratings.cleanliness = generateNum(5);
     currentReview.ratings.service = generateNum(5);
     currentReview.ratings.sleep_quality = generateNum(5);
-    currentReview.ratings.overall = generateAvg(
-      currentReview.ratings.location,
-      currentReview.ratings.cleanliness,
-      currentReview.ratings.service,
-      currentReview.ratings.sleep_quality
-    );
-    currentReview.images = [];
+    currentReview.ratings.overall = generateRating();
 
     reviews.push(currentReview);
   }

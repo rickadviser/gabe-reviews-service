@@ -1,16 +1,9 @@
-const ratingSystem = [
-  'Terrible',
-  'Terrible',
-  'Poor',
-  'Average',
-  'Good',
-  'Excellent',
-];
+const ratingSystem = ['Terrible', 'Poor', 'Average', 'Good', 'Excellent'];
 
-export const getSubTotalsByRatings = reviews => {
-  return reviews
+const getSubTotalsByRatings = reviews =>
+  reviews
     .reduce((acc, { ratings }) => {
-      const rating = ratingSystem[ratings.overall];
+      const rating = ratingSystem[ratings.overall - 1];
 
       for (let i = 0; i < acc.length; i++) {
         if (acc[i].type === rating) {
@@ -29,7 +22,5 @@ export const getSubTotalsByRatings = reviews => {
       ];
     }, [])
     .sort((a, b) => b.rating - a.rating);
-};
 
-export const getTotalRatings = ratingsData =>
-  ratingsData.reduce((acc, item) => acc + item.total, 0);
+export default getSubTotalsByRatings;

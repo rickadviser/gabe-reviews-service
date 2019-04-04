@@ -14,6 +14,7 @@ import {
   review__userInfo__username,
   review__userInfo__subInfo,
   review__userInfo__contributions,
+  review__popup,
 } from './css/review.scss';
 
 const ReviewUserInfo = ({ user, date }) => {
@@ -50,8 +51,10 @@ const ReviewUserInfo = ({ user, date }) => {
         <ReviewButton icon="ellipsis-h" text="" onClick={toggleExtras} />
         {extrasPopup && (
           <div className={review__extrasPopup__wrapper}>
-            <ul>
-              <li>More...</li>
+            <ul className={review__popup}>
+              <li>
+                <a href="http://www.google.com">Report this</a>
+              </li>
             </ul>
           </div>
         )}
@@ -62,7 +65,7 @@ const ReviewUserInfo = ({ user, date }) => {
 
 ReviewUserInfo.propTypes = {
   user: userPropTypes.isRequired,
-  date: PropTypes.instanceOf(Date).isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default ReviewUserInfo;

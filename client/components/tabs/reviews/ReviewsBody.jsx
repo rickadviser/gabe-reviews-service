@@ -31,13 +31,6 @@ const ReviewsBody = () => {
   return (
     <div className={reviews__body__wrapper}>
       {filtered.map(review => (
-        // ({ title, date, traveler_type, language })
-        // <div key={date}>
-        //   <h3>{title}</h3>
-        //   <p>{date}</p>
-        //   <p>{traveler_type}</p>
-        //   <p>{language}</p>
-        // </div>
         <ReviewSingle key={review._id} review={review} />
       ))}
     </div>

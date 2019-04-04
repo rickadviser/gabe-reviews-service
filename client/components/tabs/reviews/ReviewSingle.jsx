@@ -10,7 +10,7 @@ import { review__single__wrapper } from './css/review.scss';
 
 const ReviewSingle = ({ review }) => (
   <div className={review__single__wrapper}>
-    <ReviewUserInfo user={review.user_id} />
+    <ReviewUserInfo user={review.user_id} date={review.date} />
     <ReviewContent review={review} />
     <ReviewLinks review={review} />
   </div>

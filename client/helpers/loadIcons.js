@@ -11,6 +11,7 @@ import {
   faThumbsUp,
   faRetweet,
   faShare,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faCamera);
@@ -24,7 +25,7 @@ library.add(faUserPlus);
 library.add(faThumbsUp);
 library.add(faRetweet);
 library.add(faShare);
-
+library.add(faCircle);
 /*
 FontAwesomeIcon.propTypes = {
   border: PropTypes.bool,
