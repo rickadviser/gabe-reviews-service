@@ -36,6 +36,11 @@ const generateRating = () => {
   return rating;
 };
 
+const generateHelpful = () => {
+  const rand = Math.random();
+  return rand > 0.75 ? Math.ceil(Math.random() * 20) : 0;
+};
+
 const generateUserReviewsData = n => {
   const reviews = [];
 
@@ -59,6 +64,8 @@ const generateUserReviewsData = n => {
     currentReview.ratings.service = generateNum(5);
     currentReview.ratings.sleep_quality = generateNum(5);
     currentReview.ratings.overall = generateRating();
+
+    currentReview.helpful_votes = generateHelpful();
 
     reviews.push(currentReview);
   }

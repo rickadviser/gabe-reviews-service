@@ -48,6 +48,10 @@ const reviewSchema = new mongoose.Schema({
     type: String,
   },
   ratings: ratingsSchema,
+  helpful_votes: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model('review', reviewSchema);

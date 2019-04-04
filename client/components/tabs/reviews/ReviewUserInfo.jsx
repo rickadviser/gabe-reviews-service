@@ -43,6 +43,10 @@ const ReviewUserInfo = ({ user, date }) => {
             user.contributions
           } `}</span>
           <span>contributions</span>
+          <span className={review__userInfo__contributions}>{` - ${
+            user.helpful_votes
+          } `}</span>
+          <span>helpful votes</span>
         </div>
       </div>
       <div className={review__userInfo__extras__wrapper}>

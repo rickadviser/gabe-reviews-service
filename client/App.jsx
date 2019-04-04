@@ -29,7 +29,7 @@ App.propTypes = {
 };
 
 ReactDOM.render(
-  <App hotelId="5ca65346bd743b20d98267d1" />,
+  <App hotelId="5ca660703086144003b3851d" />,
   document.getElementById('root')
 );
 

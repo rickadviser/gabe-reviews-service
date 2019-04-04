@@ -3,11 +3,13 @@ import formatDate from 'dateformat';
 
 import reviewPropTypes from '../../../proptypes/review';
 import getReviewDescription from '../../../helpers/getReviewDescription';
+import getTripType from '../../../helpers/getTripType';
 
 import {
   review__inner__wrapper,
   review__content__wrapper,
   review__dateOfStay,
+  review__tripInfo,
 } from './css/review.scss';
 
 import { review__stars__full, review__stars__empty } from '../../css/main.scss';
@@ -38,6 +40,7 @@ const ReviewContent = ({ review }) => {
 
   const formattedDate = formatDate(review.date, 'mmm yyyy');
   const trimmedDescription = getReviewDescription(description, more);
+  const tripType = getTripType(review.traveler_type);
   const stars = showStars(ratings);
 
   return (
@@ -48,10 +51,18 @@ const ReviewContent = ({ review }) => {
       <a href="http://google.com" onClick={toggleMore}>
         {more ? 'Read less' : 'Read more'}
       </a>
-      <span>
-        <span className={review__dateOfStay}>Date of Stay: </span>
-        <span>{formattedDate}</span>
-      </span>
+      <div className={review__tripInfo}>
+        <div>
+          <span className={review__dateOfStay}>Date of Stay: </span>
+          <span>{formattedDate}</span>
+        </div>
+        {more && (
+          <div>
+            <span className={review__dateOfStay}>Trip Type: </span>
+            <span>{tripType}</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
