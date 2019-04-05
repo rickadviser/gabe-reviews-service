@@ -19,6 +19,17 @@
   // padding-top: 24px;
 }
 
+.review__stars__wrapper {
+  @include center;
+  justify-content: flex-start;
+}
+
+.review__extras__stars__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+}
+
 .review__userInfo__username,
 .review__userInfo__contributions {
   font-weight: bold;
@@ -103,9 +114,6 @@
   font-size: 12px;
   color: $secondaryGrayFontColor;
   font-style: italic;
-}
-
-.review__links__wrapper {
 }
 
 .review__links__helpfulVotes {

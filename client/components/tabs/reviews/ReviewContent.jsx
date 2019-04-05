@@ -4,6 +4,7 @@ import formatDate from 'dateformat';
 import reviewPropTypes from '../../../proptypes/review';
 import getReviewDescription from '../../../helpers/getReviewDescription';
 import getTripType from '../../../helpers/getTripType';
+import capitalize from '../../../helpers/capitalize';
 
 import ReviewStars from './ReviewStars';
 
@@ -14,6 +15,7 @@ import {
   review__content__tripType,
   review__content__tripInfo,
   review__content__advisory,
+  review__extras__stars__wrapper,
 } from './css/review.scss';
 
 const ReviewContent = ({ review }) => {
@@ -48,6 +50,22 @@ const ReviewContent = ({ review }) => {
             <div className={review__content__tripType}>
               <span className={review__content__key}>Trip Type: </span>
               <span>{tripType}</span>
+            </div>
+            <div className={review__extras__stars__wrapper}>
+              {Object.keys(review.ratings).map(key => {
+                if (key !== '_id' && key !== 'overall') {
+                  return (
+                    <ReviewStars
+                      key={key}
+                      rating={review.ratings[key]}
+                      text={capitalize(key.replace('_', ' '))}
+                      size="small"
+                    />
+                  );
+                }
+
+                return null;
+              })}
             </div>
             <div className={review__content__advisory}>
               <span>
