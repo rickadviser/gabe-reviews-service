@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import HotelContext from '../../../../context/hotel-context';
+import QuestionsState from '../QuestionsState';
+import QuestionSingle from '../QuestionSingle/index';
 
 const QuestionsBody = () => {
+  const { questions } = useContext(HotelContext);
+  console.log(questions);
+
   return (
-    <div>
-      <p>Content2</p>
-    </div>
+    <QuestionsState>
+      {questions.map(question => (
+        <QuestionSingle key={question._id} question={question} />
+      ))}
+    </QuestionsState>
   );
 };
 

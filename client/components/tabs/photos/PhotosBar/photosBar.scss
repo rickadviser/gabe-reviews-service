@@ -1,6 +1,10 @@
 @import '../../../css/globals.scss';
 
 .photosBar__wrapper {
+  border-top: $thinGrayBorder;
+  padding: 24px 0 0 0;
+  margin-top: 24px;
+
   h5 {
     text-transform: uppercase;
     margin: 0 0 10px 0;
