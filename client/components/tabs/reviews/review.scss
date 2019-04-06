@@ -1,0 +1,161 @@
+@import '../../css/globals.scss';
+
+.review__inner__wrapper {
+  background-color: #fff;
+  padding: 16px 24px;
+}
+
+.reviews__wrapper {
+  display: grid;
+  grid-template:
+    'ratings date type language'
+    'mentions mentions mentions mentions'
+    / minmax(250px, 350px) auto auto auto;
+  width: 100%;
+  font-size: 14px;
+}
+
+.reviews__ratings {
+  grid-area: ratings;
+}
+
+.reviews__date {
+  grid-area: date;
+}
+
+.reviews__type {
+  grid-area: type;
+}
+
+.reviews__language {
+  grid-area: language;
+}
+
+.reviews__mentions {
+  grid-area: mentions;
+}
+
+.checkbox__wrapper {
+  margin-bottom: 10px;
+}
+
+.reviews__subheader {
+  margin-top: 0;
+  padding-top: 0;
+  color: #000;
+}
+
+.styled__checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label,
+  & + span {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before,
+  & + span:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 1.2em;
+    height: 1.2em;
+    background: white;
+    border: 1px solid #888;
+    border-radius: 3px;
+    transition: all 100ms ease;
+  }
+
+  /* Box hover
+  &:hover + label:before {
+  }
+
+  // Box focus
+  &:focus + label:before {
+  } */
+
+  // Box checked
+  &:checked + label:before,
+  &:checked + span:before {
+    background: $darkGreenMain;
+  }
+
+  // Disabled state label.
+  &:disabled + label,
+  &:disabled + span {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before,
+  &:disabled + span:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after,
+  &:checked + span:after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+      4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+[type='radio']:checked,
+[type='radio']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type='radio']:checked + label,
+[type='radio']:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  display: inline-block;
+}
+[type='radio']:checked + label:before,
+[type='radio']:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #888;
+  border-radius: 100%;
+  background: #fff;
+}
+[type='radio']:checked + label:after,
+[type='radio']:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: $darkGreenMain;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  transition: all 100ms ease;
+}
+[type='radio']:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type='radio']:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}

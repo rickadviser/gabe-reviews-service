@@ -1,0 +1,48 @@
+@import '../../../css/globals.scss';
+
+.ratingbar__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 40px;
+  }
+}
+
+.ratingbar__inner__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .label {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    cursor: pointer;
+  }
+}
+
+/*.ratingbar__bar__bg,
+.ratingbar__bar__green {
+  height: 8px;
+}*/
+
+.ratingbar__bar__bg {
+  height: 12px;
+  position: relative;
+  background-color: #e3e3e3;
+}
+
+.ratingbar__bar__green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $darkGreenMain;
+}
