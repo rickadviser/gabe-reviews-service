@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dateFormat from 'dateformat';
 import ReviewButton from '../ReviewButton/index';
@@ -18,10 +18,30 @@ import {
 
 import { review__inner__wrapper } from '../review.scss';
 
-const ReviewUserInfo = ({ user, date }) => {
+const ReviewUserInfo = ({ user, date, type }) => {
   const formattedDate = dateFormat(date, 'mmm yyyy');
   const [extrasPopup, setExtrasPopup] = useState(false);
-  const toggleExtras = () => setExtrasPopup(!extrasPopup);
+
+  const toggleExtras = (_e, option) =>
+    setExtrasPopup(typeof option === 'boolean' ? option : !extrasPopup);
+
+  const togglePopupOff = e => {
+    if (
+      e.target.id !== 'extras_popup_wrapper' &&
+      e.target.id !== 'extras_popup_ul' &&
+      e.target.id !== 'extras_popup_li'
+    ) {
+      toggleExtras(null, false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', togglePopupOff);
+
+    return function removeListener() {
+      document.removeEventListener('click', togglePopupOff);
+    };
+  });
 
   return (
     <div className={`${review__inner__wrapper} ${review__userInfo__wrapper}`}>
@@ -35,7 +55,11 @@ const ReviewUserInfo = ({ user, date }) => {
       <div>
         <div>
           <span className={review__userInfo__username}>{user.username}</span>
-          <span>{` wrote a review ${formattedDate}`}</span>
+          <span>
+            {` ${
+              type === 'photo' ? 'posted a photo' : 'wrote a review'
+            } ${formattedDate}`}
+          </span>
         </div>
         <div className={review__userInfo__subInfo}>
           <span>{`${user.location && user.location.city}, `}</span>
@@ -55,9 +79,12 @@ const ReviewUserInfo = ({ user, date }) => {
         <ReviewButton icon="user-plus" text="Follow" />
         <ReviewButton icon="ellipsis-h" text="" onClick={toggleExtras} />
         {extrasPopup && (
-          <div className={review__extrasPopup__wrapper}>
-            <ul className={review__userInfo__popup}>
-              <li>
+          <div
+            id="extras_popup_wrapper"
+            className={review__extrasPopup__wrapper}
+          >
+            <ul id="extras_popup_ul" className={review__userInfo__popup}>
+              <li id="extras_popup_li">
                 <a href="http://www.google.com">Report this</a>
               </li>
             </ul>
@@ -71,6 +98,11 @@ const ReviewUserInfo = ({ user, date }) => {
 ReviewUserInfo.propTypes = {
   user: userPropTypes.isRequired,
   date: PropTypes.string.isRequired,
+  type: PropTypes.string,
+};
+
+ReviewUserInfo.defaultProps = {
+  type: 'review',
 };
 
 export default ReviewUserInfo;

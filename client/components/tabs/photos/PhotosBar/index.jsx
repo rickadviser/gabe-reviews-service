@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import PhotosContext from '../context/PhotosContext';
 import HotelContext from '../../../../context/hotel-context';
 
-import { photosBar__wrapper, photosBar__category } from './photosBar.scss';
+import PhotoCategory from '../PhotoCategory/index';
+
+import { photosBar__wrapper } from './photosBar.scss';
 
 const PhotosBar = () => {
-  const { selectedCategory, setSelectedCategory } = useContext(PhotosContext);
   const { photos } = useContext(HotelContext);
 
   const categories = Array.from(
@@ -16,17 +16,12 @@ const PhotosBar = () => {
     <div className={photosBar__wrapper}>
       <h5>Album Categories</h5>
       <ul>
+        <li>
+          <PhotoCategory category="All" />
+        </li>
         {categories.map(category => (
           <li key={category}>
-            <button
-              type="button"
-              onClick={() => setSelectedCategory(category)}
-              className={`${photosBar__category} ${
-                selectedCategory === category ? photosBar__category : ''
-              }`}
-            >
-              {category}
-            </button>
+            <PhotoCategory category={category} />
           </li>
         ))}
       </ul>

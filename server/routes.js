@@ -85,7 +85,9 @@ router.get('/hotels/:id/reviews/general', async (req, res) => {
  */
 
 router.get('/hotels/:id/reviews/photos', async (req, res) => {
-  const photos = await Photo.find({ hotel_id: req.params.id });
+  const photos = await Photo.find({ hotel_id: req.params.id })
+    .populate('user_id')
+    .exec();
   res.json(photos);
 });
 
@@ -114,9 +116,9 @@ router.get('/hotels/:id/reviews/questions', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/general
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get All General Reviews
     Access:         Public
  */
 
@@ -126,9 +128,9 @@ router.get('/reviews/general', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/general/:id
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get Single General Review (by ID)
     Access:         Public
  */
 
@@ -141,9 +143,9 @@ router.get('/reviews/general/:id', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/roomtips
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get All Room Tips
     Access:         Public
  */
 
@@ -153,9 +155,9 @@ router.get('/reviews/roomtips', async (req, res) => {
 });
 
 /*
-    Route:          /api/questions
+    Route:          /api/reviews/roomtips/:id
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get Single Room Tip (by ID)
     Access:         Public
  */
 
@@ -165,9 +167,9 @@ router.get('/reviews/roomtips/:id', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/photos
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get All Photos
     Access:         Public
  */
 
@@ -177,9 +179,9 @@ router.get('/reviews/photos', async (req, res) => {
 });
 
 /*
-    Route:          /api/questions
+    Route:          /api/reviews/photos/:id
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get Single Photo (by ID)
     Access:         Public
  */
 
@@ -189,9 +191,9 @@ router.get('/reviews/photos/:id', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/questions
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get All Questions
     Access:         Public
  */
 
@@ -201,9 +203,9 @@ router.get('/reviews/questions', async (req, res) => {
 });
 
 /*
-    Route:          /api/questions
+    Route:          /api/reviews/questions/:id
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get Single Question (by ID)
     Access:         Public
  */
 
@@ -213,7 +215,7 @@ router.get('/reviews/questions/:id', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels
+    Route:          /api/reviews/answers
     Method:         GET
     Description:    Get All Hotels
     Access:         Public
@@ -227,9 +229,9 @@ router.get('/reviews/answers', async (req, res) => {
 });
 
 /*
-    Route:          /api/questions
+    Route:          /api/reviews/answers/:id
     Method:         GET
-    Description:    Get All Hotels
+    Description:    Get Single Answer (by ID)
     Access:         Public
  */
 
