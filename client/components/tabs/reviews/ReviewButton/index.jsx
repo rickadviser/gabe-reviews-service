@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { review__smallButton__wrapper } from './css/review.scss';
+import { review__smallButton__wrapper } from './reviewButton.scss';
 
 const ReviewButton = ({ icon, text, ...others }) => (
   <div className={review__smallButton__wrapper}>

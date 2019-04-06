@@ -1,8 +1,8 @@
 import React from 'react';
 
-import TimeRow from './TimeRow';
+import TimeRow from '../TimeRow/index';
 
-import { reviews__subheader } from './css/review.scss';
+import { reviews__subheader } from '../review.scss';
 
 const calcMonth = target => {
   const current = new Date().getMonth();

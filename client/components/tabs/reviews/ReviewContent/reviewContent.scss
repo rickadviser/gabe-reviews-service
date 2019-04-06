@@ -1,0 +1,71 @@
+@import '../../../css/globals.scss';
+
+.review__content__wrapper {
+  background-color: #f9f9f9;
+  color: #4a4a4a;
+
+  h4 {
+    color: $blackBoldText;
+    font-size: 18px;
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  .review__content__tripInfo {
+    font-size: 14px;
+    display: block;
+  }
+
+  div {
+    margin-top: 10px;
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: $secondaryGrayFontColor;
+    margin-top: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 12px;
+      width: 10px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('https://png.pngtree.com/svg/20161117/b362dc768b.svg');
+      background-size: cover;
+    }
+  }
+}
+
+.review__content__key {
+  font-weight: bold;
+}
+
+.review__content__tripType {
+  margin-bottom: 10px;
+}
+
+.review__content__advisory {
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  color: $secondaryGrayFontColor;
+  font-style: italic;
+}
+
+.review__extras__stars__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+}

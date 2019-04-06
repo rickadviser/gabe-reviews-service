@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import ReviewsContext from './context/reviews-context';
+import ReviewsContext from '../context/reviews-context';
 
 import {
   reviews__search__wrapper,
   reviews__closeButton__wrapper,
   reviews__searchButton,
-} from './css/review.scss';
+} from './reviewsSearch.scss';
 
 const ReviewsSearch = () => {
   const { setSearchTerm } = useContext(ReviewsContext);

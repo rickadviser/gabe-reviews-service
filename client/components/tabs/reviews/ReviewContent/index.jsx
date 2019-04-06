@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import formatDate from 'dateformat';
 
-import reviewPropTypes from '../../../proptypes/review';
-import getReviewDescription from '../../../helpers/getReviewDescription';
-import getTripType from '../../../helpers/getTripType';
-import capitalize from '../../../helpers/capitalize';
+import reviewPropTypes from '../../../../proptypes/review';
+import getReviewDescription from '../../../../helpers/getReviewDescription';
+import getTripType from '../../../../helpers/getTripType';
+import capitalize from '../../../../helpers/capitalize';
 
-import ReviewStars from './ReviewStars';
+import ReviewStars from '../ReviewStars/index';
+
+import { review__inner__wrapper } from '../review.scss';
 
 import {
-  review__inner__wrapper,
   review__content__wrapper,
   review__content__key,
   review__content__tripType,
   review__content__tripInfo,
   review__content__advisory,
   review__extras__stars__wrapper,
-} from './css/review.scss';
+} from './reviewContent.scss';
 
 const ReviewContent = ({ review }) => {
   const { title, description, ratings } = review;

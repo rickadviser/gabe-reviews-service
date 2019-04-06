@@ -4,7 +4,7 @@
 import React, { useState, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import ReviewsContext from './context/reviews-context';
+import ReviewsContext from '../context/reviews-context';
 
 import {
   ratingbar__wrapper,
@@ -12,9 +12,9 @@ import {
   ratingbar__bar__green,
   ratingbar__inner__wrapper,
   label,
-} from './css/ratingsbar.scss';
+} from './ratingRow.scss';
 
-import { styled__checkbox } from './css/review.scss';
+import { styled__checkbox } from '../review.scss';
 
 const RatingRow = ({ type, rating, total, percentage }) => {
   const [checkbox, setCheckbox] = useState(false);

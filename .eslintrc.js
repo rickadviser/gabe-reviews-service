@@ -32,5 +32,6 @@ module.exports = {
     'function-paren-newline': 'off',
     'object-curly-newline': 'off',
     'operator-linebreak': 'off',
+    'no-underscore-dangle': 'off',
   },
 };

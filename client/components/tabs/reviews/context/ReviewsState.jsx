@@ -1,7 +1,8 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import ReviewsContext from './reviews-context';
+import HotelContext from '../../../../context/hotel-context';
 
 import getFilteredReviews from '../../../../helpers/filteredReviews';
 import crudReducer from '../../../../helpers/crudReducer';
@@ -14,6 +15,17 @@ const ReviewsState = ({ children }) => {
   const [selectedLanguage, setLanguage] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const { setReviews, hotelId, setLoading } = useContext(HotelContext);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/hotels/${hotelId}/reviews/general`)
+      .then(res => res.json())
+      .then(data => {
+        setReviews(data);
+        setLoading(false);
+      });
+  }, []);
+
   const contextData = {
     selectedRatings,
     selectedTimes,
@@ -21,7 +33,6 @@ const ReviewsState = ({ children }) => {
     selectedMentions,
     selectedLanguage,
     searchTerm,
-
     dispatchRatings,
     dispatchTimes,
     dispatchTypes,

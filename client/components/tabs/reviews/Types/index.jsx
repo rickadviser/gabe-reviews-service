@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import TypeRow from './TypeRow';
-import HotelContext from '../../../context/hotel-context';
+import TypeRow from '../TypeRow/index';
+import HotelContext from '../../../../context/hotel-context';
 
-import getTravelerTypes from '../../../helpers/getTravelerTypes';
+import getTravelerTypes from '../../../../helpers/getTravelerTypes';
 
-import { reviews__subheader } from './css/review.scss';
+import { reviews__subheader } from '../review.scss';
 
 const Types = () => {
   const { reviews } = useContext(HotelContext);

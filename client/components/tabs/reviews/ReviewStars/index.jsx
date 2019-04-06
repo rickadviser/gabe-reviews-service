@@ -6,7 +6,7 @@ import {
   review__stars__empty,
   review__stars__wrapper,
   review__stars__description,
-} from '../../css/main.scss';
+} from './reviewStars.scss';
 
 const renderStars = (rating, size) => {
   const stars = [];

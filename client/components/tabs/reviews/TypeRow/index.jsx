@@ -2,9 +2,9 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import ReviewsContext from './context/reviews-context';
+import ReviewsContext from '../context/reviews-context';
 
-import { styled__checkbox, checkbox__wrapper } from './css/review.scss';
+import { styled__checkbox, checkbox__wrapper } from '../review.scss';
 
 const TypeRow = ({ type }) => {
   const [checked, setChecked] = useState(false);

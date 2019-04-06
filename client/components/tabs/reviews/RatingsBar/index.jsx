@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 
-// import ReviewsContext from './context/reviews-context';
-import HotelContext from '../../../context/hotel-context';
-import RatingRow from './RatingRow';
+import HotelContext from '../../../../context/hotel-context';
+import RatingRow from '../RatingRow/index';
 
-import getSubTotalsByRatings from '../../../helpers/totalsByRatings';
+import getSubTotalsByRatings from '../../../../helpers/totalsByRatings';
 
-import { reviews__subheader } from './css/review.scss';
+import { reviews__subheader } from '../review.scss';
 
 const RatingsBar = () => {
   // reduce ratings to 5/4/3/2/1 star totals

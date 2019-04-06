@@ -1,12 +1,12 @@
 import React from 'react';
 
-import reviewPropTypes from '../../../proptypes/review';
+import reviewPropTypes from '../../../../proptypes/review';
 
-import ReviewUserInfo from './ReviewUserInfo';
-import ReviewContent from './ReviewContent';
-import ReviewLinks from './ReviewLinks';
+import ReviewUserInfo from '../ReviewUserInfo';
+import ReviewContent from '../ReviewContent';
+import ReviewLinks from '../ReviewLinks';
 
-import { review__single__wrapper } from './css/review.scss';
+import { review__single__wrapper } from './reviewSingle.scss';
 
 const ReviewSingle = ({ review }) => (
   <div className={review__single__wrapper}>

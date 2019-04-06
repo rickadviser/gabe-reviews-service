@@ -15,7 +15,6 @@ const GlobalState = ({ children, hotelId }) => {
   const [roomtips, setRooomtips] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch hotel info and array of reviews (all types)
   useEffect(() => {
     const baseUrl = 'http://localhost:3000/api';
     setLoading(true);
@@ -23,29 +22,13 @@ const GlobalState = ({ children, hotelId }) => {
       .then(res => res.json())
       .then(data => {
         setHotel(data[0]);
-        return data[0];
-      })
-      .then(({ _id: id }) =>
-        Promise.all([
-          fetch(`${baseUrl}/hotels/${id}/reviews/general`),
-          fetch(`${baseUrl}/hotels/${id}/reviews/photos`),
-          fetch(`${baseUrl}/hotels/${id}/reviews/questions`),
-          fetch(`${baseUrl}/hotels/${id}/reviews/roomtips`),
-        ])
-      )
-      .then(rawData => Promise.all(rawData.map(i => i.json())))
-      .then(([reviewData, photoData, questionData, roomtipData]) => {
-        setLoading(false);
-        setReviews(reviewData);
-        setPhotos(photoData);
-        setQuestions(questionData);
-        setRooomtips(roomtipData);
       })
       .catch(console.error);
   }, [hotelId]);
 
   const contextData = {
     hotel,
+    hotelId,
     setHotel,
     reviews,
     setReviews,

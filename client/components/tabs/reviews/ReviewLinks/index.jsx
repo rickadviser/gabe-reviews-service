@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ReviewButton from './ReviewButton';
+import ReviewButton from '../ReviewButton/index';
+
+import { review__inner__wrapper } from '../review.scss';
 
 import {
   review__links__wrapper,
-  review__inner__wrapper,
   review__links__helpfulVotes,
   review__links,
-} from './css/review.scss';
+} from './reviewLinks.scss';
 
 const ReviewLinks = ({ votes }) => (
   <div className={review__inner__wrapper}>

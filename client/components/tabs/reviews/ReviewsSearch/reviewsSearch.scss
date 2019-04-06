@@ -1,0 +1,35 @@
+@import '../../../css/globals.scss';
+
+.reviews__search__wrapper {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  transition: box-shadow 50ms ease-in;
+
+  div {
+    color: $darkGreenMain;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    @include center;
+
+    input {
+      width: 100%;
+      margin-left: 10px;
+      border: 0;
+      outline: none;
+    }
+  }
+}
+
+.reviews__searchButton,
+.reviews__closeButton__wrapper {
+  cursor: pointer;
+}
+
+.reviews__closeButton__wrapper {
+  transition: opacity 150ms ease;
+}

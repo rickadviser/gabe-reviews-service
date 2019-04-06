@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { checkbox__wrapper } from './css/review.scss';
+import { checkbox__wrapper } from '../review.scss';
 
 const LanguageRow = ({ languageData, checked, selectRadio }) => {
   const { language, total } = languageData;

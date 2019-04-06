@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
 
-import HotelContext from '../../../context/hotel-context';
-import ReviewsContext from './context/reviews-context';
-import LanguageRow from './LanguageRow';
+import HotelContext from '../../../../context/hotel-context';
+import ReviewsContext from '../context/reviews-context';
+import LanguageRow from '../LanguageRow/index';
 
-import { reviews__subheader } from './css/review.scss';
-import { getLanguages, getTotalLaguages } from '../../../helpers/getLanguages';
+import { reviews__subheader } from '../review.scss';
+import {
+  getLanguages,
+  getTotalLaguages,
+} from '../../../../helpers/getLanguages';
 
 const Languages = () => {
   const [checked, setChecked] = useState('All languages');
@@ -19,6 +22,7 @@ const Languages = () => {
     setChecked(e.target.value);
     setLanguage(e.target.value);
   };
+
   return (
     <>
       <h4 className={reviews__subheader}>Language</h4>

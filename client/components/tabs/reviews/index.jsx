@@ -3,13 +3,14 @@ import React from 'react';
 
 import ReviewsState from './context/ReviewsState';
 import TabHeader from '../../TabHeader';
-import RatingsBar from './RatingsBar';
-import Times from './Times';
-import Types from './Types';
-import Languages from './Languages';
-import ReviewsSearch from './ReviewsSearch';
-import ReviewsBody from './ReviewsBody';
-import styles from './css/review.scss';
+import RatingsBar from './RatingsBar/index';
+import Times from './Times/index';
+import Types from './Types/index';
+import Languages from './Languages/index';
+import BodyWrapper from '../BodyWrapper';
+import ReviewsSearch from './ReviewsSearch/index';
+import ReviewsBody from './ReviewsBody/index';
+import styles from './review.scss';
 
 import { upper__wrapper } from '../../css/main.scss';
 
@@ -48,7 +49,9 @@ const Reviews = () => (
       <ReviewsSearch />
     </div>
     <div>
-      <ReviewsBody />
+      <BodyWrapper>
+        <ReviewsBody />
+      </BodyWrapper>
     </div>
   </ReviewsState>
 );
