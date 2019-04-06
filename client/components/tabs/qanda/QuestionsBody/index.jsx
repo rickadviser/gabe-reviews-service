@@ -3,7 +3,7 @@ import React from 'react';
 const QuestionsBody = () => {
   return (
     <div>
-      <p>Content</p>
+      <p>Content2</p>
     </div>
   );
 };
