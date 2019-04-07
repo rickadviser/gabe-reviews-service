@@ -11,7 +11,7 @@ import {
 } from '../../../../helpers/getLanguages';
 
 const Languages = () => {
-  const [checked, setChecked] = useState('All languages');
+  const [checked, setChecked] = useState('English');
   const { reviews } = useContext(HotelContext);
   const { setLanguage } = useContext(ReviewsContext);
 

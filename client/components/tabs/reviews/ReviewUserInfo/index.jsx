@@ -56,7 +56,12 @@ const ReviewUserInfo = ({ user, date, type }) => {
       </div>
       <div>
         <div>
-          <span className={review__userInfo__username}>{user.username}</span>
+          <a
+            href="http://www.google.com"
+            className={review__userInfo__username}
+          >
+            {user.username}
+          </a>
           <span>{` ${reviewPhrase} ${formattedDate}`}</span>
         </div>
         <div className={review__userInfo__subInfo}>

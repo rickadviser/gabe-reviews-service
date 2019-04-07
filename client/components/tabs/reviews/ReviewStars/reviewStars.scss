@@ -3,16 +3,19 @@
 .review__stars__wrapper {
   @include center;
   justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 2px !important;
 }
 
 .review__stars__full,
 .review__stars__empty {
   @include center;
   position: relative;
+  display: inline-block;
   background-color: #fff;
   border: 2px solid lighten($greenRatings, 10%);
-  margin-right: 1px;
-  margin-top: 0;
+  margin: 0 1px 0 0 !important;
+  padding: 0 !important;
   border-radius: 50%;
 }
 
@@ -29,5 +32,5 @@
 }
 
 .review__stars__description {
-  margin-left: 6px;
+  margin-left: 8px;
 }
