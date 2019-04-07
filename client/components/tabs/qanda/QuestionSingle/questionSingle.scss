@@ -2,3 +2,16 @@
   margin-top: 10px;
   border: 1px solid #e5e5e5;
 }
+
+.question__single__description {
+  background-color: #fff;
+  padding: 0 24px 10px 24px;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 1px solid #e5e5e5;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

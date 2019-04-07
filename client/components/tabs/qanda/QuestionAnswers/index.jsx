@@ -22,14 +22,16 @@ const QuestionAnswers = ({ id: questionId }) => {
 
   return (
     <>
-      <QuestionAnswer answer={first} />
+      {first && <QuestionAnswer answer={first} />}
       {seeMore &&
         remaining.map(answer => (
-          <QuestionAnswer key={answer._id} answer={answer} />
+          <QuestionAnswer
+            key={answer._id}
+            answer={answer}
+            more={seeMore}
+            setMore={setSeeMore}
+          />
         ))}
-      <button type="button" onClick={() => setSeeMore(!seeMore)}>
-        See More
-      </button>
     </>
   );
 };

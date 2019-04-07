@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import ReviewUserInfo from '../../reviews/ReviewUserInfo/index';
 import QuestionAnswers from '../QuestionAnswers/index';
+import NewAnswer from '../NewAnswer/index';
 
 import {
   question__single__wrapper,
@@ -22,6 +23,7 @@ const QuestionSingle = ({ question }) => (
       {question.question.slice(0, -1) + '?'}
     </div>
     <QuestionAnswers id={question._id} />
+    <NewAnswer />
   </div>
 );
 
