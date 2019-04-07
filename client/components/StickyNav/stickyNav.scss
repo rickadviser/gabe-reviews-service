@@ -1,0 +1,42 @@
+.main__stickyNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border-bottom: 1px solid#e5e5e5;
+  padding-left: 300px;
+  width: 100%;
+  z-index: 10;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+      float: left;
+      margin: 0 2em 0 0;
+
+      a,
+      .main__stickyNav__selected {
+        cursor: pointer;
+        padding: 16px;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 14px;
+        color: #4a4a4a;
+        transition: color 200ms ease;
+      }
+
+      .main__stickyNav__selected {
+        font-weight: 700;
+        border-bottom: 3px solid #5da880;
+      }
+
+      a:hover {
+        color: #00a680;
+      }
+    }
+  }
+}
