@@ -99,7 +99,9 @@ router.get('/hotels/:id/reviews/photos', async (req, res) => {
  */
 
 router.get('/hotels/:id/reviews/roomtips', async (req, res) => {
-  const roomTips = await RoomTip.find({ hotel_id: req.params.id });
+  const roomTips = await RoomTip.find({ hotel_id: req.params.id })
+    .populate('user_id')
+    .exec();
   res.json(roomTips);
 });
 

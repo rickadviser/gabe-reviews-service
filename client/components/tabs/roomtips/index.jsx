@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import TabHeader from '../../TabHeader';
+import BodyWrapper from '../BodyWrapper';
+import RoomtipsState from './RoomtipsState';
+import RoomtipsBody from './RoomtipsBody/index';
 
 import { upper__wrapper } from '../../css/main.scss';
 
-class RoomTips extends Component {
-  state = {};
-
-  render() {
-    return (
-      <>
-        <div className={upper__wrapper}>
-          <TabHeader title="Room Tips" buttonText="Finish Your Review" />
-          <div>
-            <p>Content</p>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
+const RoomTips = () => (
+  <RoomtipsState>
+    <div className={upper__wrapper}>
+      <TabHeader title="Room Tips" buttonText="Finish Your Review" />
+    </div>
+    <div>
+      <BodyWrapper>
+        <RoomtipsBody />
+      </BodyWrapper>
+    </div>
+  </RoomtipsState>
+);
 
 export default RoomTips;

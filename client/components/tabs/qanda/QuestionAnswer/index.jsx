@@ -19,7 +19,6 @@ import {
 
 const QuestionAnswer = ({ answer, more, setMore }) => {
   const formattedDate = formatDate(answer.date, 'mmm yyyy');
-  console.log(answer);
 
   const toggleMore = e => {
     e.preventDefault();

@@ -6,7 +6,6 @@ import QuestionSingle from '../QuestionSingle/index';
 
 const QuestionsBody = () => {
   const { questions } = useContext(HotelContext);
-  console.log(questions);
 
   return (
     <QuestionsState>

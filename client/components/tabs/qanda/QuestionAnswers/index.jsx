@@ -22,7 +22,10 @@ const QuestionAnswers = ({ id: questionId }) => {
 
   return (
     <>
-      {first && <QuestionAnswer answer={first} />}
+      {first && (
+        <QuestionAnswer answer={first} more={seeMore} setMore={setSeeMore} />
+      )}
+
       {seeMore &&
         remaining.map(answer => (
           <QuestionAnswer

@@ -1,0 +1,18 @@
+.roomtip__single__inner__wrapper {
+  background-color: #fff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.roomtip__single__readMore {
+  color: #078171;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 8px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -15,7 +15,7 @@ const NewAnswer = () => {
       <div className={answer__search__icon__wrapper}>
         <FontAwesomeIcon
           icon="user"
-          size="md"
+          size="1x"
           color="#5da880"
           className={answer__search__icon}
         />

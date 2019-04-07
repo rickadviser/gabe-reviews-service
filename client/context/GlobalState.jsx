@@ -12,7 +12,7 @@ const GlobalState = ({ children, hotelId }) => {
   const [reviews, setReviews] = useState([]);
   const [photos, setPhotos] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [roomtips, setRooomtips] = useState([]);
+  const [roomtips, setRoomtips] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const GlobalState = ({ children, hotelId }) => {
     questions,
     setQuestions,
     roomtips,
-    setRooomtips,
+    setRoomtips,
     loading,
     setLoading,
   };
