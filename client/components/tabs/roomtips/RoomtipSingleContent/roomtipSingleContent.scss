@@ -1,11 +1,13 @@
+@import '../../../css/globals.scss';
+
 .roomtip__single__inner__wrapper {
-  background-color: #fff;
+  background-color: $white;
+  border-bottom: $main-border;
   padding: 16px 24px;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .roomtip__single__readMore {
-  color: #078171;
+  color: $dark-green-main;
   display: block;
   font-size: 0.875rem;
   font-weight: 700;

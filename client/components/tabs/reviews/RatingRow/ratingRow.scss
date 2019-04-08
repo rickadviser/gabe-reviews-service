@@ -2,8 +2,8 @@
 
 .ratingbar__wrapper {
   display: grid;
-  grid-template-columns: 1fr auto;
   font-size: 14px;
+  grid-template-columns: 1fr auto;
   margin-bottom: 10px;
 
   span {
@@ -12,9 +12,9 @@
 }
 
 .ratingbar__inner__wrapper {
+  cursor: pointer;
   display: grid;
   grid-template-columns: auto 1fr;
-  cursor: pointer;
 
   input {
     cursor: pointer;
@@ -22,27 +22,22 @@
   }
 
   .label {
+    cursor: pointer;
     display: grid;
     grid-template-columns: 80px 1fr;
-    cursor: pointer;
   }
 }
 
-/*.ratingbar__bar__bg,
-.ratingbar__bar__green {
-  height: 8px;
-}*/
-
 .ratingbar__bar__bg {
+  background-color: $ratings-bg;
   height: 12px;
   position: relative;
-  background-color: #e3e3e3;
 }
 
 .ratingbar__bar__green {
+  background-color: $dark-green-main;
+  bottom: 0;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: $darkGreenMain;
 }

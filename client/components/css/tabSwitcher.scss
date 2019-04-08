@@ -6,34 +6,34 @@
 }
 
 .tabswitch__tab {
-  flex: 25%;
   @include center;
-  flex-direction: column;
-  padding: 18px 30px;
+  background-color: $light-gray;
+  border: $thin-gray-border;
+  border-right: 0;
+  color: $dark-green-main;
   cursor: pointer;
+  flex: 25%;
+  flex-direction: column;
   outline: none;
-  color: #078171;
-  border: $thinGrayBorder;
-  border-right: none;
-  background-color: #f9f9f9;
+  padding: 18px 30px;
 
   &:last-of-type {
-    border-right: 0.5px solid #e5e5e5;
+    border-right: $thin-gray-border;
   }
 }
 .active {
-  color: #000a12;
-  position: relative;
-  outline: none;
+  background-color: $white;
+  border-bottom-color: $white;
+  border-top: 3px solid $dark-green-main;
+  color: $black-bold-text;
   font-weight: 700;
-  background-color: #fff;
-  border-bottom-color: #fff;
-  border-top: 3px solid $darkGreenMain;
+  outline: none;
+  position: relative;
 }
 
 .tabNumbers {
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   margin-top: 10px;
 }
 

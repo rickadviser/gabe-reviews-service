@@ -1,40 +1,40 @@
 @import '../../../css/globals.scss';
 
 .answer__writeNew {
-  display: grid;
-  grid-template-columns: auto 1fr;
   align-items: center;
+  background-color: $white;
+  border-top: $main-border;
+  display: grid;
   grid-gap: 10px;
+  grid-template-columns: auto 1fr;
   padding: 16px 24px;
-  background-color: #fff;
-  border-top: 1px solid #e5e5e5;
 }
 
 .answer__search__icon {
+  left: 50%;
   margin: 0 !important;
   padding: 0 !important;
   position: absolute;
   top: 60%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .answer__search {
-  padding: 6px;
+  border: $darker-gray-border;
+  border-radius: 2px;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 6px;
   resize: none;
   width: 100%;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  border: 1px solid #d6d6d6;
-  border-radius: 2px;
 }
 
 .answer__search__icon__wrapper {
-  height: 20px;
-  width: 20px;
+  border: $main-border;
   border-radius: 50%;
-  border: 1px solid #e5e5e5;
+  height: 20px;
   overflow: hidden;
   position: relative;
+  width: 20px;
 }

@@ -1,14 +1,14 @@
 @import '../../../css/globals.scss';
 
 .photosBar__wrapper {
-  border-top: $thinGrayBorder;
-  padding: 24px 0 0 0;
+  border-top: $thin-gray-border;
   margin-top: 24px;
+  padding: 24px 0 0 0;
 
   h5 {
-    text-transform: uppercase;
     margin: 0 0 10px 0;
     padding: 0;
+    text-transform: uppercase;
   }
 
   ul {
@@ -17,10 +17,10 @@
     padding: 0;
 
     li {
-      padding: 0;
+      display: inline-block;
       margin-bottom: 6px;
       margin-right: 6px;
-      display: inline-block;
+      padding: 0;
     }
   }
 }

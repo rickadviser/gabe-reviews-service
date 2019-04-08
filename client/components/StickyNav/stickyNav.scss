@@ -1,10 +1,12 @@
+@import '../css/globals.scss';
+
 .main__stickyNav {
+  background-color: $white;
+  border-bottom: $main-border;
+  left: 0;
+  padding-left: 300px;
   position: fixed;
   top: 0;
-  left: 0;
-  background-color: #fff;
-  border-bottom: 1px solid#e5e5e5;
-  padding-left: 300px;
   width: 100%;
   z-index: 10;
 
@@ -14,28 +16,28 @@
     padding: 0;
 
     li {
-      padding: 0;
       float: left;
       margin: 0 2em 0 0;
+      padding: 0;
 
       a,
       .main__stickyNav__selected {
+        color: $dark-gray-secondary;
         cursor: pointer;
-        padding: 16px;
         display: inline-block;
-        text-decoration: none;
         font-size: 14px;
-        color: #4a4a4a;
+        padding: 16px;
+        text-decoration: none;
         transition: color 200ms ease;
       }
 
       .main__stickyNav__selected {
+        border-bottom: 3px solid $main-green;
         font-weight: 700;
-        border-bottom: 3px solid #5da880;
       }
 
       a:hover {
-        color: #00a680;
+        color: $light-green-link-hover;
       }
     }
   }
