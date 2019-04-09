@@ -16,7 +16,7 @@ const Photos = () => (
         <PhotosBar />
       </div>
     </div>
-    <div>
+    <div data-testid="photos-body">
       <BodyWrapper>
         <PhotosBody />
       </BodyWrapper>

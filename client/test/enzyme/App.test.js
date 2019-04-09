@@ -20,7 +20,7 @@ describe('App.jsx component', () => {
   });
 
   it('should render wrapper without errors', () => {
-    const mainWrapper = component.find('.mainWrapper');
+    const mainWrapper = component.find('.main__wrapper');
     expect(mainWrapper.length).toBe(1);
   });
 

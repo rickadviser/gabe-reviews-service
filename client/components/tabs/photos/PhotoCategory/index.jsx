@@ -12,17 +12,15 @@ const PhotoCategory = ({ category }) => {
   const { selectedCategory, setSelectedCategory } = useContext(PhotosContext);
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setSelectedCategory(category)}
-        className={`${photosBar__category} ${
-          selectedCategory === category ? photosBar__category__active : ''
-        }`}
-      >
-        {category}
-      </button>
-    </>
+    <button
+      type="button"
+      onClick={() => setSelectedCategory(category)}
+      className={`${photosBar__category} ${
+        selectedCategory === category ? photosBar__category__active : ''
+      }`}
+    >
+      {category}
+    </button>
   );
 };
 

@@ -1,14 +1,8 @@
-/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
-  tabswitch__tab,
-  active,
-  tabNumbers,
-  tabCategory,
-} from './css/tabSwitcher.scss';
+import { tabswitch__tab, active, tabNumbers, tabCategory } from './tab.scss';
 
 const Tab = ({ selected, icon, total, category, onClick, handleKeyPress }) => (
   <div
@@ -17,6 +11,7 @@ const Tab = ({ selected, icon, total, category, onClick, handleKeyPress }) => (
     tabIndex={-1}
     onClick={onClick}
     onKeyPress={handleKeyPress}
+    data-testid={category}
   >
     <FontAwesomeIcon icon={icon} size="lg" />
     <span className={tabNumbers}>{total}</span>

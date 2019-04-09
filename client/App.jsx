@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import StickyNav from './components/StickyNav/index';
 import GlobalState from './context/GlobalState';
-import TabSwitcher from './components/TabSwitcher';
-import TabLoader from './components/TabLoader';
+import TabSwitcher from './components/TabSwitcher/index';
+import TabLoader from './components/TabLoader/index';
 import './helpers/loadIcons';
 
 import styles from './components/css/main.scss';

@@ -1,7 +1,7 @@
 @import '../../../css/globals.scss';
 
 .review__photo {
-  background-size: cover;
+  background-size: cover !important;
   cursor: pointer;
   height: 300px;
   position: relative;

@@ -23,19 +23,4 @@ describe('TabSwitcher.jsx component', () => {
     const tab = component.find(Tab);
     expect(tab.length).toBe(4);
   });
-
-  test('enzyme dive', () => {
-    // const TestComponent = () => (
-    //   <NameContext.Provider value="Provided Value">
-    //     <MyComponent />
-    //   </NameContext.Provider>
-    // );
-    // const element = shallow(<TestComponent />);
-    // expect(
-    //   element
-    //     .find(MyComponent)
-    //     .dive()
-    //     .text()
-    // ).toBe('Provided Value');
-  });
 });

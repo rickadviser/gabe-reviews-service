@@ -1,9 +1,4 @@
-@import 'globals';
-
-.tabswitch__wrapper {
-  @include center;
-  width: 100%;
-}
+@import '../css/globals.scss';
 
 .tabswitch__tab {
   @include center;
@@ -21,6 +16,7 @@
     border-right: $thin-gray-border;
   }
 }
+
 .active {
   background-color: $white;
   border-bottom-color: $white;
