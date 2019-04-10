@@ -1,0 +1,11 @@
+@import '../css/globals.scss';
+
+.main__wrapper {
+  @include center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 50px 300px;
+  max-width: 850px;
+  min-width: 700px;
+  width: 50%;
+}

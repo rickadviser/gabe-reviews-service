@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
+
 const Hotel = require('../models/Hotel');
 const Review = require('../models/Review');
 const User = require('../models/User');
@@ -14,7 +15,7 @@ const generatePhotosData = require('./photos');
 const generateRoomTipsData = require('./room_tips');
 const { generateQuestionsData, generateAnswerData } = require('./q_and_a');
 
-const seedMongo = async n => {
+const seedMongo = async (n = 99) => {
   const hotelsData = generateHotelsData(n);
   const usersData = generateUsersData(n);
 

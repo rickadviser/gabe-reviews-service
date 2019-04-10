@@ -2,15 +2,10 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import StickyNav from './components/StickyNav/index';
-import GlobalState from './context/GlobalState';
-import TabSwitcher from './components/TabSwitcher/index';
-import TabLoader from './components/TabLoader/index';
-import './helpers/loadIcons';
+import Main from './Main/index';
+import StickyNav from './StickyNav/index';
 
-import styles from './components/css/main.scss';
-
-const { main__wrapper } = styles;
+import '../helpers/loadIcons';
 
 const App = ({ hotelId }) => {
   const [currentTab, setCurrentTab] = useState('Reviews');
@@ -34,15 +29,16 @@ const App = ({ hotelId }) => {
   }, []);
 
   return (
-    <GlobalState hotelId={hotelId}>
+    <>
       {sticky && (
         <StickyNav activeNavTab={activeNavTab} setActive={setActive} />
       )}
-      <div className={main__wrapper}>
-        <TabSwitcher update={setCurrentTab} />
-        <TabLoader tab={currentTab} />
-      </div>
-    </GlobalState>
+      <Main
+        hotelId={hotelId}
+        currentTab={currentTab}
+        setCurrentTab={setCurrentTab}
+      />
+    </>
   );
 };
 
@@ -51,7 +47,7 @@ App.propTypes = {
 };
 
 ReactDOM.render(
-  <App hotelId="5ca68a56cb85a6716054a7d8" />,
+  <App hotelId="5cae2d24099a2f630657e514" />,
   document.getElementById('root')
 );
 

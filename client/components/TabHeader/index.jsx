@@ -1,23 +1,18 @@
-/* eslint-disable camelcase */
-/* eslint-disable operator-linebreak */
-/* eslint-disable arrow-parens */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   button__header,
   tabHeader__wrapper,
   tabHeader__popup__wrapper,
   tabHeader__popup,
-} from './tabHeader.scss';
-import {
-  button__primary,
-  button,
   popup__box,
   popup__box__link__wrapper,
   popup__box__link,
-  button__side,
-} from '../css/main.scss';
+} from './tabHeader.scss';
+
+import { button__primary, button, button__side } from '../css/main.scss';
 
 const TabHeader = ({ title, buttonText }) => {
   const [popup, setPopup] = useState(false);
@@ -63,41 +58,41 @@ const TabHeader = ({ title, buttonText }) => {
           >
             v
           </button>
-          <div
-            className={`${tabHeader__popup} ${popup__box}`}
-            style={{ display: !popup ? 'none' : 'block' }}
-          >
-            <div className={popup__box__link__wrapper}>
-              <div className="wrapper">
-                <FontAwesomeIcon icon="edit" size="sm" />
+
+          {popup && (
+            <div className={`${tabHeader__popup} ${popup__box}`}>
+              <div className={popup__box__link__wrapper}>
+                <div className="wrapper">
+                  <FontAwesomeIcon icon="edit" size="sm" />
+                </div>
+                <div className="wrapper">
+                  <a href="http://www.google.com" className={popup__box__link}>
+                    Finish Your Review
+                  </a>
+                </div>
               </div>
-              <div className="wrapper">
-                <a href="http://www.google.com" className={popup__box__link}>
-                  Finish Your Review
-                </a>
+              <div className={popup__box__link__wrapper}>
+                <div className="wrapper">
+                  <FontAwesomeIcon icon="camera" size="sm" />
+                </div>
+                <div className="wrapper">
+                  <a href="http://www.google.com" className={popup__box__link}>
+                    Post a Photo
+                  </a>
+                </div>
+              </div>
+              <div className={popup__box__link__wrapper}>
+                <div className="wrapper">
+                  <FontAwesomeIcon icon="lightbulb" size="sm" />
+                </div>
+                <div className="wrapper">
+                  <a href="http://www.google.com" className={popup__box__link}>
+                    Ask a Question
+                  </a>
+                </div>
               </div>
             </div>
-            <div className={popup__box__link__wrapper}>
-              <div className="wrapper">
-                <FontAwesomeIcon icon="camera" size="sm" />
-              </div>
-              <div className="wrapper">
-                <a href="http://www.google.com" className={popup__box__link}>
-                  Post a Photo
-                </a>
-              </div>
-            </div>
-            <div className={popup__box__link__wrapper}>
-              <div className="wrapper">
-                <FontAwesomeIcon icon="lightbulb" size="sm" />
-              </div>
-              <div className="wrapper">
-                <a href="http://www.google.com" className={popup__box__link}>
-                  Ask a Question
-                </a>
-              </div>
-            </div>
-          </div>
+          )}
         </span>
       </div>
     </div>
