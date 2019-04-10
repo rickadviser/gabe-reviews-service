@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import ReviewsContext from '../context/reviews-context';
 
-import { styled__checkbox, checkbox__wrapper } from '../review.scss';
+import TimeRowPresentational from './TimeRowPresentational';
 
 const months = [
   'Jan',
@@ -34,16 +33,13 @@ const TimeRow = ({ start, end }) => {
   };
 
   return (
-    <div className={checkbox__wrapper}>
-      <input
-        className={styled__checkbox}
-        id={start}
-        type="checkbox"
-        value={checked}
-        onChange={handleCheck}
-      />
-      <label htmlFor={start}>{`${months[start]} - ${months[end]}`}</label>
-    </div>
+    <TimeRowPresentational
+      start={start}
+      end={end}
+      handleCheck={handleCheck}
+      months={months}
+      checked={checked}
+    />
   );
 };
 

@@ -1,13 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import ReviewsSearchPresentational from './ReviewsSearchPresentational';
 import ReviewsContext from '../context/reviews-context';
-
-import {
-  reviews__search__wrapper,
-  reviews__closeButton__wrapper,
-  reviews__searchButton,
-} from './reviewsSearch.scss';
 
 const ReviewsSearch = () => {
   const { setSearchTerm } = useContext(ReviewsContext);
@@ -34,39 +28,15 @@ const ReviewsSearch = () => {
     '2px 2px #078171, -2px -2px #078171, 2px -2px #078171, -2px 2px #078171';
 
   return (
-    <div
-      className={reviews__search__wrapper}
-      style={{ boxShadow: outlined ? outlinedShadow : '' }}
-    >
-      <div>
-        <FontAwesomeIcon
-          icon="search"
-          size="sm"
-          onClick={handleSearch}
-          className={reviews__searchButton}
-        />
-        <input
-          type="text"
-          name="search"
-          value={search}
-          onChange={updateSearchField}
-          onKeyPress={handleSearch}
-          placeholder="Search reviews..."
-          onFocus={toggleWrapperOutline}
-          onBlur={toggleWrapperOutline}
-        />
-        <span
-          style={{ opacity: outlined ? 1 : 0 }}
-          onClick={handleClear}
-          onKeyPress={handleClear}
-          role="button"
-          tabIndex={-1}
-          className={reviews__closeButton__wrapper}
-        >
-          <FontAwesomeIcon icon="times-circle" size="sm" />
-        </span>
-      </div>
-    </div>
+    <ReviewsSearchPresentational
+      toggleWrapperOutline={toggleWrapperOutline}
+      updateSearchField={updateSearchField}
+      handleSearch={handleSearch}
+      handleClear={handleClear}
+      outlinedShadow={outlinedShadow}
+      outlined={outlined}
+      search={search}
+    />
   );
 };
 

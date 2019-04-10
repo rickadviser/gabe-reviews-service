@@ -1,16 +1,11 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable camelcase */
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import HotelContext from '../../context/hotel-context';
-import Tab from '../Tab/index';
-
-import { tabswitch__wrapper } from './tabSwitcher.scss';
+import TabSwitcherPresentational from './TabSwitcherPresentational';
 
 const TabSwitcher = ({ update }) => {
   const [selected, setSelected] = useState('Reviews');
-  // const [lengths, setLengths] = useState([]);
 
   const selectTab = tab => {
     update(tab);
@@ -54,19 +49,12 @@ const TabSwitcher = ({ update }) => {
   ];
 
   return (
-    <div className={tabswitch__wrapper}>
-      {data.map(({ category, icon, total }) => (
-        <Tab
-          key={category}
-          selected={selected}
-          category={category}
-          icon={icon}
-          total={total}
-          onClick={() => selectTab(category)}
-          handleKeyPress={handleKeyPress}
-        />
-      ))}
-    </div>
+    <TabSwitcherPresentational
+      data={data}
+      selected={selected}
+      handleKeyPress={handleKeyPress}
+      selectTab={selectTab}
+    />
   );
 };
 

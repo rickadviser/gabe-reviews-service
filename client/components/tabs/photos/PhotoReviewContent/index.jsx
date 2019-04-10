@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import userPropTypes from '../../../../proptypes/users';
+import photoPropTypes from '../../../../proptypes/photo';
 
 import {
   review__photo,
@@ -19,24 +18,7 @@ const PhotoReviewContent = ({ photo }) => (
 );
 
 PhotoReviewContent.propTypes = {
-  photo: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    category: PropTypes.oneOf([
-      'Dining',
-      'Pool & Beach',
-      'Family and Play Areas',
-    ]).isRequired,
-    url: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    likes: PropTypes.number.isRequired,
-    hotel_id: PropTypes.string.isRequired,
-    user_id: userPropTypes.isRequired,
-  }).isRequired,
+  photo: photoPropTypes.isRequired,
 };
 
 export default PhotoReviewContent;
-
-//
-//
-//

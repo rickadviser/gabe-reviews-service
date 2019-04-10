@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  review__stars__full,
-  review__stars__empty,
-  review__stars__wrapper,
-  review__stars__description,
-} from './reviewStars.scss';
+import ReviewStarsPresentational from './ReviewStarsPresentational';
+
+import { review__stars__full, review__stars__empty } from './reviewStars.scss';
 
 const renderStars = (rating, size) => {
   const stars = [];
@@ -28,12 +25,7 @@ const renderStars = (rating, size) => {
 const ReviewStars = ({ rating, size, text }) => {
   const stars = renderStars(rating, size);
 
-  return (
-    <div className={review__stars__wrapper}>
-      <span>{stars}</span>
-      {text && <span className={review__stars__description}>{text}</span>}
-    </div>
-  );
+  return <ReviewStarsPresentational stars={stars} text={text} />;
 };
 
 ReviewStars.propTypes = {

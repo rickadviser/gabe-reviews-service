@@ -1,14 +1,10 @@
 import React, { useState, useContext } from 'react';
 
+import LanguagesPresentational from './LanguagesPresentational';
 import HotelContext from '../../../../context/hotel-context';
 import ReviewsContext from '../context/reviews-context';
-import LanguageRow from '../LanguageRow/index';
 
-import { reviews__subheader } from '../review.scss';
-import {
-  getLanguages,
-  getTotalLaguages,
-} from '../../../../helpers/getLanguages';
+import { getLanguages, getTotalLaguages } from './getLanguages';
 
 const Languages = () => {
   const [checked, setChecked] = useState('English');
@@ -24,24 +20,12 @@ const Languages = () => {
   };
 
   return (
-    <>
-      <h4 className={reviews__subheader}>Language</h4>
-      <form>
-        <LanguageRow
-          checked={checked}
-          languageData={totalData}
-          selectRadio={selectRadio}
-        />
-        {languageData.map(language => (
-          <LanguageRow
-            key={language.language}
-            checked={checked}
-            languageData={language}
-            selectRadio={selectRadio}
-          />
-        ))}
-      </form>
-    </>
+    <LanguagesPresentational
+      checked={checked}
+      selectRadio={selectRadio}
+      languageData={languageData}
+      totalData={totalData}
+    />
   );
 };
 

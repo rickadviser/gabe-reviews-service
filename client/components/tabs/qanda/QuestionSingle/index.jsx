@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import ReviewUserInfo from '../../reviews/ReviewUserInfo/index';
 import QuestionAnswers from '../QuestionAnswers/index';
@@ -10,7 +9,7 @@ import {
   question__single__description,
 } from './questionSingle.scss';
 
-import userPropTypes from '../../../../proptypes/users';
+import questionPropTypes from '../../../../proptypes/question';
 
 const QuestionSingle = ({ question }) => (
   <div className={question__single__wrapper}>
@@ -28,13 +27,7 @@ const QuestionSingle = ({ question }) => (
 );
 
 QuestionSingle.propTypes = {
-  question: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    hotel_id: PropTypes.string.isRequired,
-    user_id: userPropTypes.isRequired,
-    question: PropTypes.string.isRequired,
-  }).isRequired,
+  question: questionPropTypes.isRequired,
 };
 
 export default QuestionSingle;
