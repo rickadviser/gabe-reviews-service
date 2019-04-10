@@ -13,6 +13,7 @@ const PhotosState = ({ children }) => {
     fetch(`http://localhost:3000/api/hotels/${hotelId}/reviews/photos`)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setPhotos(data);
         setLoading(false);
       });

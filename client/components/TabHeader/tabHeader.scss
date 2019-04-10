@@ -1,24 +1,26 @@
-@import 'globals';
+@import '../css/globals.scss';
 
 .tabHeader__wrapper {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  border-bottom: $thinGrayBorder;
-  margin-bottom: 24px;
 
   h2 {
+    color: $black-bold-text;
     flex: 1;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
     margin-top: 0;
+    padding-bottom: 0;
     padding-top: 0;
   }
 
   > div {
     flex: 1;
     text-align: right;
-    margin-bottom: 24px;
   }
 }
 
@@ -27,15 +29,15 @@
 }
 
 .tabHeader__popup__wrapper {
+  background-color: $white;
   position: relative;
-  background-color: #fff;
 }
 
 .tabHeader__popup {
+  background-color: $white;
+  color: $dark-green-main;
   position: absolute;
-  top: 200%;
   right: 0;
+  top: 200%;
   width: 250px;
-  color: #078171;
-  background-color: #fff;
 }

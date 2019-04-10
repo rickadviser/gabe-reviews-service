@@ -1,22 +1,44 @@
-/* eslint-disable import/extensions */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+
+import StickyNav from './components/StickyNav/index';
 import GlobalState from './context/GlobalState';
-import TabSwitcher from './components/TabSwitcher.jsx';
-import TabLoader from './components/TabLoader.jsx';
+import TabSwitcher from './components/TabSwitcher/index';
+import TabLoader from './components/TabLoader/index';
 import './helpers/loadIcons';
 
 import styles from './components/css/main.scss';
 
-const { mainWrapper } = styles;
+const { main__wrapper } = styles;
 
 const App = ({ hotelId }) => {
   const [currentTab, setCurrentTab] = useState('Reviews');
+  const [sticky, setSticky] = useState(false);
+  const [activeNavTab, setActiveNavTab] = useState('Review');
+
+  const showStickyNav = () => {
+    setSticky(window.pageYOffset > 200);
+  };
+
+  const setActive = (e, tab) => {
+    e.preventDefault();
+    setActiveNavTab(tab);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', showStickyNav);
+    return function removeScroll() {
+      window.removeEventListener('scroll', showStickyNav);
+    };
+  }, []);
 
   return (
     <GlobalState hotelId={hotelId}>
-      <div className={mainWrapper}>
+      {sticky && (
+        <StickyNav activeNavTab={activeNavTab} setActive={setActive} />
+      )}
+      <div className={main__wrapper}>
         <TabSwitcher update={setCurrentTab} />
         <TabLoader tab={currentTab} />
       </div>

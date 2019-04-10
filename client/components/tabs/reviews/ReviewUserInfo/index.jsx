@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import dateFormat from 'dateformat';
 import ReviewButton from '../ReviewButton/index';
 
+import getReviewPhrase from './getReviewPhrase';
 import userPropTypes from '../../../../proptypes/users';
 
 import {
@@ -37,11 +38,12 @@ const ReviewUserInfo = ({ user, date, type }) => {
 
   useEffect(() => {
     document.addEventListener('click', togglePopupOff);
-
     return function removeListener() {
       document.removeEventListener('click', togglePopupOff);
     };
   });
+
+  const reviewPhrase = getReviewPhrase(type);
 
   return (
     <div className={`${review__inner__wrapper} ${review__userInfo__wrapper}`}>
@@ -54,28 +56,28 @@ const ReviewUserInfo = ({ user, date, type }) => {
       </div>
       <div>
         <div>
-          <span className={review__userInfo__username}>{user.username}</span>
-          <span>
-            {` ${
-              type === 'photo' ? 'posted a photo' : 'wrote a review'
-            } ${formattedDate}`}
-          </span>
+          <a
+            href="http://www.google.com"
+            className={review__userInfo__username}
+          >
+            {user.username}
+          </a>
+          <span>{` ${reviewPhrase} ${formattedDate}`}</span>
         </div>
         <div className={review__userInfo__subInfo}>
           <span>{`${user.location && user.location.city}, `}</span>
           <span>{user.location && user.location.state}</span>
           <span className={review__userInfo__contributions}>
-            {` - ${user.contributions} `}
+            {` ⁃ ${user.contributions} `}
           </span>
           <span>contributions</span>
           <span className={review__userInfo__contributions}>
-            {` - ${user.helpful_votes} `}
+            {` ⁃ ${user.helpful_votes} `}
           </span>
           <span>helpful votes</span>
         </div>
       </div>
       <div className={review__userInfo__extras__wrapper}>
-        {/* put share button here */}
         <ReviewButton icon="user-plus" text="Follow" />
         <ReviewButton icon="ellipsis-h" text="" onClick={toggleExtras} />
         {extrasPopup && (

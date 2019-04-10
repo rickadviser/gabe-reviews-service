@@ -1,0 +1,71 @@
+@import '../../../css/globals.scss';
+
+.answer__outer__wrapper {
+  background-color: $white;
+  padding: 12px 24px;
+}
+
+.answer__wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: auto 1fr;
+}
+
+.answer__avatar {
+  height: 26px;
+  width: 26px;
+}
+
+.answer__answer {
+  color: $secondary-gray-font;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.answer__username {
+  color: $dark-gray-secondary;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.answer_userInfo,
+.answer_date {
+  color: $dark-gray-secondary;
+  margin-bottom: 9px;
+}
+
+.answer__userInfo {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.answer__date {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.answer__date__stars {
+  color: $light-gray-secondary;
+  font-weight: 700;
+}
+
+.answer__seeAll {
+  color: $black-bold-text;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-top: 16px;
+  outline: none;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

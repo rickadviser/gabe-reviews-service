@@ -30,7 +30,7 @@ const ReviewStars = ({ rating, size, text }) => {
 
   return (
     <div className={review__stars__wrapper}>
-      {stars}
+      <span>{stars}</span>
       {text && <span className={review__stars__description}>{text}</span>}
     </div>
   );

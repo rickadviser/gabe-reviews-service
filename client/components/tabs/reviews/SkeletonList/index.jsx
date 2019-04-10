@@ -28,9 +28,6 @@ const SkeletonList = () => (
     <div style={{ marginTop: 13 }}>
       <Skeleton height={20} />
     </div>
-    <div style={{ marginTop: 13 }}>
-      <Skeleton height={20} />
-    </div>
   </div>
 );
 

@@ -1,0 +1,20 @@
+@import '../../../css/globals.scss';
+
+.roomtip__single__inner__wrapper {
+  background-color: $white;
+  border-bottom: $main-border;
+  padding: 16px 24px;
+}
+
+.roomtip__single__readMore {
+  color: $dark-green-main;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 8px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

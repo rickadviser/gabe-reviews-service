@@ -3,10 +3,10 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import HotelContext from '../context/hotel-context';
-import Tab from './Tab';
+import HotelContext from '../../context/hotel-context';
+import Tab from '../Tab/index';
 
-import { tabswitch__wrapper } from './css/tabSwitcher.scss';
+import { tabswitch__wrapper } from './tabSwitcher.scss';
 
 const TabSwitcher = ({ update }) => {
   const [selected, setSelected] = useState('Reviews');

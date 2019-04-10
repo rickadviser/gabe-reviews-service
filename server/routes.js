@@ -99,7 +99,9 @@ router.get('/hotels/:id/reviews/photos', async (req, res) => {
  */
 
 router.get('/hotels/:id/reviews/roomtips', async (req, res) => {
-  const roomTips = await RoomTip.find({ hotel_id: req.params.id });
+  const roomTips = await RoomTip.find({ hotel_id: req.params.id })
+    .populate('user_id')
+    .exec();
   res.json(roomTips);
 });
 
@@ -111,7 +113,9 @@ router.get('/hotels/:id/reviews/roomtips', async (req, res) => {
  */
 
 router.get('/hotels/:id/reviews/questions', async (req, res) => {
-  const questions = await Question.find({ hotel_id: req.params.id });
+  const questions = await Question.find({ hotel_id: req.params.id })
+    .populate('user_id')
+    .exec();
   res.json(questions);
 });
 
@@ -212,6 +216,20 @@ router.get('/reviews/questions', async (req, res) => {
 router.get('/reviews/questions/:id', async (req, res) => {
   const question = await Question.find({ _id: req.params.id });
   res.json(question);
+});
+
+/*
+    Route:          /api/reviews/questions/:id/answers
+    Method:         GET
+    Description:    Get List of Answers Per Question
+    Access:         Public
+ */
+
+router.get('/reviews/questions/:id/answers', async (req, res) => {
+  const answers = await Answer.find({ question_id: req.params.id })
+    .populate('user_id')
+    .exec();
+  res.json(answers);
 });
 
 /*

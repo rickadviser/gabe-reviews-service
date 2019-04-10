@@ -7,6 +7,7 @@ import {
   faSearch,
   faTimesCircle,
   faEllipsisH,
+  faUser,
   faUserPlus,
   faThumbsUp,
   faRetweet,
@@ -21,6 +22,7 @@ library.add(faLightbulb);
 library.add(faSearch);
 library.add(faTimesCircle);
 library.add(faEllipsisH);
+library.add(faUser);
 library.add(faUserPlus);
 library.add(faThumbsUp);
 library.add(faRetweet);

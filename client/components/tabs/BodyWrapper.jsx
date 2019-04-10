@@ -13,6 +13,7 @@ const BodyWrapper = ({ children }) => {
         <>
           <SkeletonList />
           <SkeletonList />
+          <SkeletonList />
         </>
       )}
       {children}

@@ -1,21 +1,21 @@
 @import '../../../css/globals.scss';
 
 .photosBar__category {
-  cursor: pointer;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
+  background-color: $white;
+  border: $main-border;
   border-radius: 2px;
-  outline: none;
+  box-shadow: 1px 1px 0 0 $black-tint-5;
+  color: $dark-gray-secondary;
+  cursor: pointer;
   font-size: 12px;
-  color: #4a4a4a;
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.05);
   line-height: 14px;
+  outline: none;
   padding: 11px 12px 10px;
   text-align: center;
   text-decoration: none;
 }
 
 .photosBar__category__active {
-  color: #fff;
-  background-color: $darkGreenMain;
+  background-color: $dark-green-main;
+  color: $white;
 }

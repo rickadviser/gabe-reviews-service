@@ -3,31 +3,34 @@
 .review__stars__wrapper {
   @include center;
   justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 2px !important;
 }
 
 .review__stars__full,
 .review__stars__empty {
   @include center;
-  position: relative;
-  background-color: #fff;
-  border: 2px solid lighten($greenRatings, 10%);
-  margin-right: 1px;
-  margin-top: 0;
+  background-color: $white;
+  border: 2px solid lighten($main-green, 10%);
   border-radius: 50%;
+  display: inline-block;
+  margin: 0 1px 0 0 !important;
+  padding: 0 !important;
+  position: relative;
 }
 
 .review__stars__full::after {
+  background-color: $main-green;
+  border-radius: 50%;
   content: '';
+  height: 60%;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  height: 60%;
-  width: 60%;
-  background-color: $greenRatings;
-  border-radius: 50%;
   transform: translate(-50%, -50%);
+  width: 60%;
 }
 
 .review__stars__description {
-  margin-left: 6px;
+  margin-left: 8px;
 }

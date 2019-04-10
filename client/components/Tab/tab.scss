@@ -1,0 +1,38 @@
+@import '../css/globals.scss';
+
+.tabswitch__tab {
+  @include center;
+  background-color: $light-gray;
+  border: $thin-gray-border;
+  border-right: 0;
+  color: $dark-green-main;
+  cursor: pointer;
+  flex: 25%;
+  flex-direction: column;
+  outline: none;
+  padding: 18px 30px;
+
+  &:last-of-type {
+    border-right: $thin-gray-border;
+  }
+}
+
+.active {
+  background-color: $white;
+  border-bottom-color: $white;
+  border-top: 3px solid $dark-green-main;
+  color: $black-bold-text;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+}
+
+.tabNumbers {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.tabCategory {
+  font-size: 14px;
+}

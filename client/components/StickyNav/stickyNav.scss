@@ -1,0 +1,44 @@
+@import '../css/globals.scss';
+
+.main__stickyNav {
+  background-color: $white;
+  border-bottom: $main-border;
+  left: 0;
+  padding-left: 300px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      margin: 0 2em 0 0;
+      padding: 0;
+
+      a,
+      .main__stickyNav__selected {
+        color: $dark-gray-secondary;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        padding: 16px;
+        text-decoration: none;
+        transition: color 200ms ease;
+      }
+
+      .main__stickyNav__selected {
+        border-bottom: 3px solid $main-green;
+        font-weight: 700;
+      }
+
+      a:hover {
+        color: $light-green-link-hover;
+      }
+    }
+  }
+}

@@ -9,18 +9,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'style-loader',
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'css-loader',
-      //   query: {
-      //     modules: true,
-      //     localIdentName: '[name]__[local]___[hash:base64:5]',
-      //   },
-      // },
       {
         test: /\.scss$/,
         loader: [
@@ -40,7 +28,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.scss'],
   },
 
   output: {

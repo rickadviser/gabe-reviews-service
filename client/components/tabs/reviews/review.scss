@@ -1,18 +1,21 @@
 @import '../../css/globals.scss';
 
 .review__inner__wrapper {
-  background-color: #fff;
+  background-color: $white;
   padding: 16px 24px;
 }
 
 .reviews__wrapper {
+  border-top: $thin-gray-border;
   display: grid;
+  font-size: 14px;
   grid-template:
     'ratings date type language'
     'mentions mentions mentions mentions'
     / minmax(250px, 350px) auto auto auto;
+  margin-top: 24px;
+  padding-top: 24px;
   width: 100%;
-  font-size: 14px;
 }
 
 .reviews__ratings {
@@ -33,6 +36,11 @@
 
 .reviews__mentions {
   grid-area: mentions;
+
+  p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .checkbox__wrapper {
@@ -40,35 +48,35 @@
 }
 
 .reviews__subheader {
+  color: $black;
   margin-top: 0;
   padding-top: 0;
-  color: #000;
 }
 
 .styled__checkbox {
-  position: absolute;
   opacity: 0;
+  position: absolute;
 
   & + label,
   & + span {
-    position: relative;
     cursor: pointer;
     padding: 0;
+    position: relative;
   }
 
   // Box.
-  & + label:before,
-  & + span:before {
+  & + label::before,
+  & + span::before {
+    background: $white;
+    border: $checkbox-border;
+    border-radius: 3px;
     content: '';
-    margin-right: 10px;
     display: inline-block;
+    height: 1.2em;
+    margin-right: 10px;
+    transition: all 100ms ease;
     vertical-align: text-top;
     width: 1.2em;
-    height: 1.2em;
-    background: white;
-    border: 1px solid #888;
-    border-radius: 3px;
-    transition: all 100ms ease;
   }
 
   /* Box hover
@@ -82,74 +90,74 @@
   // Box checked
   &:checked + label:before,
   &:checked + span:before {
-    background: $darkGreenMain;
+    background: $dark-green-main;
   }
 
   // Disabled state label.
   &:disabled + label,
   &:disabled + span {
-    color: #b8b8b8;
+    color: $checkbox-gray-1;
     cursor: auto;
   }
 
   // Disabled box.
   &:disabled + label:before,
   &:disabled + span:before {
+    background: $checkbox-gray-bg;
     box-shadow: none;
-    background: #ddd;
   }
 
   // Checkmark. Could be replaced with an image
   &:checked + label:after,
   &:checked + span:after {
+    background: $white;
+    box-shadow: 2px 0 0 $white, 4px 0 0 $white, 4px -2px 0 $white,
+      4px -4px 0 $white, 4px -6px 0 $white, 4px -8px 0 $white;
     content: '';
-    position: absolute;
-    left: 4px;
-    top: 8px;
-    background: white;
-    width: 2px;
     height: 2px;
-    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
-      4px -6px 0 white, 4px -8px 0 white;
+    left: 4px;
+    position: absolute;
+    top: 8px;
     transform: rotate(45deg);
+    width: 2px;
   }
 }
 
 [type='radio']:checked,
 [type='radio']:not(:checked) {
-  position: absolute;
   left: -9999px;
+  position: absolute;
 }
 [type='radio']:checked + label,
 [type='radio']:not(:checked) + label {
-  position: relative;
-  padding-left: 28px;
   cursor: pointer;
   display: inline-block;
+  padding-left: 28px;
+  position: relative;
 }
 [type='radio']:checked + label:before,
 [type='radio']:not(:checked) + label:before {
+  background: $white;
+  border: $checkbox-border;
+  border-radius: 100%;
   content: '';
-  position: absolute;
+  height: 20px;
   left: 0;
+  position: absolute;
   top: 0;
   width: 20px;
-  height: 20px;
-  border: 1px solid #888;
-  border-radius: 100%;
-  background: #fff;
 }
 [type='radio']:checked + label:after,
 [type='radio']:not(:checked) + label:after {
+  background: $dark-green-main;
+  border-radius: 100%;
   content: '';
-  width: 12px;
   height: 12px;
-  background: $darkGreenMain;
+  left: 4px;
   position: absolute;
   top: 4px;
-  left: 4px;
-  border-radius: 100%;
   transition: all 100ms ease;
+  width: 12px;
 }
 [type='radio']:not(:checked) + label:after {
   opacity: 0;

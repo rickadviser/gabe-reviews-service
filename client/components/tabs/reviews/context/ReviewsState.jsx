@@ -12,7 +12,7 @@ const ReviewsState = ({ children }) => {
   const [selectedTimes, dispatchTimes] = useReducer(crudReducer, []);
   const [selectedTypes, dispatchTypes] = useReducer(crudReducer, []);
   const [selectedMentions, dispatchMentions] = useReducer(crudReducer, []);
-  const [selectedLanguage, setLanguage] = useState('All');
+  const [selectedLanguage, setLanguage] = useState('English');
   const [searchTerm, setSearchTerm] = useState('');
 
   const { setReviews, hotelId, setLoading } = useContext(HotelContext);
