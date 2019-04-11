@@ -9,7 +9,6 @@ cache:
 before_script:
   - sleep 15
   - npm run seed
-  - npm start
 script:
   - npm test
   - npm run build
