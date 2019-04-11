@@ -8,7 +8,7 @@ const QuestionsState = ({ children }) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/hotels/${hotelId}/reviews/questions`)
+    fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/questions`)
       .then(res => res.json())
       .then(data => {
         setQuestions(data);

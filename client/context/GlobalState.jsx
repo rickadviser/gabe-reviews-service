@@ -16,7 +16,7 @@ const GlobalState = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const baseUrl = 'http://localhost:3000/api';
+    const baseUrl = 'http://localhost:3004/api';
     setLoading(true);
     fetch(`${baseUrl}/hotels/first`)
       .then(res => res.json())

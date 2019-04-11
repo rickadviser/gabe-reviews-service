@@ -18,7 +18,7 @@ const ReviewsState = ({ children }) => {
   const { setReviews, hotelId, setLoading } = useContext(HotelContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/hotels/${hotelId}/reviews/general`)
+    fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/general`)
       .then(res => res.json())
       .then(data => {
         setReviews(data);
