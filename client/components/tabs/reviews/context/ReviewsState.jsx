@@ -18,13 +18,15 @@ const ReviewsState = ({ children }) => {
   const { setReviews, hotelId, setLoading } = useContext(HotelContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/general`)
-      .then(res => res.json())
-      .then(data => {
-        setReviews(data);
-        setLoading(false);
-      });
-  }, []);
+    if (hotelId) {
+      fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/general`)
+        .then(res => res.json())
+        .then(data => {
+          setReviews(data);
+          setLoading(false);
+        });
+    }
+  }, [hotelId]);
 
   const contextData = {
     selectedRatings,
