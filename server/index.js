@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 mongoose
-  .connect('mongodb://localhost:27017/rickadvisor', {
+  .connect('mongodb://database/rickadvisor', {
     useNewUrlParser: true,
   })
   .then(() => console.log('MongoDB Connected'))

@@ -8,8 +8,8 @@ import TabLoader from '../TabLoader/index';
 import { main__wrapper } from './mainComponent.scss';
 import '../css/main.scss';
 
-const MainPresentational = ({ hotelId, currentTab, setCurrentTab }) => (
-  <GlobalState hotelId={hotelId}>
+const MainPresentational = ({ currentTab, setCurrentTab }) => (
+  <GlobalState>
     <div className={main__wrapper}>
       <TabSwitcher update={setCurrentTab} />
       <TabLoader tab={currentTab} />
@@ -18,7 +18,6 @@ const MainPresentational = ({ hotelId, currentTab, setCurrentTab }) => (
 );
 
 MainPresentational.propTypes = {
-  hotelId: PropTypes.string.isRequired,
   currentTab: PropTypes.string.isRequired,
   setCurrentTab: PropTypes.func.isRequired,
 };

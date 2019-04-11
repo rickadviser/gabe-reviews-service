@@ -52,15 +52,15 @@ router.get('/hotels', async (req, res) => {
 });
 
 /*
-    Route:          /api/hotels/:id
+    Route:          /api/hotels/random
     Method:         GET
-    Description:    Get Single Hotel
+    Description:    Get First Hotel
     Access:         Public
  */
 
-router.get('/hotels/:id', async (req, res) => {
-  const hotels = await Hotel.find({ _id: req.params.id });
-  res.json(hotels);
+router.get('/hotels/first', async (req, res) => {
+  const hotels = await Hotel.find({});
+  res.json(hotels[0]);
 });
 
 /*
