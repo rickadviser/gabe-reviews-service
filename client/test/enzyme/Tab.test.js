@@ -2,7 +2,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { shallow, mount, render } from 'enzyme';
-import Tab from '../../components/Tab';
+import Tab from '../../components/Tab/index';
 import './globalMocks';
 
 describe('Tab', () => {

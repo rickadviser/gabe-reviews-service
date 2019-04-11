@@ -2,16 +2,24 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { shallow, mount, render } from 'enzyme';
-import TabHeader from '../../components/TabHeader';
+import TabHeaderPresentational from '../../components/TabHeader/TabHeaderPresentational';
 import './globalMocks';
 
-describe('TabHeader', () => {
+describe('<TabHeaderPresentational />', () => {
   let component;
   let title;
   let button;
+  const toggleButtonPopup = jest.fn();
 
   beforeEach(() => {
-    component = shallow(<TabHeader title="Title1" buttonText="Button1" />);
+    component = shallow(
+      <TabHeaderPresentational
+        title="Title1"
+        buttonText="Button1"
+        popup={false}
+        toggleButtonPopup={toggleButtonPopup}
+      />
+    );
   });
 
   it('should render the correct title', () => {

@@ -1,14 +1,7 @@
 import React from 'react';
 
-import TimeRow from '../TimeRow/index';
-
-import { reviews__subheader } from '../review.scss';
-
-const calcMonth = target => {
-  const current = new Date().getMonth();
-  const newMonth = current + target;
-  return newMonth > 11 ? newMonth - 12 : newMonth;
-};
+import TimesPresentational from './TimesPresentational';
+import calcMonth from './calcMonth';
 
 const Times = () => {
   const data = [
@@ -30,16 +23,7 @@ const Times = () => {
     },
   ];
 
-  return (
-    <>
-      <h4 className={reviews__subheader}>Time of year</h4>
-      <div>
-        {data.map(({ start, end }) => (
-          <TimeRow key={start} start={start} end={end} />
-        ))}
-      </div>
-    </>
-  );
+  return <TimesPresentational data={data} />;
 };
 
 export default Times;

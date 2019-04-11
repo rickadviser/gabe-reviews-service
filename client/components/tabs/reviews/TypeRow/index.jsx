@@ -3,8 +3,7 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import ReviewsContext from '../context/reviews-context';
-
-import { styled__checkbox, checkbox__wrapper } from '../review.scss';
+import TypeRowPresentational from './TypeRowPresentational';
 
 const TypeRow = ({ type }) => {
   const [checked, setChecked] = useState(false);
@@ -20,16 +19,11 @@ const TypeRow = ({ type }) => {
   };
 
   return (
-    <div className={checkbox__wrapper}>
-      <input
-        className={styled__checkbox}
-        id={type}
-        type="checkbox"
-        value={checked}
-        onChange={handleCheck}
-      />
-      <label htmlFor={type}>{type}</label>
-    </div>
+    <TypeRowPresentational
+      handleCheck={handleCheck}
+      type={type}
+      checked={checked}
+    />
   );
 };
 

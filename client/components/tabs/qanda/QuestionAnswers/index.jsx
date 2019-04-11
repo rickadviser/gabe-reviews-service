@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import QuestionAnswer from '../QuestionAnswer/index';
+import QuestionAnswersPresentational from './QuestionAnswersPresentational';
 
 const QuestionAnswers = ({ id: questionId }) => {
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
@@ -21,21 +22,12 @@ const QuestionAnswers = ({ id: questionId }) => {
   const [first, ...remaining] = answers;
 
   return (
-    <>
-      {first && (
-        <QuestionAnswer answer={first} more={seeMore} setMore={setSeeMore} />
-      )}
-
-      {seeMore &&
-        remaining.map(answer => (
-          <QuestionAnswer
-            key={answer._id}
-            answer={answer}
-            more={seeMore}
-            setMore={setSeeMore}
-          />
-        ))}
-    </>
+    <QuestionAnswersPresentational
+      first={first}
+      remaining={remaining}
+      seeMore={seeMore}
+      setSeeMore={setSeeMore}
+    />
   );
 };
 

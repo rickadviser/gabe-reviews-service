@@ -24,6 +24,8 @@ PhotoReview.propTypes = {
       'Dining',
       'Pool & Beach',
       'Family and Play Areas',
+      'Business Center & Event Rooms',
+      'Room & Suite',
     ]).isRequired,
     url: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,

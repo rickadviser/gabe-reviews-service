@@ -1,17 +1,27 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { shallow, mount, render } from 'enzyme';
-import App from '../../App';
+import MainPresentational from '../../components/Main/MainPresentational';
 import GlobalState from '../../context/GlobalState';
 import TabSwitcher from '../../components/TabSwitcher';
 import TabLoader from '../../components/TabLoader';
 import './globalMocks';
 
-describe('App.jsx component', () => {
+describe('<MainPresentational />', () => {
   let component;
+  let setCurrentTab;
 
   beforeEach(() => {
-    component = shallow(<App hotelId="" />);
+    setCurrentTab = jest.fn();
+
+    component = shallow(
+      <MainPresentational
+        hotelId="5cae2d24099a2f630657e514"
+        currentTab="Reviews"
+        setCurrentTab={setCurrentTab}
+      />
+    );
   });
 
   it('should render GlobalState without errors', () => {

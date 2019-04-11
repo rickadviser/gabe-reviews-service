@@ -10,6 +10,7 @@ import {
 
 const NewAnswer = () => {
   const [search, setSearch] = useState('');
+
   return (
     <div className={answer__writeNew}>
       <div className={answer__search__icon__wrapper}>

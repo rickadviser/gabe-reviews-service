@@ -14,10 +14,10 @@ import 'jest-dom/extend-expect';
 // import axiosMock from 'axios';
 import '../enzyme/globalMocks';
 
-import App from '../../App';
+import Main from '../../components/Main/index';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App hotelId="123" />, div);
+  ReactDOM.render(<Main hotelId="5cae2d24099a2f630657e514" />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

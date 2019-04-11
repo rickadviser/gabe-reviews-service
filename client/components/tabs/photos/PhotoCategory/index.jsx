@@ -30,6 +30,8 @@ PhotoCategory.propTypes = {
     'Dining',
     'Pool & Beach',
     'Family and Play Areas',
+    'Business Center & Event Rooms',
+    'Room & Suite',
   ]).isRequired,
 };
 

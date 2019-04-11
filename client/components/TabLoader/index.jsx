@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Photos from '../tabs/photos';
-import QAndA from '../tabs/qanda';
-import RoomTips from '../tabs/roomtips';
-import Reviews from '../tabs/reviews';
-
 import { main__filter__wrapper } from '../css/main.scss';
+
+// const Photos = lazy(() => import('../tabs/photos'));
+// const QAndA = lazy(() => import('../tabs/qanda'));
+// const RoomTips = lazy(() => import('../tabs/roomtips'));
+// const Reviews = lazy(() => import('../tabs/reviews'));
+import Photos from '../tabs/photos/index';
+import QAndA from '../tabs/qanda/index';
+import RoomTips from '../tabs/roomtips/index';
+import Reviews from '../tabs/reviews/index';
 
 const TabLoader = ({ tab }) => {
   let Component;
@@ -28,7 +32,9 @@ const TabLoader = ({ tab }) => {
 
   return (
     <div className={main__filter__wrapper}>
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <Component />
+      {/* </Suspense> */}
     </div>
   );
 };

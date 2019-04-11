@@ -10,7 +10,7 @@ import {
 import 'jest-dom/extend-expect';
 import '../enzyme/globalMocks';
 
-import App from '../../App';
+import Main from '../../components/Main/index';
 // import TabSwitcher from '../../components/TabSwitcher';
 
 afterEach(cleanup);
@@ -18,7 +18,7 @@ afterEach(cleanup);
 describe('<Tab />', () => {
   it('should render proper review tab when clicking tabs', () => {
     const { queryByTestId, getByTestId, getByText } = render(
-      <App hotelId="5ca68a56cb85a6716054a7d8" />
+      <Main hotelId="5cae2d24099a2f630657e514" />
     );
     const reviewsTab = queryByTestId('Photos');
     fireEvent.click(reviewsTab);
