@@ -11,4 +11,3 @@ before_script:
   - npm run seed
 script:
   - npm test
-  - npm run build
