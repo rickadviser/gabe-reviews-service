@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const seedMongo = require('./seedMongo');
 
 mongoose
-  .connect('mongodb://localhost:27017/rickadvisor', {
+  .connect('mongodb://database/rickadvisor', {
     useNewUrlParser: true,
   })
   .then(() => {

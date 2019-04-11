@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import HotelContext from './hotel-context';
 
-const GlobalState = ({ children, hotelId }) => {
+const GlobalState = ({ children }) => {
   const [hotel, setHotel] = useState({
     address: {},
     nearest_airport: {},
@@ -18,17 +18,18 @@ const GlobalState = ({ children, hotelId }) => {
   useEffect(() => {
     const baseUrl = 'http://localhost:3000/api';
     setLoading(true);
-    fetch(`${baseUrl}/hotels/${hotelId}`)
+    fetch(`${baseUrl}/hotels/first`)
       .then(res => res.json())
       .then(data => {
-        setHotel(data[0]);
+        console.log(data);
+        setHotel(data);
       })
       .catch(console.error);
-  }, [hotelId]);
+  }, []);
 
   const contextData = {
     hotel,
-    hotelId,
+    hotelId: hotel._id,
     setHotel,
     reviews,
     setReviews,
@@ -51,7 +52,6 @@ const GlobalState = ({ children, hotelId }) => {
 
 GlobalState.propTypes = {
   children: PropTypes.node.isRequired,
-  hotelId: PropTypes.string.isRequired,
 };
 
 export default GlobalState;
