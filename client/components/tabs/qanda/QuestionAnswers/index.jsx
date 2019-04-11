@@ -11,7 +11,7 @@ const QuestionAnswers = ({ id: questionId }) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/reviews/questions/${questionId}/answers`)
+    fetch(`http://localhost:3004/api/reviews/questions/${questionId}/answers`)
       .then(res => res.json())
       .then(data => {
         setAnswers(data);

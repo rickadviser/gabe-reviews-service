@@ -58,7 +58,7 @@ router.get('/hotels', async (req, res) => {
     Access:         Public
  */
 
-router.get('/hotels/first', async (req, res) => {
+router.get('/hotel', async (req, res) => {
   const hotels = await Hotel.find({});
   res.json(hotels[0]);
 });

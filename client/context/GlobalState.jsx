@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import HotelContext from './hotel-context';
 
 const GlobalState = ({ children }) => {
+  const [hotelId, setHotelId] = useState('');
   const [hotel, setHotel] = useState({
     address: {},
     nearest_airport: {},
@@ -18,18 +19,18 @@ const GlobalState = ({ children }) => {
   useEffect(() => {
     const baseUrl = 'http://localhost:3004/api';
     setLoading(true);
-    fetch(`${baseUrl}/hotels/first`)
+    fetch(`${baseUrl}/hotel`)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setHotel(data);
+      .then(firstHotel => {
+        setHotel(firstHotel);
+        setHotelId(firstHotel._id);
       })
       .catch(console.error);
-  }, []);
+  }, [hotelId]);
 
   const contextData = {
     hotel,
-    hotelId: hotel._id,
+    hotelId,
     setHotel,
     reviews,
     setReviews,
