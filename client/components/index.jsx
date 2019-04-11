@@ -5,4 +5,4 @@ import Main from './Main/index';
 
 const App = () => <Main />;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('reviews'));

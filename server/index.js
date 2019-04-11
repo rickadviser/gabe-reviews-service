@@ -1,19 +1,21 @@
 const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const apiRoutes = require('./routes');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3004;
 
 mongoose
-  .connect('mongodb://database/rickadvisor', {
+  .connect('mongodb://localhost:27017/rickadvisor', {
     useNewUrlParser: true,
   })
   .then(() => console.log('MongoDB Connected'))
   .catch(console.error);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
