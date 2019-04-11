@@ -1,2 +1,15 @@
 language: node_js
-services: mongodb
+node_js:
+  - 'stable'
+services:
+  - mongodb
+cache:
+  directories:
+    - node_modules
+before_script:
+  - sleep 15
+  - npm run seed
+  - npm start
+script:
+  - npm test
+  - npm run build

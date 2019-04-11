@@ -10,19 +10,24 @@ import {
 import 'jest-dom/extend-expect';
 import '../enzyme/globalMocks';
 
-import App from '../../App';
+import Main from '../../components/Main/index';
 
 afterEach(cleanup);
 
-it('should render proper review tab when clicking tabs', () => {
+const sleep = t => new Promise(r => setTimeout(r, t));
+
+test('should render proper review tab when clicking tabs', () => {
   const { queryByTestId, getByTestId, getByText } = render(
-    <App hotelId="5ca68a56cb85a6716054a7d8" />
+    <Main hotelId="5cae2d24099a2f630657e514" />
   );
   const reviewsTab = queryByTestId('Photos');
   expect(reviewsTab).toBeTruthy();
   fireEvent.click(reviewsTab);
-  const photosBody = queryByTestId('photos-body');
-  expect(photosBody).toBeTruthy();
+  sleep(5).then(() => {
+    // const photosBody = await waitForElement(() => queryByTestId('photos-body'));
+    const photosBody = queryByTestId('photos-body');
+    expect(photosBody).toBeTruthy();
+  });
 });
 
 // getByLabelText('Text').value = 'hello';

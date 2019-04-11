@@ -6,7 +6,7 @@ import PhotoCategory from '../PhotoCategory/index';
 import { photosBar__wrapper } from './photosBar.scss';
 
 const PhotosBarPresentational = ({ categories }) => (
-  <div className={photosBar__wrapper}>
+  <div className={photosBar__wrapper} data-testid="photosbar">
     <h5>Album Categories</h5>
     <ul>
       <li>

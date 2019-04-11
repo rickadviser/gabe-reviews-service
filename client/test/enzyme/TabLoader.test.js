@@ -2,7 +2,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { shallow, mount, render } from 'enzyme';
-import TabLoader from '../../components/TabLoader';
+import TabLoader from '../../components/TabLoader/index';
 import Reviews from '../../components/tabs/reviews/index';
 import Photos from '../../components/tabs/photos/index';
 import QAndA from '../../components/tabs/qanda/index';
@@ -13,6 +13,7 @@ import './globalMocks';
 describe('TabLoader', () => {
   let component;
   let wrapper;
+  const sleep = t => new Promise(r => setTimeout(r, t));
 
   beforeEach(() => {
     const props = {
@@ -20,16 +21,21 @@ describe('TabLoader', () => {
     };
 
     component = shallow(<TabLoader {...props} />);
-    wrapper = component.find('.main__filter__wrapper');
   });
 
   it('should render the correct tab', () => {
-    expect(wrapper.find(Reviews).exists()).toBeTruthy();
+    sleep(5).then(() => {
+      wrapper = component.find('.main__filter__wrapper');
+      expect(wrapper.find(Reviews).exists()).toBeTruthy();
+    });
   });
 
   it('should not render any incorrect tabs', () => {
-    expect(wrapper.find(Photos).exists()).toBeFalsy();
-    expect(wrapper.find(QAndA).exists()).toBeFalsy();
-    expect(wrapper.find(RoomTips).exists()).toBeFalsy();
+    sleep(5).then(() => {
+      wrapper = component.find('.main__filter__wrapper');
+      expect(wrapper.find(Photos).exists()).toBeFalsy();
+      expect(wrapper.find(QAndA).exists()).toBeFalsy();
+      expect(wrapper.find(RoomTips).exists()).toBeFalsy();
+    });
   });
 });

@@ -2,16 +2,53 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { shallow, mount, render } from 'enzyme';
-import TabSwitcher from '../../components/TabSwitcher';
-import Tab from '../../components/Tab';
+import TabSwitcherPresentational from '../../components/TabSwitcher/TabSwitcherPresentational';
+import Tab from '../../components/Tab/index';
 import './globalMocks';
 
 describe('TabSwitcher.jsx component', () => {
   let component;
   let wrapper;
+  let selectTab;
+  let handleKeyPress;
+  let data;
+  const sleep = t => new Promise(r => setTimeout(r, t));
 
   beforeEach(() => {
-    component = shallow(<TabSwitcher update={() => {}} />);
+    selectTab = jest.fn();
+    handleKeyPress = jest.fn();
+
+    data = [
+      {
+        category: 'Test1',
+        icon: 'test1',
+        total: 12,
+      },
+      {
+        category: 'Test2',
+        icon: 'test2',
+        total: 15,
+      },
+      {
+        category: 'Test3',
+        icon: 'test3',
+        total: 16,
+      },
+      {
+        category: 'Test4',
+        icon: 'test4',
+        total: 10,
+      },
+    ];
+
+    component = shallow(
+      <TabSwitcherPresentational
+        data={data}
+        selected="Test1"
+        selectTab={selectTab}
+        handleKeyPress={handleKeyPress}
+      />
+    );
     wrapper = component.find('.tabswitch__wrapper');
   });
 
