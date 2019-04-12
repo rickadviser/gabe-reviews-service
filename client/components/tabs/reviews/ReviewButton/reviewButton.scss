@@ -4,6 +4,8 @@
   @include center;
   cursor: pointer;
   margin-right: 5px;
+  display: inline-block !important;
+  width: auto !important;
 
   span {
     font-size: 12px;

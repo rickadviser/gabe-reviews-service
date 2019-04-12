@@ -11,6 +11,7 @@ import {
   tabHeader__wrapper,
   tabHeader__popup__wrapper,
   tabHeader__popup,
+  tabHeader__buttons__wrapper,
   popup__box,
   popup__box__link__wrapper,
   popup__box__link,
@@ -26,14 +27,14 @@ const TabHeaderPresentational = ({
 }) => (
   <div className={tabHeader__wrapper}>
     <h2>{title}</h2>
-    <div>
+    <div className={tabHeader__buttons__wrapper}>
       <button
         type="button"
         className={`${button} ${button__primary} ${button__header}`}
       >
         {buttonText}
       </button>
-      <span id="tabHeader_popup" className={tabHeader__popup__wrapper}>
+      <div id="tabHeader_popup" className={tabHeader__popup__wrapper}>
         <button
           type="button"
           id="tabHeader_popup_button"
@@ -77,7 +78,7 @@ const TabHeaderPresentational = ({
             </div>
           </div>
         )}
-      </span>
+      </div>
     </div>
   </div>
 );

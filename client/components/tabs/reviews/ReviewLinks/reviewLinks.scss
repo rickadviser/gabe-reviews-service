@@ -9,15 +9,13 @@
 }
 
 .review__links {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   padding: 2px 0;
   width: 50%;
 
   > * {
-    display: inline-block;
-    margin-right: 20px;
-    text-align: left;
+    margin-right: 26px;
   }
+}
+
+.review__links__wrapper {
 }

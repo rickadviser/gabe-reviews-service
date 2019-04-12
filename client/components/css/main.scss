@@ -1,5 +1,11 @@
 @import 'globals';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .reviews__component__wrapper {
   font-family: Arial, Tahoma, sans-serif;
 
@@ -15,6 +21,14 @@
     height: 1em;
     width: 1em;
   }
+}
+
+.upper__wrapper {
+  background-color: $white;
+  border-bottom: $main-border;
+  border-left: $main-border;
+  border-right: $main-border;
+  padding: 24px;
 }
 
 .button__primary {
@@ -42,12 +56,4 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-}
-
-.upper__wrapper {
-  background-color: $white;
-  border-bottom: $main-border;
-  border-left: $main-border;
-  border-right: $main-border;
-  padding: 24px;
 }
