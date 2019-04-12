@@ -4,6 +4,8 @@ import StickyNav from '../StickyNav/index';
 
 import '../../helpers/loadIcons';
 
+import { reviews__component__wrapper } from '../css/main.scss';
+
 const Main = () => {
   const [currentTab, setCurrentTab] = useState('Reviews');
   const [sticky, setSticky] = useState(false);
@@ -26,7 +28,7 @@ const Main = () => {
   }, []);
 
   return (
-    <>
+    <div className={reviews__component__wrapper}>
       {sticky && (
         <StickyNav activeNavTab={activeNavTab} setActive={setActive} />
       )}
@@ -34,7 +36,7 @@ const Main = () => {
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       />
-    </>
+    </div>
   );
 };
 
