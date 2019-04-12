@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import HotelContext from '../../../../context/hotel-context';
 import ReviewsContext from '../context/reviews-context';
 import ReviewSingle from '../ReviewSingle/index';
+import EmptyList from '../EmptyList/index';
 
 const ReviewsBody = () => {
   const { reviews } = useContext(HotelContext);
@@ -25,12 +26,13 @@ const ReviewsBody = () => {
     selectedLanguage,
     searchTerm
   );
-
   return (
     <>
       {filtered.map(review => (
         <ReviewSingle key={review._id} review={review} />
       ))}
+
+      {filtered.length === 0 && <EmptyList />}
     </>
   );
 };

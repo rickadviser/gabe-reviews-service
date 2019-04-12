@@ -1,0 +1,21 @@
+.emptyList__wrapper {
+  background-color: #fef8d0;
+  border: 1px solid #fad69f;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 12px 0 24px;
+  padding: 12px 18px;
+}
+
+.emptyList__clear {
+  background-color: transparent;
+  border: 0;
+  color: #069;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+}

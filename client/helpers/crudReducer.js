@@ -4,6 +4,8 @@ const crudReducer = (state, action) => {
       return [action.payload, ...state];
     case 'remove':
       return state.filter(i => i !== action.payload);
+    case 'clear':
+      return [];
     default:
       return state;
   }
