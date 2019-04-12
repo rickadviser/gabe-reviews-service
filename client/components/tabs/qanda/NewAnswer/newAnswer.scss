@@ -10,6 +10,15 @@
   padding: 16px 24px;
 }
 
+.answer__search__icon__wrapper {
+  border: $main-border;
+  border-radius: 50%;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 20px !important;
+}
+
 .answer__search__icon {
   left: 50%;
   margin: 0 !important;
@@ -28,13 +37,4 @@
   padding: 6px;
   resize: none;
   width: 100%;
-}
-
-.answer__search__icon__wrapper {
-  border: $main-border;
-  border-radius: 50%;
-  height: 20px;
-  overflow: hidden;
-  position: relative;
-  width: 20px;
 }
