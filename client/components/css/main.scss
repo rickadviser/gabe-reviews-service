@@ -1,19 +1,5 @@
 @import 'globals';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: $super-light-gray;
-  color: $main-font-color;
-  font-family: Arial, Tahoma, sans-serif;
-  margin-top: 3em;
-  overflow-y: scroll;
-}
-
 div {
   width: 100%;
 }
