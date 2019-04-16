@@ -9,15 +9,10 @@ import { reviews__component__wrapper } from '../css/main.scss';
 const Main = () => {
   const [currentTab, setCurrentTab] = useState('Reviews');
   const [sticky, setSticky] = useState(false);
-  const [activeNavTab, setActiveNavTab] = useState('Review');
+  const [activeNavTab, setActiveNavTab] = useState('Pricing');
 
   const showStickyNav = () => {
     setSticky(window.pageYOffset > 200);
-  };
-
-  const setActive = (e, tab) => {
-    e.preventDefault();
-    setActiveNavTab(tab);
   };
 
   useEffect(() => {
@@ -30,7 +25,10 @@ const Main = () => {
   return (
     <div className={reviews__component__wrapper}>
       {sticky && (
-        <StickyNav activeNavTab={activeNavTab} setActive={setActive} />
+        <StickyNav
+          activeNavTab={activeNavTab}
+          setActiveNavTab={setActiveNavTab}
+        />
       )}
       <MainPresentational
         currentTab={currentTab}

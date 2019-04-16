@@ -10,7 +10,7 @@ const PhotosState = ({ children }) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/photos`)
+    fetch(`/api/hotels/${hotelId}/reviews/photos`)
       .then(res => res.json())
       .then(data => {
         setPhotos(data);

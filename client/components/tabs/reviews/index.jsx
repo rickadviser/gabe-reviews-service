@@ -10,6 +10,7 @@ import Languages from './Languages/index';
 import BodyWrapper from '../BodyWrapper';
 import ReviewsSearch from './ReviewsSearch/index';
 import ReviewsBody from './ReviewsBody/index';
+import ReviewMentions from './ReviewMentions/index';
 import styles from './review.scss';
 
 import { upper__wrapper } from '../../css/main.scss';
@@ -41,7 +42,7 @@ const Reviews = () => (
           <Languages />
         </div>
         <div className={reviews__mentions}>
-          <p>MENTIONS</p>
+          <ReviewMentions />
         </div>
       </div>
     </div>

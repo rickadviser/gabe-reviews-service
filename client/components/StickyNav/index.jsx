@@ -3,25 +3,32 @@ import PropTypes from 'prop-types';
 
 import { main__stickyNav, main__stickyNav__selected } from './stickyNav.scss';
 
-const StickyNav = ({ setActive, activeNavTab }) => (
+const StickyNav = ({ setActiveNavTab, activeNavTab }) => (
   <nav className={main__stickyNav}>
     <ul>
       <li>
-        {activeNavTab !== 'Review' && (
-          <a href="http://www.google.com" onClick={e => setActive(e, 'Review')}>
-            Review
+        {activeNavTab !== 'Pricing' && (
+          <a href="#Pricing" onClick={() => setActiveNavTab('Pricing')}>
+            Pricing
           </a>
         )}
-        {activeNavTab === 'Review' && (
-          <span className={main__stickyNav__selected}>Review</span>
+        {activeNavTab === 'Pricing' && (
+          <span className={main__stickyNav__selected}>Pricing</span>
+        )}
+      </li>
+      <li>
+        {activeNavTab !== 'About' && (
+          <a href="#about" onClick={() => setActiveNavTab('About')}>
+            About
+          </a>
+        )}
+        {activeNavTab === 'About' && (
+          <span className={main__stickyNav__selected}>About</span>
         )}
       </li>
       <li>
         {activeNavTab !== 'Location' && (
-          <a
-            href="http://www.google.com"
-            onClick={e => setActive(e, 'Location')}
-          >
+          <a href="#location" onClick={() => setActiveNavTab('Location')}>
             Location
           </a>
         )}
@@ -30,13 +37,13 @@ const StickyNav = ({ setActive, activeNavTab }) => (
         )}
       </li>
       <li>
-        {activeNavTab !== 'Deals' && (
-          <a href="http://www.google.com" onClick={e => setActive(e, 'Deals')}>
-            Deals
+        {activeNavTab !== 'Reviews' && (
+          <a href="#reviews" onClick={() => setActiveNavTab('Reviews')}>
+            Reviews
           </a>
         )}
-        {activeNavTab === 'Deals' && (
-          <span className={main__stickyNav__selected}>Deals</span>
+        {activeNavTab === 'Reviews' && (
+          <span className={main__stickyNav__selected}>Reviews</span>
         )}
       </li>
     </ul>
@@ -44,7 +51,7 @@ const StickyNav = ({ setActive, activeNavTab }) => (
 );
 
 StickyNav.propTypes = {
-  setActive: PropTypes.func.isRequired,
+  setActiveNavTab: PropTypes.func.isRequired,
   activeNavTab: PropTypes.string.isRequired,
 };
 

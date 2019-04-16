@@ -6,12 +6,11 @@ const cors = require('cors');
 const apiRoutes = require('./routes');
 
 const app = express();
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 3000;
+const mongoURI = process.env.DB_URI || 'mongodb://database/rickadvisor';
 
 mongoose
-  .connect('mongodb://localhost:27017/rickadvisor', {
-    useNewUrlParser: true,
-  })
+  .connect(mongoURI, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(console.error);
 

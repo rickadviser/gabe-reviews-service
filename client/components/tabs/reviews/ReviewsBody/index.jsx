@@ -14,6 +14,7 @@ const ReviewsBody = () => {
     selectedTimes,
     selectedTypes,
     selectedLanguage,
+    selectedMention,
     searchTerm,
     getFilteredReviews,
   } = useContext(ReviewsContext);
@@ -24,8 +25,10 @@ const ReviewsBody = () => {
     selectedTimes,
     selectedTypes,
     selectedLanguage,
+    selectedMention,
     searchTerm
   );
+
   return (
     <>
       {filtered.map(review => (

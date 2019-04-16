@@ -7,7 +7,7 @@ const RoomtipsState = ({ children }) => {
   const { hotelId, setRoomtips, setLoading } = useContext(HotelContext);
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/roomtips`)
+    fetch(`/api/hotels/${hotelId}/reviews/roomtips`)
       .then(res => res.json())
       .then(data => {
         setRoomtips(data);

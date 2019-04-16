@@ -10,7 +10,7 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run build\"",
     "startdocker": "concurrently \"npm run server\" \"npm run dockerbuild\"",
-    "docker": "concurrently \"npm run seed\" \"npm run startdocker\"",
+    "docker": "concurrently \"npm run seed\" \"npm run server\"",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production --watch",
     "dockerbuild": "webpack --mode production",
