@@ -8,18 +8,18 @@ import getFilteredReviews from '../../../../helpers/filteredReviews';
 import crudReducer from '../../../../helpers/crudReducer';
 
 const ReviewsState = ({ children }) => {
+  const { setReviews, hotelId, setLoading } = useContext(HotelContext);
+
   const [selectedRatings, dispatchRatings] = useReducer(crudReducer, []);
   const [selectedTimes, dispatchTimes] = useReducer(crudReducer, []);
   const [selectedTypes, dispatchTypes] = useReducer(crudReducer, []);
-  const [selectedMentions, dispatchMentions] = useReducer(crudReducer, []);
   const [selectedLanguage, setLanguage] = useState('English');
   const [searchTerm, setSearchTerm] = useState('');
-
-  const { setReviews, hotelId, setLoading } = useContext(HotelContext);
+  const [selectedMention, setSelectedMention] = useState('All reviews');
 
   useEffect(() => {
     if (hotelId) {
-      fetch(`http://localhost:3004/api/hotels/${hotelId}/reviews/general`)
+      fetch(`/api/hotels/${hotelId}/reviews/general`)
         .then(res => res.json())
         .then(data => {
           setReviews(data);
@@ -32,13 +32,13 @@ const ReviewsState = ({ children }) => {
     selectedRatings,
     selectedTimes,
     selectedTypes,
-    selectedMentions,
     selectedLanguage,
     searchTerm,
     dispatchRatings,
     dispatchTimes,
     dispatchTypes,
-    dispatchMentions,
+    selectedMention,
+    setSelectedMention,
     setLanguage,
     setSearchTerm,
     getFilteredReviews,

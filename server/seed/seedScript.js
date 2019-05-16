@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const seedMongo = require('./seedMongo');
 
+const mongoURI = process.env.DB_URI || 'mongodb://database/rickadvisor';
+
 mongoose
-  .connect('mongodb://database/rickadvisor', {
+  .connect(mongoURI, {
     useNewUrlParser: true,
   })
   .then(() => {

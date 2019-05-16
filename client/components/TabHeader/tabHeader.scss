@@ -50,8 +50,10 @@
   grid-template-columns: 1fr 3fr;
 
   div {
-    @include center;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     text-align: left;
 
     &:first-of-type {
@@ -86,5 +88,5 @@
   position: absolute;
   right: 0;
   top: 150%;
-  width: 220px !important;
+  width: 230px !important;
 }

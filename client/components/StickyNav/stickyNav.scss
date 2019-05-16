@@ -4,7 +4,7 @@
   background-color: $white;
   border-bottom: $main-border;
   left: 0;
-  padding-left: 300px;
+  padding-left: 200px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,6 +19,7 @@
       float: left;
       margin: 0 2em 0 0;
       padding: 0;
+      width: 100px;
 
       a,
       .main__stickyNav__selected {

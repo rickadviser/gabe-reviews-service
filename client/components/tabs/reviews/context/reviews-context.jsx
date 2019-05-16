@@ -4,13 +4,15 @@ export default React.createContext({
   selectedRatings: [],
   selectedTimes: [],
   selectedTypes: [],
-  selectedMentions: [],
   selectedLanguage: '',
+  selectedMention: '',
+  searchTerm: '',
 
   dispatchRatings: () => {},
   dispatchTimes: () => {},
   dispatchTypes: () => {},
-  dispatchMentions: () => {},
   setLanguage: () => {},
+  setSearchTerm: () => {},
+  setSelectedMention: () => {},
   getFilteredReviews: () => {},
 });
