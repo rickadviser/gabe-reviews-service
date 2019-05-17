@@ -4,7 +4,7 @@ This project consisted of designing, building and deploying a fully functional f
 
 This microservice consisted of the Reviews component which allows users to search, filter and list user reviews related to an individual hotel.
 
-![Reviews Service Screenshot](screenshots/reviews.png)
+![User Reviews Screenshot](screenshots/reviews.png)
 
 ## Table of Contents
 
